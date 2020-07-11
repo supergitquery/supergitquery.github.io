@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第一章_列表 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第一章_列表"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-16T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-17
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第一章_列表</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#修改"><span class="toc-number">2.</span> <span class="toc-text">修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用方法"><span class="toc-number">3.</span> <span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#append"><span class="toc-number">3.1.</span> <span class="toc-text">append</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">3.2.</span> <span class="toc-text">insert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#extend"><span class="toc-number">3.3.</span> <span class="toc-text">extend </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pop"><span class="toc-number">3.4.</span> <span class="toc-text">pop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remove"><span class="toc-number">3.5.</span> <span class="toc-text">remove</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clear"><span class="toc-number">3.6.</span> <span class="toc-text">clear</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#index"><span class="toc-number">3.7.</span> <span class="toc-text">index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#count"><span class="toc-number">3.8.</span> <span class="toc-text">count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-number">3.9.</span> <span class="toc-text">reverse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sort"><span class="toc-number">3.10.</span> <span class="toc-text">sort</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>列表（list）是最常用的Python数据类型，它可以作为一个方括号内的逗号分割值出现。<br>List中的数据项不需要具有相同的类型，可以进行的操作包括索引（第一个索引是0，第二个索引是1，以此类推）、切片、加、乘、检查成员等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = [<span class="string">'Jack'</span>, <span class="string">'Amon'</span>, <span class="string">'Alyssa'</span>]</span><br><span class="line">print(name[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jack</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h1><p>列表索引位置元素并赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = [<span class="string">'Jack'</span>, <span class="string">'Amon'</span>, <span class="string">'Alyssa'</span>]</span><br><span class="line">name[<span class="number">0</span>] = <span class="string">'Alice'</span></span><br><span class="line">print(name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;Alice&#39;, &#39;Amon&#39;, &#39;Alyssa&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><hr>
+<h2 id="append"><a href="#append" class="headerlink" title="append"></a>append</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">append(self, object, &#x2F;)</span><br><span class="line">    将对象追加到列表的末尾。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.append(<span class="string">'lisi'</span>)</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;xiaohua&#39;, &#39;xiaoming&#39;, &#39;zhangsan&#39;, &#39;lisi&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert(self, index, object, &#x2F;)</span><br><span class="line">    在索引之前插入对象。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.insert(<span class="number">1</span>, <span class="string">'lisi'</span>)</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;xiaohua&#39;, &#39;lisi&#39;, &#39;xiaoming&#39;, &#39;zhangsan&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="extend"><a href="#extend" class="headerlink" title="extend "></a>extend <a name='extend'></a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extend(self, iterable, &#x2F;)</span><br><span class="line">    通过添加来自iterable的元素来扩展列表。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.extend([<span class="string">'lisi'</span>, <span class="string">'xiaohong'</span>])</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;xiaohua&#39;, &#39;xiaoming&#39;, &#39;zhangsan&#39;, &#39;lisi&#39;, &#39;xiaohong&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pop(self, index&#x3D;-1, &#x2F;)</span><br><span class="line">    删除并返回索引处的项目（默认为最后一个）。</span><br><span class="line"></span><br><span class="line">    如果列表为空或索引超出范围，则引发IndexError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">pop_name = name_list.pop(<span class="number">1</span>)</span><br><span class="line">print(pop_name, name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xiaoming [&#39;xiaohua&#39;, &#39;zhangsan&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">remove(self, value, &#x2F;)</span><br><span class="line">    删除第一次出现的值。</span><br><span class="line"></span><br><span class="line">    如果不存在该值，则引发ValueError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.remove(<span class="string">'xiaohua'</span>)</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;xiaoming&#39;, &#39;zhangsan&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clear(self, &#x2F;)</span><br><span class="line">    从列表中删除所有项目。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.clear()</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">index(self, value, start&#x3D;0, stop&#x3D;2147483647, &#x2F;)</span><br><span class="line">    返回值的第一个索引。</span><br><span class="line"></span><br><span class="line">    如果不存在该值，则引发ValueError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">index = name_list.index(<span class="string">'xiaoming'</span>)</span><br><span class="line">print(index)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">count(self, value, &#x2F;)</span><br><span class="line">    返回值出现的次数。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">count = name_list.count(<span class="string">'xiaohua'</span>)</span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reverse(self, &#x2F;)</span><br><span class="line">    翻转。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>]</span><br><span class="line">name_list.reverse()</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;zhangsan&#39;, &#39;xiaoming&#39;, &#39;xiaohua&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sort(self, &#x2F;, *, key&#x3D;None, reverse&#x3D;False)</span><br><span class="line">    排序。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">'xiaohua'</span>, <span class="string">'xiaoming'</span>, <span class="string">'zhangsan'</span>, <span class="string">'1'</span>, <span class="string">'5'</span>, <span class="string">'yes'</span>]</span><br><span class="line">name_list.sort()</span><br><span class="line">print(name_list)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;1&#39;, &#39;5&#39;, &#39;xiaohua&#39;, &#39;xiaoming&#39;, &#39;yes&#39;, &#39;zhangsan&#39;]</span><br></pre></td></tr></table></figure>
+
+
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/18/2020-06-18-python第一章_运算/" class="prev">上一篇：python第一章_运算</a>
+    
+    
+    <a href="/2020/06/16/2020-06-16-python第一章_字符串/" class="next">下一篇：python第一章_字符串</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

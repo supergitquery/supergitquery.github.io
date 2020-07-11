@@ -1,0 +1,610 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>mysql | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="mysql"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-05-09T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-05-10
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">mysql</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yum安装"><span class="toc-number">1.1.</span> <span class="toc-text">yum安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码编译安装mysql"><span class="toc-number">1.2.</span> <span class="toc-text">源码编译安装mysql</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql主要配置"><span class="toc-number">2.1.</span> <span class="toc-text">mysql主要配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql配置模板"><span class="toc-number">2.2.</span> <span class="toc-text">mysql配置模板</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">3.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#登陆与帮助"><span class="toc-number">3.1.</span> <span class="toc-text">登陆与帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对用户增删改查"><span class="toc-number">3.2.</span> <span class="toc-text">对用户增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对当前的用户授权增删查"><span class="toc-number">3.3.</span> <span class="toc-text">对当前的用户授权增删查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库增删查"><span class="toc-number">3.4.</span> <span class="toc-text">数据库增删查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表增删改查复制"><span class="toc-number">3.5.</span> <span class="toc-text">表增删改查复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字段操作增删改查"><span class="toc-number">3.6.</span> <span class="toc-text">字段操作增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据操作增删改查"><span class="toc-number">3.7.</span> <span class="toc-text">数据操作增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库变量查改"><span class="toc-number">3.8.</span> <span class="toc-text">数据库变量查改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主从操作"><span class="toc-number">3.9.</span> <span class="toc-text">主从操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看配置信息或其他操作"><span class="toc-number">3.10.</span> <span class="toc-text">查看配置信息或其他操作</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><hr>
+<h2 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h2><p>下载页面,因为Linux默认的是mariadb,所以yum安装的话需要有mysql的yum源</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http<span class="variable">s:</span>//dev.mysql.<span class="keyword">com</span>/downloads/repo/yum/</span><br></pre></td></tr></table></figure>
+
+<p>Linux下载mysql的yum源安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://repo.mysql.com/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o mysql80.noarch.rpm https://repo.mysql.com/mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+
+<p>安装下载的mysql yum源包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql80-community-release-el7-1.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<p>检查mysql的yum源是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum repolist enabled | grep <span class="string">"mysql.*-community.*"</span></span><br></pre></td></tr></table></figure>
+
+<p>yum安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql:  yum -y  install mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<p>查看初始登陆密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/<span class="built_in">log</span>/mysqld.log | grep <span class="string">'A temporary password'</span></span><br></pre></td></tr></table></figure>
+
+<p>修改密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="源码编译安装mysql"><a href="#源码编译安装mysql" class="headerlink" title="源码编译安装mysql"></a>源码编译安装mysql</h2><p>下载源码包地址</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http<span class="variable">s:</span>//dev.mysql.<span class="keyword">com</span>/downloads/mysql/</span><br></pre></td></tr></table></figure>
+
+<p>安装依赖软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install cmake ncurses-devel bison</span><br></pre></td></tr></table></figure>
+
+<p>创建服务运行用户mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -M -s /sbin/nologin mysql</span><br></pre></td></tr></table></figure>
+
+<p>参数配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysql文档https://dev.mysql.com/doc/</span></span><br><span class="line"></span><br><span class="line">cmake \</span><br><span class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql \</span><br><span class="line">-DMYSQL_UNIX_ADDR=/tmp/mysql.sock \</span><br><span class="line">-DDEFAULT_CHARSET=utf8 \</span><br><span class="line">-DDEFAULT_COLLATION=utf8_general_ci \</span><br><span class="line">-DWITH_EXTRA_CHARSETS=all \</span><br><span class="line">-DENABLED_LOCAL_INFILE=1 \</span><br><span class="line">-DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/mysql/data</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果出错,解决后要删除cmake的缓存文件CMakeCache.txt再重新执行</span></span><br></pre></td></tr></table></figure>
+
+<p>参数解释</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/mysql     <span class="comment">#  安装位置</span></span><br><span class="line">-DMYSQL_UNIX_ADDR=/tmp/mysql.sock           <span class="comment">#  服务器与本地客户端进行通信的Unix套接字文件，必须是绝对路径，默认位置/tmp/</span></span><br><span class="line">											<span class="comment">#  mysql.sock，可以在服务器启动时，用--socket改变路径</span></span><br><span class="line">-DDEFAULT_CHARSET                           <span class="comment">#  mysql默认使用的字符集，不指定将默认使用Latin1西欧字符集</span></span><br><span class="line">-DDEFAULT_COLLATION                         <span class="comment">#  默认字符校对</span></span><br><span class="line">-DWITH_EXTRA_CHARSETS			      		<span class="comment">#  制定mysql拓展字符集，默认值也是all支持所有的字符集</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  MYISAM，INNOBASE，MEMORY存储引擎强制编译到到MYSQL服务器,不需要明确安装</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-DENABLED_LOCAL_INFILE   <span class="comment">#  允许本地倒入数据，启用加载本地数据</span></span><br><span class="line">-DMYSQL_DATADIR          <span class="comment">#  mysql数据库存放路径</span></span><br></pre></td></tr></table></figure>
+
+<p>编译安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>修改目录权限为创建的mysql用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R mysql. /usr/<span class="built_in">local</span>/mysql</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/<span class="built_in">local</span>/mysql/support-files/mysql.server /etc/init.d/mysqld</span><br><span class="line">chkconfig --add mysqld</span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果安装位置不是/usr/local/mysql的话需要修改以下配置</span></span><br><span class="line">vim /etc/init.d/mysqld</span><br><span class="line">basedir=           <span class="comment">#  等号后面需要设置编译时指定的mysql安装目录</span></span><br><span class="line">datadir=           <span class="comment">#  等号后面需要设置编译时指定的数据目录</span></span><br></pre></td></tr></table></figure>
+
+<p>生成配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -f /usr/<span class="built_in">local</span>/mysql/support-files/my-default.cnf /usr/<span class="built_in">local</span>/mysql/my.cnf</span><br></pre></td></tr></table></figure>
+
+<p>初始化数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/mysql/scripts/mysql_install_db \</span><br><span class="line">--defaults-file=/usr/<span class="built_in">local</span>/mysql/my.cnf \</span><br><span class="line">--basedir=/usr/<span class="built_in">local</span>/mysql       \</span><br><span class="line">--datadir=/usr/<span class="built_in">local</span>/mysql/data  \</span><br><span class="line">--user=mysql</span><br><span class="line"></span><br><span class="line">--defaults-file                   <span class="comment">#  默认使用配置文件</span></span><br><span class="line">--basedir=/usr/<span class="built_in">local</span>/mysql/       <span class="comment">#  mysql安装目录</span></span><br><span class="line">--datadir=/usr/<span class="built_in">local</span>/mysql/data/  <span class="comment">#  mysql数据目录</span></span><br><span class="line">--user=mysql                      <span class="comment">#  用于运行mysqld的登录用户名。mysqld创建的文件和目录将归此用户所有。您必须是根用户才能使用此选项</span></span><br></pre></td></tr></table></figure>
+
+<p>快速调用命令或者添加环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/mysql/bin/* /usr/bin/</span><br><span class="line"></span><br><span class="line">vim /etc/profile</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/mysql/bin/</span><br></pre></td></tr></table></figure>
+
+<p>配置文件添加使包含其他配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/mysql/my.cnf</span><br><span class="line">!includedir /etc/my.cnf.d</span><br></pre></td></tr></table></figure>
+
+<p>启动mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+
+<p>修改mysql管理密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><hr>
+<h2 id="mysql主要配置"><a href="#mysql主要配置" class="headerlink" title="mysql主要配置"></a>mysql主要配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]                                       #  服务端配置</span><br><span class="line">    datadir=/data/mysql                        #  数据目录</span><br><span class="line">    socket=/var/lib/mysql/mysql.sock           #  socket通信设置</span><br><span class="line">    user=mysql                                 #  使用mysql用户启动</span><br><span class="line">    symbolic-links=<span class="number">0</span>                           #  是否支持快捷方式</span><br><span class="line">    <span class="built_in">log</span>-bin=mysql-bin                          #  开启bin-<span class="built_in">log</span>日志</span><br><span class="line">    server-id=<span class="number">1</span>                                #  mysql服务的id</span><br><span class="line">    auto_increment_offset=<span class="number">1</span>                    #  自增长字段从固定数开始</span><br><span class="line">    auto_increment_increment=<span class="number">2</span>                 #  自增长字段每次递增的量</span><br><span class="line">    socket=/tmp/mysql.sock                     #  mysql客户程序与服务器之间的本地通信套接字文件</span><br><span class="line">    port=<span class="number">3306</span>                                  #  指定mysql监听的端口</span><br><span class="line">    key-buff=<span class="number">384</span>MB                             #  key_buff是用于索引块的缓冲区大小</span><br><span class="line">    table_cache=<span class="number">512</span>                            #  所有线程打开表的数量</span><br><span class="line">    sort_buffer_size=<span class="number">2</span>MB                       #  为每个需要进行排序的线程分配该大小的一个缓冲区</span><br><span class="line">    read_buff_size=<span class="number">2</span>MB                         #  读查询操作所能使用的缓冲区大小</span><br><span class="line">    query_cache_size=<span class="number">32</span>MB                      #  指定mysql查询结果缓冲区的大小</span><br><span class="line">    read_rnd_buff_size=<span class="number">8</span>MB                     #  改参数在使用行指针排序之后,随机读</span><br><span class="line">    myisam_sort_buffer_size=<span class="number">64</span>MB               #  myinam表发生变化时重新排序所需的缓冲</span><br><span class="line">    thread_concurrency=<span class="number">8</span>                       #  最大并发线程数,取值为服务器逻辑cpu数量×<span class="number">2</span></span><br><span class="line">    thread_cache=<span class="number">8</span>                             #  缓存可重用的线程数</span><br><span class="line">    skip-locking                               #  避免mysql的外部锁定,减少出错几率增强稳定性</span><br><span class="line">    default-storage-engine=INNODB              #  设置mysql默认引擎为InnoDB</span><br><span class="line"></span><br><span class="line">[mysqld_safe]                                  #  mysql服务安全配置</span><br><span class="line">    <span class="built_in">log</span>-error=/var/<span class="built_in">log</span>/mysqld.<span class="built_in">log</span>              #  mysql错误日志路径</span><br><span class="line">    pid-<span class="keyword">file</span>=/var/run/mysqld/mysqld.pid        #  mysql pid进程文件</span><br><span class="line">    key_buff_size=<span class="number">2048</span>MB                       #  myisam表索引缓冲区的大小</span><br><span class="line">    max_connections=<span class="number">3000</span>                       #  mysql最大连接数</span><br><span class="line">    innodb_buffer_pool_size=<span class="number">2048</span>MB             #  innodb内存缓冲数据和索引大小</span><br><span class="line">    basedir=/usr/local/mysql55/                #  数据库安装路径</span><br><span class="line"></span><br><span class="line">[mysqldump]                                    #  数据库导出段配置</span><br><span class="line">    max_allowed_packet=<span class="number">16</span>MB                    #  服务器和客户端发送的最大数据包</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="mysql配置模板"><a href="#mysql配置模板" class="headerlink" title="mysql配置模板"></a>mysql配置模板</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">port=<span class="number">3306</span>                   </span><br><span class="line">socket=/tmp/mysql.sock</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">user=mysql                #  服务运行用户</span><br><span class="line">server_id=<span class="number">10</span>              #  服务ID</span><br><span class="line">port=<span class="number">3306</span>　　　　　　　      #　运行端口</span><br><span class="line">socket=/tmp/mysql.sock    #  socket通信设置</span><br><span class="line">datadir=/data/mysql/      #  数据存放目录</span><br><span class="line">old_passwords=<span class="number">1</span>           #  兼容<span class="number">4.1</span>之前的密码散列方法</span><br><span class="line">                          #  长度：<span class="number">4.1</span>和<span class="number">4.1</span>之前的哈希分别为<span class="number">41</span>和<span class="number">16</span>个字节。</span><br><span class="line">                          #  <span class="number">4.1</span>格式的密码哈希始终以*字符开头，而<span class="number">4.1</span>之前的格式密码则永远都不是 字符。</span><br><span class="line">lower_case_table_names=<span class="number">1</span>  #  忽略表名的大小写</span><br><span class="line">character_set_server=utf8 #  服务器默认字符集</span><br><span class="line">default_storage_engine=MYISAM   #  表的默认存储引擎。</span><br><span class="line">log_bin=bin.<span class="built_in">log</span>                 #  开启bin-<span class="built_in">log</span>日志</span><br><span class="line">log_error=error.<span class="built_in">log</span>             #  开启错误日志</span><br><span class="line">long_query_time=<span class="number">2</span>               #  查询所花的时间超过许多秒，则服务器将增加Slow_queries 状态变量。</span><br><span class="line">                                #  如果启用了慢查询日志，则查询将记录到慢查询日志文件中。</span><br><span class="line">slow_query_log=ON               #  开启慢查询日志</span><br><span class="line">slow_query_log_file=slow.<span class="built_in">log</span>    #  慢查询日志文件</span><br><span class="line">binlog_format=mixed             #  二进制日志格式</span><br><span class="line">max_binlog_cache_size=<span class="number">16</span>MB      #  最大二进制日志缓存</span><br><span class="line">max_binlog_size=<span class="number">1</span>GB             #  二进制日志大小</span><br><span class="line">expire_logs_days=<span class="number">30</span>             #  binlog过期清理时间(天)</span><br><span class="line">ft_min_word_len=<span class="number">4</span>               #  指定在全文搜索中匹配到最小的字符长度才返回结果</span><br><span class="line">back_log=<span class="number">512</span>                    #  在MySQL暂时停止回答新请求之前的短时间内可以堆叠多少个请求。</span><br><span class="line">max_allowed_packet=<span class="number">64</span>MB         #  服务器和客户端发送的最大数据包</span><br><span class="line">max_connections=<span class="number">4096</span>            #  mysql最大连接数</span><br><span class="line">max_connect_errors=<span class="number">100</span>          #  最大主机错误连接次数</span><br><span class="line"></span><br><span class="line">join_buffer_size=<span class="number">2</span>MB            #  用于普通索引扫描，范围索引扫描和不使用索引的联接的缓冲区的最小大小，</span><br><span class="line">                                #  从而执行全表扫描。</span><br><span class="line"></span><br><span class="line">read_buffer_size=<span class="number">2</span>MB            #  对MyISAM表进行顺序扫描的每个线程都会为其扫描的每个表分配此大小</span><br><span class="line">                                #  （以字节为单位）的缓冲区。</span><br><span class="line"></span><br><span class="line">read_rnd_buffer_size=<span class="number">2</span>MB        #  当MyISAM在键排序操作之后按排序顺序从表中读取行时，</span><br><span class="line">                                #  将通过此缓冲区读取行以避免磁盘查找。</span><br><span class="line"></span><br><span class="line">sort_buffer_size=<span class="number">2</span>MB            #  每个必须执行排序的会话都会分配此大小的缓冲区。sort_buffer_size </span><br><span class="line">                                #  并非特定于任何存储引擎，而是以一般方式进行优化.</span><br><span class="line"></span><br><span class="line">query_cache_size=<span class="number">64</span>MB           #  分配用于缓存查询结果的内存量。允许的值是<span class="number">1024</span>的倍数.</span><br><span class="line">table_open_cache=<span class="number">10000</span>          #  所有线程的打开表数。增大该值将增加mysqld所需的文件描述符的数量 。</span><br><span class="line"> </span><br><span class="line">thread_cache_size=<span class="number">256</span>           #  服务器应缓存多少线程以供重用。通过尽可能地重用从缓存中获取的线程来满足线程请求，</span><br><span class="line">                                #  并且仅当缓存为空时才创建新线程。如果您有许多新连接，则可以增加此变量以提高性能。</span><br><span class="line"></span><br><span class="line">tmp_table_size=<span class="number">64</span>MB             #  内部内存临时表的最大大小。此变量不适用于用户创建的 MEMORY表。</span><br><span class="line">thread_stack=<span class="number">192</span>KB              #  每个线程的堆栈大小。</span><br><span class="line"></span><br><span class="line">local_infile=<span class="number">0</span>                  #  服务器会拒绝或允许已LOCAL在客户端启用的客户端加载本地数据。</span><br><span class="line">skip_show_database=ON           #  SHOW DATABASES如果他们没有SHOW DATABASES特权， 这将阻止人们使用该语句 </span><br><span class="line"></span><br><span class="line">skip_name_resolve=ON            #  检查客户端连接时是否解析主机名。如果此变量为OFF，则 mysqld在检查客户端连接</span><br><span class="line">                                #  时解析主机名。如果为ON，则 mysqld仅使用IP编号。</span><br><span class="line">                                #  在这种情况下，Host授权表中的所有列值都必须是IP地址或localhost。</span><br><span class="line"></span><br><span class="line">skip_external_locking=ON        #  如果为OFF,则为mysql使用外部锁定（系统锁定），如果为ON,则禁用外部锁定。 </span><br><span class="line">                                #  这仅影响MyISAM表访问。</span><br><span class="line"></span><br><span class="line">connect_timeout=<span class="number">600</span>             #  mysqld服务器等待连接数据包失败之前以响应的秒数。 默认值为<span class="number">10</span>秒。</span><br><span class="line">interactive_timeout=<span class="number">600</span>         #  服务器在关闭交互式连接之前等待活动的秒数。</span><br><span class="line">wait_timeout=<span class="number">600</span>                #  服务器在关闭非交互式连接之前等待活动的秒数。</span><br><span class="line"></span><br><span class="line"># *** MyISAM</span><br><span class="line">key_buffer_size=<span class="number">512</span>NB           #  MyISAM表的索引块被缓冲并由所有线程共享。 key_buffer_size是用于索引块的缓冲区的大小。</span><br><span class="line">bulk_insert_buffer_size=<span class="number">64</span>MB    #  此变量限制高速缓存树的大小,每个线程以字节为单位。将其设置为<span class="number">0</span>将禁用此优化。 默认值为<span class="number">8</span>MB。</span><br><span class="line"></span><br><span class="line">myisam_sort_buffer_size=<span class="number">64</span>MB    #  在repair table期间对MyISAM索引排序或使用CREATE INDEX或ALTER </span><br><span class="line">                                #  TABLE创建索引时分配的缓冲区大小。</span><br><span class="line"></span><br><span class="line">myisam_max_sort_file_size=<span class="number">1</span>GB   #  在重新创建MyISAM索引时（在REPAIR TABLE，ALTER TABLE或LOAD </span><br><span class="line">                                #  DATA期间），允许MySQL使用的临时文件的最大大小。 </span><br><span class="line">                                #  如果文件大小大于此值，那么将使用键高速缓存来创建索引，这会更慢。 该值以字节为单位。</span><br><span class="line"></span><br><span class="line">myisam_repair_threads=<span class="number">1</span>         #  如果该值大于<span class="number">1</span>，则在按排序修复过程中并行创建MyISAM表索引（每个索引在其自己的线程中）。 </span><br><span class="line">                                #  预设值为<span class="number">1</span>。</span><br><span class="line"></span><br><span class="line">concurrent_insert=<span class="number">2</span>         #  如果为默认值，则MySQL允许INSERT和SELECT语句针对数据文件中间没有可用块的MyISAM表并发运行。</span><br><span class="line"></span><br><span class="line">myisam_recover_options=default  #  设置MyISAM存储引擎恢复模式。 </span><br><span class="line">                                #  变量值是OFF，DEFAULT，BACKUP，FORCE或QUICK的值的任意组合。 </span><br><span class="line">                                #  如果指定多个值，请用逗号分隔。 </span><br><span class="line">                                #  如果启用了恢复，则mysqld每次打开MyISAM表时，都会检查该表是否标记为已崩溃或未正确关闭。</span><br><span class="line">                                # （只有在禁用外部锁定的情况下运行，最后一个选项才起作用。）在这种情况下，mysqld在表上运行</span><br><span class="line">                                #  检查。 如果表已损坏，则mysqld尝试对其进行修复</span><br><span class="line"></span><br><span class="line"># *** INNODB</span><br><span class="line">innodb_buffer_pool_size=<span class="number">64</span>GB    #  InnoDB在其中缓存表和索引数据的内存区域的大小，以缓冲池的字节数为单位。</span><br><span class="line"></span><br><span class="line">innodb_additional_mem_pool_size=<span class="number">32</span>MB  #  InnoDB用于存储数据字典信息和其他内部数据结构的内存池的字节大小。 </span><br><span class="line">                                      #  您的应用程序中拥有的表越多，您在此处分配的内存就越多。 如果InnoDB在该池</span><br><span class="line">                                      #  中的内存不足，它将开始从操作系统分配内存，并将警告消息写入MySQL错误日志。 </span><br><span class="line"></span><br><span class="line">innodb_data_file_path=iddata1:1G;ibdata2:1G:autoextend   #  定义InnoDB系统表空间数据文件的名称，大小和属性。 </span><br><span class="line">                                                         #  如果未为innodb_data_file_path指定值，则默认行为是创</span><br><span class="line">                                                         #  建一个稍大于<span class="number">12</span>MB的名为ibdata1的单个自动扩展数据文件。</span><br><span class="line"></span><br><span class="line">innodb_read_io_threads=<span class="number">8</span>                    #  InnoDB中用于读取操作的I / O线程数</span><br><span class="line">innodb_write_io_threads=<span class="number">8</span>                   #  InnoDB中用于写操作的I / O线程数</span><br><span class="line">innodb_file_per_table=<span class="number">1</span>                     #  设置开启独立表空间,有非常多的表不推荐使用独立表空间</span><br><span class="line"></span><br><span class="line">innodb_flush_log_at_trx_commit=<span class="number">2</span>            #  控制提交操作的严格ACID遵从性与更高的性能之间的平衡，</span><br><span class="line">                                            #  当重新安排并批量执行与提交相关的I / O操作时，可以实现更高的性能。</span><br><span class="line"></span><br><span class="line">innodb_lock_wait_timeout=<span class="number">120</span>            #  InnoDB事务在放弃之前等待行锁的时间长度（以秒为单位）。 默认值为<span class="number">50</span>秒。</span><br><span class="line">innodb_log_buffer_size=<span class="number">8</span>MB              #  InnoDB用于写入磁盘上的日志文件的缓冲区大小（以字节为单位）。</span><br><span class="line">innodb_log_file_size=<span class="number">256</span>MB              #  The size in bytes of each <span class="built_in">log</span> <span class="keyword">file</span> in <span class="keyword">a</span> <span class="built_in">log</span> group. </span><br><span class="line">innodb_log_files_in_group=<span class="number">3</span>             #  日志组中的日志文件数。</span><br><span class="line"></span><br><span class="line">innodb_max_dirty_pages_pct=<span class="number">90</span>           #  InnoDB尝试从缓冲池中刷新数据，以使脏页百分比不超过此值。</span><br><span class="line">                                        #  指定一个介于<span class="number">0</span>到<span class="number">99</span>之间的整数。默认值为<span class="number">75</span>。</span><br><span class="line"></span><br><span class="line">innodb_thread_concurrency=<span class="number">16</span>        #  使InnoDB内部并发的操作系统线程数小于或等于此变量给定的限制</span><br><span class="line">                                    # （InnoDB使用操作系统线程来处理用户事务）。</span><br><span class="line"></span><br><span class="line">innodb_open_files=<span class="number">10000</span>             #  仅当您使用多个InnoDB表空间时，此变量才相关。 </span><br><span class="line">                                    #  它指定MySQL一次可以保持打开状态的.ibd文件的最大数量。 最小值是<span class="number">10</span>。</span><br><span class="line">#innodb_force_recovery=<span class="number">4</span>            #  崩溃恢复模式通常仅在严重的故障排除情况下才更改。 可能的值是<span class="number">0</span>到<span class="number">6</span>。</span><br><span class="line"></span><br><span class="line"># *** replication slave</span><br><span class="line">innodb_read_only=ON                 #  以只读模式启动</span><br><span class="line">relay_log=relay.<span class="built_in">log</span>                 #  启动从复制中继日志</span><br><span class="line">log_slave_updates=ON                #  从服务器从主服务器收到的更新是否应记录到从服务器自己的二进制日志中。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><hr>
+<h2 id="登陆与帮助"><a href="#登陆与帮助" class="headerlink" title="登陆与帮助"></a>登陆与帮助</h2><ul>
+<li>连接数据库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u<span class="variable">$user</span> -p<span class="variable">$passwd</span> -h<span class="variable">$host</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看对应帮助</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">help</span> $command;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="对用户增删改查"><a href="#对用户增删改查" class="headerlink" title="对用户增删改查"></a>对用户增删改查</h2><ul>
+<li>创建alex用户</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'alex'</span>@<span class="string">'192.168.1.1'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123456'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定alex用户从192.118.1.0/24网络的登录</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'alex'</span>@<span class="string">'192.118.1.%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定允许从任何ip的alex用户登录</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'alex'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除用户</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改用户</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">user</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span> <span class="keyword">to</span> <span class="string">'新用户名'</span>@<span class="string">'IP地址'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改密码</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'用户名'</span>@<span class="string">'IP地址'</span>=<span class="keyword">Password</span>(<span class="string">'新密码'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询用户表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">user</span>,<span class="keyword">password</span>,host <span class="keyword">from</span> mysql.user;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="对当前的用户授权增删查"><a href="#对当前的用户授权增删查" class="headerlink" title="对当前的用户授权增删查"></a>对当前的用户授权增删查</h2><ul>
+<li>授权 alex用户仅对db1.t1文件有查询、插入和更新的操作</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>,<span class="keyword">insert</span>,<span class="keyword">update</span> <span class="keyword">on</span> db1.t1 <span class="keyword">to</span> <span class="string">"alex"</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>alex用户对数据库db1下的t1文件有任意操作</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> db1.t1 <span class="keyword">to</span> <span class="string">"alex"</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>alex用户对db1数据库中的文件执行任何操作</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> db1.* <span class="keyword">to</span> <span class="string">"alex"</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>alex用户对所有数据库中文件有任何操作</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.*  <span class="keyword">to</span> <span class="string">"alex"</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>取消alex用户对db1的t1文件的任意操作</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">all</span> <span class="keyword">on</span> db1.t1 <span class="keyword">from</span> <span class="string">'alex'</span>@<span class="string">"%"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>取消来自远程服务器的alex用户对数据库db1的所有表的所有权限</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">all</span> <span class="keyword">on</span> db1.* <span class="keyword">from</span> <span class="string">'alex'</span>@<span class="string">"%"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>取消来自远程服务器的alex用户所有数据库的所有的表的权限</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">revoke</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">from</span> <span class="string">'alex'</span>@<span class="string">'%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看权限</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">grants</span> <span class="keyword">for</span> <span class="string">'用户'</span>@<span class="string">'IP地址'</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数据库增删查"><a href="#数据库增删查" class="headerlink" title="数据库增删查"></a>数据库增删查</h2><ul>
+<li>创建db1数据库</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> db1 <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除数据库db1</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> db1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询所有数据库</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改数据库编码</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">database</span> db1 <span class="keyword">default</span> <span class="built_in">character</span> <span class="keyword">set</span> utf8;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="表增删改查复制"><a href="#表增删改查复制" class="headerlink" title="表增删改查复制"></a>表增删改查复制</h2><ul>
+<li>创建表t1</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t1 (<span class="keyword">id</span> <span class="built_in">varchar</span>(<span class="number">20</span>),<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>)) <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除表t1</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> t1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重命名表t1为t2</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">rename</span> <span class="keyword">to</span> t2;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制t1表结构为t2</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t2 <span class="keyword">like</span> t1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制t1表为t2</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t2 <span class="keyword">select</span> * <span class="keyword">from</span> t1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改表编码</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> t1 <span class="keyword">default</span> <span class="built_in">character</span> <span class="keyword">set</span> utf8;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="字段操作增删改查"><a href="#字段操作增删改查" class="headerlink" title="字段操作增删改查"></a>字段操作增删改查</h2><ul>
+<li>向表中添加字段</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 字段类型；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在第一列添加一个字段</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students <span class="keyword">add</span> 字段名 字段类型 <span class="keyword">first</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在age字段后面添加一个address字段</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> students <span class="keyword">add</span> 字段名 字段类型 <span class="keyword">after</span> age;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除表中字段</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名 ;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改字段类型</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">modify</span> 要修改的字段名 要修改的类型;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改表中字段名和字段类型</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">change</span> 原字段名 新字段名 新字段类型;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询表结构</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数据操作增删改查"><a href="#数据操作增删改查" class="headerlink" title="数据操作增删改查"></a>数据操作增删改查</h2><ul>
+<li>向表中插入数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span> (字段值<span class="number">1</span>,字段值<span class="number">2</span>, 字段值<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>向表中插入多条数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span> (字段值<span class="number">1</span>,字段值<span class="number">2</span>, 字段值<span class="number">3</span>),(字段值<span class="number">1</span>,字段值<span class="number">2</span>, 字段值<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>向指定字段插入数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t2(<span class="keyword">id</span>) <span class="keyword">value</span>(<span class="number">33</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制其他表的数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t2 <span class="keyword">select</span> * <span class="keyword">from</span> t1;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除指定的行</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表 <span class="keyword">where</span> 字段=值;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除所有表数据(无法删除AUTO_INCREMENT的值)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> 表;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除所有表数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span>  <span class="keyword">table</span>  表；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新表数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> 表 <span class="keyword">set</span> 字段=<span class="string">'更新的值'</span> <span class="keyword">where</span> 字段=值;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多字段更新</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> students <span class="keyword">set</span> stname=<span class="string">'zhangsan'</span>,age=<span class="number">21</span> <span class="keyword">where</span> uid=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询表里数据</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段<span class="number">1</span>,字段<span class="number">2</span>,字段<span class="number">3</span>,... <span class="keyword">from</span> 表;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>去重复查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> 字段<span class="number">1</span>,字段<span class="number">2</span>,字段<span class="number">3</span>,... <span class="keyword">from</span> 表;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子语句查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段<span class="number">1</span>,字段<span class="number">2</span> <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">where</span> 字段=(<span class="keyword">select</span> 字段<span class="number">1</span> <span class="keyword">from</span> 表<span class="number">2</span> <span class="keyword">where</span> bTypeName=<span class="string">'网络技术'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>限定显示的条目查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段<span class="number">1</span>,字段<span class="number">2</span>,字段<span class="number">3</span>,... <span class="keyword">from</span> 表 <span class="keyword">limit</span> 偏移量,数目;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数据库变量查改"><a href="#数据库变量查改" class="headerlink" title="数据库变量查改"></a>数据库变量查改</h2><ul>
+<li>查询当前session变量</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> == <span class="keyword">show</span> <span class="keyword">session</span> <span class="keyword">variables</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查询全局服务器的变量(常修改的是这个)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">global</span> <span class="keyword">variables</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模糊查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">global</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"wait%"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>本次会话的参数状态</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">status</span>;</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">session</span> <span class="keyword">status</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改全局变量</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> 变量名=值;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="主从操作"><a href="#主从操作" class="headerlink" title="主从操作"></a>主从操作</h2><ul>
+<li>查看日志事件</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span>\G</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看slave同步状态</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">slave</span> <span class="keyword">status</span>\G</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看数据库所有线程正在执行什么</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">processlist</span> \G</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看数据库的编码方式</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">"character_set_%"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看binlog里的事件</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看某一binlog里的事件</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span> <span class="keyword">in</span> <span class="string">'$binlog_file'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>强制刷新数据库的binlog</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">flush</span> <span class="keyword">logs</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重置设置reset</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">reset</span> <span class="keyword">slave</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看server_id</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">LIKE</span> <span class="string">'server_id'</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="查看配置信息或其他操作"><a href="#查看配置信息或其他操作" class="headerlink" title="查看配置信息或其他操作"></a>查看配置信息或其他操作</h2><ul>
+<li>删除一个数据库里的所有表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">concat</span>(<span class="string">'DROP TABLE IF EXISTS '</span>, table_name, <span class="string">';'</span>) <span class="keyword">FROM</span> information_schema.tables <span class="keyword">WHERE</span> table_schema = <span class="string">'$mydb'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看全局状态*</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">global</span> <span class="keyword">status</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看默认的引擎</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">engines</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看默认的数据库存储引擎</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'%storage_engine%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看表的储存引擎</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> 表;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看版本</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">global</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'%version%'</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>统计数据库大小</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> TABLE_SCHEMA, <span class="keyword">concat</span>(<span class="keyword">truncate</span>(<span class="keyword">sum</span>(data_length)/<span class="number">1024</span>/<span class="number">1024</span>,<span class="number">2</span>),<span class="string">' MB'</span>) <span class="keyword">as</span> data_size,<span class="keyword">concat</span></span><br><span class="line">(<span class="keyword">truncate</span>(<span class="keyword">sum</span>(index_length)/<span class="number">1024</span>/<span class="number">1024</span>,<span class="number">2</span>),<span class="string">'MB'</span>) <span class="keyword">as</span> index_size</span><br><span class="line"><span class="keyword">from</span> information_schema.tables</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> TABLE_SCHEMA</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> data_length <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>一些计算函数</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sum()   select sum(price) from books;</span><br><span class="line">avg()   select avg(price) from books where bId&lt;=3;</span><br><span class="line">max()   select bName,price from books where price=(select max(price) from books);</span><br><span class="line">min()   select bName,price from books where price=(select min(price) from books);</span><br><span class="line">count() select count(*) from books where price&gt;40;</span><br><span class="line">concat(str1,str2,str3.....) 拼接  select concat(bName,publishing) from books;</span><br><span class="line">upper() select upper(bname) from books where bId=9;</span><br><span class="line">lower()  select lower(bName) from books where bId=10;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看支持的字符集</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="built_in">character</span> <span class="keyword">set</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>跳过某一个出错事务</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  该语句跳过N个主服务器的下一个事务。这对于从语句引起的复制停止中恢复很有用。</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">global</span> sql_slave_skip_counter=N</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看事务(同步失败时排错)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">binlog</span> <span class="keyword">events</span> <span class="keyword">in</span> <span class="string">'mysql-bin-master.000002'</span> <span class="keyword">from</span> <span class="number">107</span>(为exec_Master_log_Pos的值)\G</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改从配置(同步主配置使用)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">master_host='10.10.10.65',master_user='repl',master_password='123456',</span><br><span class="line">master_log_file='mysql-bin-slave1.000002',master_log_pos=415;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mysql使用内存计算(mariadb)</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> (</span><br><span class="line">   @@key_buffer_size + @@query_cache_size + @@innodb_buffer_pool_size + </span><br><span class="line">   @@innodb_additional_mem_pool_size + @@innodb_log_buffer_size + </span><br><span class="line">   @@max_connections *(</span><br><span class="line">      @@read_buffer_size + @@read_rnd_buffer_size + @@sort_buffer_size + </span><br><span class="line">      @@join_buffer_size + @@binlog_cache_size + @@thread_stack) </span><br><span class="line">)/<span class="number">1024</span>/<span class="number">1024</span>  <span class="keyword">as</span> <span class="string">"Total_AllMem result"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>刷新主机表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">flush</span> host;</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/11/2020-06-11-python练习/" class="prev">上一篇：python练习</a>
+    
+    
+    <a href="/2020/05/03/2020-05-03-php/" class="next">下一篇：php</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第二章_字典 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第二章_字典"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-21T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-22
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第二章_字典</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用方法"><span class="toc-number">2.</span> <span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#fromkeys"><span class="toc-number">2.1.</span> <span class="toc-text">fromkeys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setdefault"><span class="toc-number">2.2.</span> <span class="toc-text">setdefault</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pop"><span class="toc-number">2.3.</span> <span class="toc-text">pop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#popitem"><span class="toc-number">2.4.</span> <span class="toc-text">popitem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clear"><span class="toc-number">2.5.</span> <span class="toc-text">clear</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#update"><span class="toc-number">2.6.</span> <span class="toc-text">update</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get"><span class="toc-number">2.7.</span> <span class="toc-text">get</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#keys"><span class="toc-number">2.8.</span> <span class="toc-text">keys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#values"><span class="toc-number">2.9.</span> <span class="toc-text">values</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#items"><span class="toc-number">2.10.</span> <span class="toc-text">items</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>1.字典是存储信息的一种方式。</p>
+<p>2.字典以键-值对存储信息，因此字典中的任何一条信息都与至少一条其他信息相连。</p>
+<p>3.字典的存储是无序的，因此可能无法按照输入的顺序返回信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;key1:value1,key2:value2&#125;</span><br><span class="line"></span><br><span class="line">1. key-value结构</span><br><span class="line">2. key必须为不可变数据类型,必须唯一</span><br><span class="line">3. 可以存放任意多个value,可修改,可以不唯一</span><br><span class="line">4. 无序</span><br><span class="line">5. 查询书都快,且不受字典大小的影响</span><br><span class="line">6. python中唯一的映射类型</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">info_dict = &#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"Jack"</span>,</span><br><span class="line">    <span class="string">"age"</span>: <span class="number">18</span>,</span><br><span class="line">    <span class="string">"sex"</span>: <span class="string">"man"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print(info_dict[<span class="string">"name"</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jack</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><hr>
+<h2 id="fromkeys"><a href="#fromkeys" class="headerlink" title="fromkeys"></a>fromkeys</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fromkeys(iterable, value&#x3D;None, &#x2F;) from builtins.type</span><br><span class="line">    使用可迭代的键并将值设置为value创建一个新字典。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">print(account_number)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;user1&#39;: 123456, &#39;user2&#39;: 123456, &#39;user3&#39;: 123456&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="setdefault"><a href="#setdefault" class="headerlink" title="setdefault"></a>setdefault</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setdefault(self, key, default&#x3D;None, &#x2F;)</span><br><span class="line">    如果key不在字典中，则插入具有默认值的key。</span><br><span class="line"></span><br><span class="line">    如果key在字典中，则返回key的值，否则返回默认值。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">search_user = account_number.setdefault(<span class="string">'user4'</span>, <span class="string">'admin'</span>)</span><br><span class="line">print(search_user)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pop(...)</span><br><span class="line">    D.pop(k[,d]) -&gt; v, 搜索删除指定的键并返回相应的值。</span><br><span class="line">    如果找不到键，则返回d（如果给出），否则引发KeyError</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">search_user = account_number.pop(<span class="string">'user4'</span>, <span class="number">-1</span>)</span><br><span class="line">print(search_user)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="popitem"><a href="#popitem" class="headerlink" title="popitem"></a>popitem</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popitem(...)</span><br><span class="line">    D.popitem() -&gt; (k, v)</span><br><span class="line">	删除并以2-tuple的形式返回一些（键，值）对； 但如果D为空，则引发KeyError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">search_user = account_number.popitem()</span><br><span class="line">print(search_user)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&#39;user3&#39;, 123456)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clear(...)</span><br><span class="line">    D.clear() -&gt; None.  从D中删除所有项目。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">account_number.clear()</span><br><span class="line">print(account_number)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">update(...)</span><br><span class="line">    D.update([E, ]**F) -&gt; None.  从 dict&#x2F;iterable E和F更新D。</span><br><span class="line">    如果E存在并且具有.keys（）方法，则执行：  for k in E: D[k] &#x3D; E[k]</span><br><span class="line">    如果E存在并且缺少.keys（）方法，则执行：  for k, v in E: D[k] &#x3D; v</span><br><span class="line">    无论哪种情况，都紧随其后： for k in F:  D[k] &#x3D; F[k]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">account_number.update(dict(user4=<span class="string">'admin'</span>))</span><br><span class="line">print(account_number)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;user1&#39;: 123456, &#39;user2&#39;: 123456, &#39;user3&#39;: 123456, &#39;user4&#39;: &#39;admin&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="get"><a href="#get" class="headerlink" title="get"></a>get</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get(self, key, default&#x3D;None, &#x2F;)</span><br><span class="line">    如果key在字典中，则返回key的值，否则返回默认值。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">search_user = account_number.get(<span class="string">'user3'</span>, <span class="number">-1</span>)</span><br><span class="line">print(search_user)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123456</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">keys(...)</span><br><span class="line">    D.keys() -&gt; 提供D的键视图的类集合对象</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">all_user = account_number.keys()</span><br><span class="line">print(all_user)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_keys([&#39;user1&#39;, &#39;user2&#39;, &#39;user3&#39;])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="values"><a href="#values" class="headerlink" title="values"></a>values</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">values(...)</span><br><span class="line">    D.values() -&gt; 提供有关D值的视图的对象</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">all_pwd = account_number.values()</span><br><span class="line">print(all_pwd)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_values([123456, 123456, 123456])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="items"><a href="#items" class="headerlink" title="items"></a>items</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">items(...)</span><br><span class="line">    D.items() -&gt; 提供D的项目视图的类集合对象</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">account_number = &#123;&#125;.fromkeys([<span class="string">'user1'</span>, <span class="string">'user2'</span>, <span class="string">'user3'</span>], <span class="number">123456</span>)</span><br><span class="line">all_user_pwd = account_number.items()</span><br><span class="line">print(all_user_pwd)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict_items([(&#39;user1&#39;, 123456), (&#39;user2&#39;, 123456), (&#39;user3&#39;, 123456)])</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/23/2020-06-23-python第二章_集合/" class="prev">上一篇：python第二章_集合</a>
+    
+    
+    <a href="/2020/06/21/2020-06-21-python第二章_元组/" class="next">下一篇：python第二章_元组</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

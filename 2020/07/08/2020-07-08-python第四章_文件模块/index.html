@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_文件模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_文件模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-07T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-08
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_文件模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#shutil"><span class="toc-number">1.</span> <span class="toc-text">shutil</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#copyfile"><span class="toc-number">1.1.</span> <span class="toc-text">copyfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copymode"><span class="toc-number">1.2.</span> <span class="toc-text">copymode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copystat"><span class="toc-number">1.3.</span> <span class="toc-text">copystat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copy"><span class="toc-number">1.4.</span> <span class="toc-text">copy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copy2"><span class="toc-number">1.5.</span> <span class="toc-text">copy2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copytree"><span class="toc-number">1.6.</span> <span class="toc-text">copytree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rmtree"><span class="toc-number">1.7.</span> <span class="toc-text">rmtree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#move"><span class="toc-number">1.8.</span> <span class="toc-text">move</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#make-archive"><span class="toc-number">1.9.</span> <span class="toc-text">make_archive</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#zipfile"><span class="toc-number">2.</span> <span class="toc-text">zipfile</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tarfile"><span class="toc-number">3.</span> <span class="toc-text">tarfile</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="shutil"><a href="#shutil" class="headerlink" title="shutil"></a>shutil</h1><hr>
+<h2 id="copyfile"><a href="#copyfile" class="headerlink" title="copyfile"></a>copyfile</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">copyfile(src, dst, *, follow_symlinks&#x3D;True)</span><br><span class="line">    Copy data from src to dst.</span><br><span class="line">    将数据从src复制到dst.</span><br><span class="line"></span><br><span class="line">    If follow_symlinks is not set and src is a symbolic link, a new</span><br><span class="line">    symlink will be created instead of copying the file it points to.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copyfile</span><br><span class="line">print(listdir())</span><br><span class="line">copyfile(<span class="string">'1.py'</span>, <span class="string">'11.py'</span>)</span><br><span class="line">print(listdir())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;1.py&#39;, &#39;2.py&#39;, &#39;a&#39;, &#39;b&#39;]</span><br><span class="line">[&#39;1.py&#39;, &#39;11.py&#39;, &#39;2.py&#39;, &#39;a&#39;, &#39;b&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="copymode"><a href="#copymode" class="headerlink" title="copymode"></a>copymode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">copymode(src, dst, *, follow_symlinks&#x3D;True)</span><br><span class="line">    Copy mode bits from src to dst.</span><br><span class="line">    将模式位从src复制到dst.</span><br><span class="line"></span><br><span class="line">    If follow_symlinks is not set, symlinks aren&#39;t followed if and only</span><br><span class="line">    if both &#96;src&#96; and &#96;dst&#96; are symlinks.  If &#96;lchmod&#96; isn&#39;t available</span><br><span class="line">    (e.g. Linux) this method does nothing.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> stat</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copymode</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">0</span>])</span><br><span class="line">print(stat(<span class="string">'1.txt'</span>)[<span class="number">0</span>])</span><br><span class="line">copymode(<span class="string">'1.py'</span>, <span class="string">'1.txt'</span>)</span><br><span class="line">print()</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">0</span>])</span><br><span class="line">print(stat(<span class="string">'1.txt'</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">33206</span><br><span class="line">33060</span><br><span class="line"></span><br><span class="line">33206</span><br><span class="line">33206</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="copystat"><a href="#copystat" class="headerlink" title="copystat"></a>copystat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">copystat(src, dst, *, follow_symlinks&#x3D;True)</span><br><span class="line">    Copy file metadata</span><br><span class="line">    复制文件元数据.</span><br><span class="line"></span><br><span class="line">    Copy the permission bits, last access time, last modification time, and</span><br><span class="line">    flags from &#96;src&#96; to &#96;dst&#96;. On Linux, copystat() also copies the &quot;extended</span><br><span class="line">    attributes&quot; where possible. The file contents, owner, and group are</span><br><span class="line">    unaffected. &#96;src&#96; and &#96;dst&#96; are path names given as strings.</span><br><span class="line">    将权限位,上次访问时间,上次修改时间和标志从src复制到dst.</span><br><span class="line">    在Linux上,copystat()还会在可能的情况下复制&quot;扩展属性&quot;. </span><br><span class="line">    文件内容,所有者和组不受影响. src和dst是以字符串形式给出的路径名.</span><br><span class="line"></span><br><span class="line">    If the optional flag &#96;follow_symlinks&#96; is not set, symlinks aren&#39;t</span><br><span class="line">    followed if and only if both &#96;src&#96; and &#96;dst&#96; are symlinks.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> stat</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copystat</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">-3</span>:])</span><br><span class="line">print(stat(<span class="string">'1.txt'</span>)[<span class="number">-3</span>:])</span><br><span class="line">copystat(<span class="string">'1.py'</span>, <span class="string">'1.txt'</span>)</span><br><span class="line">print()</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">-3</span>:])</span><br><span class="line">print(stat(<span class="string">'1.txt'</span>)[<span class="number">-3</span>:])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1594023399, 1594020471, 1594020471)</span><br><span class="line">(1594024062, 1594023912, 1594023912)</span><br><span class="line"></span><br><span class="line">(1594023399, 1594020471, 1594020471)</span><br><span class="line">(1594023399, 1594020471, 1594023912)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">copy(src, dst, *, follow_symlinks&#x3D;True)</span><br><span class="line">    Copy data and mode bits (&quot;cp src dst&quot;). Return the file&#39;s destination.</span><br><span class="line">    复制数据和模式位(&quot;cp src dst&quot;).返回文件的目的地.</span><br><span class="line"></span><br><span class="line">    The destination may be a directory.</span><br><span class="line"></span><br><span class="line">    If follow_symlinks is false, symlinks won&#39;t be followed. This</span><br><span class="line">    resembles GNU&#39;s &quot;cp -P src dst&quot;.</span><br><span class="line"></span><br><span class="line">    If source and destination are the same file, a SameFileError will be</span><br><span class="line">    raised.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> stat</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copy</span><br><span class="line">copy(<span class="string">'1.py'</span>, <span class="string">'20.py'</span>)</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">0</span>])</span><br><span class="line">print(stat(<span class="string">'20.py'</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">33206</span><br><span class="line">33206</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="copy2"><a href="#copy2" class="headerlink" title="copy2"></a>copy2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">copy2(src, dst, *, follow_symlinks&#x3D;True)</span><br><span class="line">    Copy data and metadata. Return the file&#39;s destination.</span><br><span class="line">    复制数据和元数据.返回文件的目的地.</span><br><span class="line"></span><br><span class="line">    Metadata is copied with copystat(). Please see the copystat function</span><br><span class="line">    for more information.</span><br><span class="line"></span><br><span class="line">    The destination may be a directory.</span><br><span class="line"></span><br><span class="line">    If follow_symlinks is false, symlinks won&#39;t be followed. This</span><br><span class="line">    resembles GNU&#39;s &quot;cp -P src dst&quot;.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> stat</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copy2</span><br><span class="line">copy2(<span class="string">'1.py'</span>, <span class="string">'30.py'</span>)</span><br><span class="line">print(stat(<span class="string">'1.py'</span>)[<span class="number">-3</span>:])</span><br><span class="line">print(stat(<span class="string">'30.py'</span>)[<span class="number">-3</span>:])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1594024898, 1594020471, 1594020471)</span><br><span class="line">(1594024898, 1594020471, 1594024882)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="copytree"><a href="#copytree" class="headerlink" title="copytree"></a>copytree</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">copytree(src, dst, symlinks&#x3D;False, ignore&#x3D;None, copy_function&#x3D;&lt;function copy2 at 0x018CB078&gt;, ignore_dangling_symlinks&#x3D;False)</span><br><span class="line">    Recursively copy a directory tree.</span><br><span class="line">    递归复制目录树.</span><br><span class="line"></span><br><span class="line">    The destination directory must not already exist.</span><br><span class="line">    If exception(s) occur, an Error is raised with a list of reasons.</span><br><span class="line"></span><br><span class="line">ignore_patterns(*patterns)</span><br><span class="line">    Function that can be used as copytree() ignore parameter.</span><br><span class="line">    可用作copytree()的函数忽略参数.</span><br><span class="line">    </span><br><span class="line">    Patterns is a sequence of glob-style patterns</span><br><span class="line">    that are used to exclude files</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> copytree</span><br><span class="line">copytree(<span class="string">'a'</span>, <span class="string">'b'</span>)</span><br><span class="line">print(os.listdir(<span class="string">'a'</span>))</span><br><span class="line">print(os.listdir(<span class="string">'b'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;3.py&#39;, &#39;b&#39;]</span><br><span class="line">[&#39;3.py&#39;, &#39;b&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rmtree"><a href="#rmtree" class="headerlink" title="rmtree"></a>rmtree</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rmtree(path, ignore_errors&#x3D;False, onerror&#x3D;None)</span><br><span class="line">    Recursively delete a directory tree.</span><br><span class="line">    递归删除目录树.</span><br><span class="line"></span><br><span class="line">    If ignore_errors is set, errors are ignored; otherwise, if onerror</span><br><span class="line">    is set, it is called to handle the error with arguments (func,</span><br><span class="line">    path, exc_info) where func is platform and implementation dependent;</span><br><span class="line">    path is the argument to that function that caused it to fail; and</span><br><span class="line">    exc_info is a tuple returned by sys.exc_info().  If ignore_errors</span><br><span class="line">    is false and onerror is None, an exception is raised.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> rmtree</span><br><span class="line">print(listdir())</span><br><span class="line">rmtree(<span class="string">'a'</span>)</span><br><span class="line">print(listdir())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;1.py&#39;, &#39;11.py&#39;, &#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;a&#39;, &#39;b&#39;]</span><br><span class="line">[&#39;1.py&#39;, &#39;11.py&#39;, &#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;b&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="move"><a href="#move" class="headerlink" title="move"></a>move</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">move(src, dst, copy_function&#x3D;&lt;function copy2 at 0x018CB078&gt;)</span><br><span class="line">    Recursively move a file or directory to another location. This is</span><br><span class="line">    similar to the Unix &quot;mv&quot; command. Return the file or directory&#39;s</span><br><span class="line">    destination.</span><br><span class="line">    将文件或目录递归移动到另一个位置. 这类似于Unix的&quot;mv&quot;命令. 返回文件或目录的目的地.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> move</span><br><span class="line">print(listdir(<span class="string">'b'</span>))</span><br><span class="line">move(<span class="string">'1.py'</span>, <span class="string">'b'</span>)</span><br><span class="line">print(listdir(<span class="string">'b'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;3.py&#39;, &#39;b&#39;]</span><br><span class="line">[&#39;1.py&#39;, &#39;3.py&#39;, &#39;b&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="make-archive"><a href="#make-archive" class="headerlink" title="make_archive"></a>make_archive</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">make_archive(base_name, format, root_dir&#x3D;None, base_dir&#x3D;None, verbose&#x3D;0, dry_run&#x3D;0, owner&#x3D;None, group&#x3D;None, logger&#x3D;None)</span><br><span class="line">    Create an archive file (eg. zip or tar).</span><br><span class="line">    创建一个存档文件(例如zip或tar).</span><br><span class="line"></span><br><span class="line">    &#39;base_name&#39; is the name of the file to create, minus any format-specific</span><br><span class="line">    extension; &#39;format&#39; is the archive format: one of &quot;zip&quot;, &quot;tar&quot;, &quot;gztar&quot;,</span><br><span class="line">    &quot;bztar&quot;, or &quot;xztar&quot;.  Or any other registered format.</span><br><span class="line">    &quot;base_name&quot;是要创建的减去扩展名的文件名称,</span><br><span class="line">    &quot;format&quot;是压缩格式：&quot;zip&quot;,&quot;tar&quot;,&quot;gztar&quot;,&quot;bztar&quot;或&quot;xztar&quot;之一.</span><br><span class="line"></span><br><span class="line">    &#39;root_dir&#39; is a directory that will be the root directory of the</span><br><span class="line">    archive; ie. we typically chdir into &#39;root_dir&#39; before creating the</span><br><span class="line">    archive.  &#39;base_dir&#39; is the directory where we start archiving from;</span><br><span class="line">    ie. &#39;base_dir&#39; will be the common prefix of all files and</span><br><span class="line">    directories in the archive.  &#39;root_dir&#39; and &#39;base_dir&#39; both default</span><br><span class="line">    to the current directory.  Returns the name of the archive file.</span><br><span class="line">    &#39;root_dir&#39; 是将要压缩的目录.</span><br><span class="line"></span><br><span class="line">    &#39;owner&#39; and &#39;group&#39; are used when creating a tar archive. By default,</span><br><span class="line">    uses the current owner and group.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">from</span> shutil <span class="keyword">import</span> make_archive</span><br><span class="line">print(listdir())</span><br><span class="line">make_archive(<span class="string">'note'</span>, <span class="string">'zip'</span>, <span class="string">'../note'</span>)</span><br><span class="line">print(listdir())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;11.py&#39;, &#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;b&#39;]</span><br><span class="line">[&#39;11.py&#39;, &#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;b&#39;, &#39;note.zip&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="zipfile"><a href="#zipfile" class="headerlink" title="zipfile"></a>zipfile</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">ZipFile(file, mode&#x3D;&#39;r&#39;, compression&#x3D;0, allowZip64&#x3D;True, compresslevel&#x3D;None)</span><br><span class="line">    Class with methods to open, read, write, close, list zip files.</span><br><span class="line">    具有打开,读取,写入,关闭,列出zip文件的方法的类.</span><br><span class="line"></span><br><span class="line">write(self, filename, arcname&#x3D;None, compress_type&#x3D;None, compresslevel&#x3D;None)</span><br><span class="line">    Put the bytes from filename into the archive under the namearcname.</span><br><span class="line">    将文件名中的字节放入名称为arcname的存档中.</span><br><span class="line"></span><br><span class="line">close(self)</span><br><span class="line">    Close the file, and for mode &#39;w&#39;, &#39;x&#39; and &#39;a&#39; write the ending records.</span><br><span class="line">    关闭文件,并为模&quot;w&quot;,&quot;x&quot;和&quot;a&quot;写入结束记录.</span><br><span class="line"></span><br><span class="line">extractall(self, path&#x3D;None, members&#x3D;None, pwd&#x3D;None)</span><br><span class="line">    Extract all members from the archive to the current working directory.</span><br><span class="line">    &#96;path&#39; specifies a different directory to extract to.</span><br><span class="line">    &#96;members&#39; is optional and must be a subset of the list returned by namelist().</span><br><span class="line">    将存档中的所有成员提取到当前工作目录.</span><br><span class="line">    &#96;path&#39;指定要提取到的其他目录.</span><br><span class="line">    &#96;members&#39;是可选的,并且必须是namelist()返回的列表的子集.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line">a = zipfile.ZipFile(<span class="string">'test.zip'</span>, <span class="string">'w'</span>)</span><br><span class="line">a.write(<span class="string">'2.py'</span>)</span><br><span class="line">a.write(<span class="string">'11.py'</span>)</span><br><span class="line">print(listdir())</span><br><span class="line">a.extractall(<span class="string">'b'</span>)</span><br><span class="line">a.close()</span><br><span class="line">print(listdir(<span class="string">'b'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&#39;11.py&#39;, &#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;b&#39;, &#39;test.zip&#39;]</span><br><span class="line">[&#39;1.py&#39;, &#39;11.py&#39;, &#39;2.py&#39;, &#39;3.py&#39;, &#39;b&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="tarfile"><a href="#tarfile" class="headerlink" title="tarfile"></a>tarfile</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">open(name&#x3D;None, mode&#x3D;&#39;r&#39;, fileobj&#x3D;None, bufsize&#x3D;10240, **kwargs) method of builtins.type instance</span><br><span class="line">    Open a tar archive for reading, writing or appending.</span><br><span class="line">    Return an appropriate TarFile class.</span><br><span class="line">    打开一个tar存档以进行读取,写入或附加. 返回适当的TarFile类.</span><br><span class="line"></span><br><span class="line">    mode:</span><br><span class="line">    &#39;r&#39; or &#39;r:*&#39; open for reading with transparent compression</span><br><span class="line">    &#39;r:&#39;         open for reading exclusively uncompressed</span><br><span class="line">    &#39;r:gz&#39;       open for reading with gzip compression</span><br><span class="line">    &#39;r:bz2&#39;      open for reading with bzip2 compression</span><br><span class="line">    &#39;r:xz&#39;       open for reading with lzma compression</span><br><span class="line">    &#39;a&#39; or &#39;a:&#39;  open for appending, creating the file if necessary</span><br><span class="line">    &#39;w&#39; or &#39;w:&#39;  open for writing without compression</span><br><span class="line">    &#39;w:gz&#39;       open for writing with gzip compression</span><br><span class="line">    &#39;w:bz2&#39;      open for writing with bzip2 compression</span><br><span class="line">    &#39;w:xz&#39;       open for writing with lzma compression</span><br><span class="line"></span><br><span class="line">    &#39;x&#39; or &#39;x:&#39;  create a tarfile exclusively without compression, raise</span><br><span class="line">                 an exception if the file is already created</span><br><span class="line">    &#39;x:gz&#39;       create a gzip compressed tarfile, raise an exception</span><br><span class="line">                 if the file is already created</span><br><span class="line">    &#39;x:bz2&#39;      create a bzip2 compressed tarfile, raise an exception</span><br><span class="line">                 if the file is already created</span><br><span class="line">    &#39;x:xz&#39;       create an lzma compressed tarfile, raise an exception</span><br><span class="line">                 if the file is already created</span><br><span class="line"></span><br><span class="line">    &#39;r|*&#39;        open a stream of tar blocks with transparent compression</span><br><span class="line">    &#39;r|&#39;         open an uncompressed stream of tar blocks for reading</span><br><span class="line">    &#39;r|gz&#39;       open a gzip compressed stream of tar blocks</span><br><span class="line">    &#39;r|bz2&#39;      open a bzip2 compressed stream of tar blocks</span><br><span class="line">    &#39;r|xz&#39;       open an lzma compressed stream of tar blocks</span><br><span class="line">    &#39;w|&#39;         open an uncompressed stream for writing</span><br><span class="line">    &#39;w|gz&#39;       open a gzip compressed stream for writing</span><br><span class="line">    &#39;w|bz2&#39;      open a bzip2 compressed stream for writing</span><br><span class="line">    &#39;w|xz&#39;       open an lzma compressed stream for writing</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">add(self, name, arcname&#x3D;None, recursive&#x3D;True, *, filter&#x3D;None)</span><br><span class="line">    Add the file &#96;name&#39; to the archive. &#96;name&#39; may be any type of file</span><br><span class="line">    (directory, fifo, symbolic link, etc.). If given, &#96;arcname&#39;</span><br><span class="line">    specifies an alternative name for the file in the archive.</span><br><span class="line">    Directories are added recursively by default. This can be avoided by</span><br><span class="line">    setting &#96;recursive&#39; to False. &#96;filter&#39; is a function</span><br><span class="line">    that expects a TarInfo object argument and returns the changed</span><br><span class="line">    TarInfo object, if it returns None the TarInfo object will be</span><br><span class="line">    excluded from the archive.</span><br><span class="line"></span><br><span class="line">close() method of tarfile.TarFile instance</span><br><span class="line">    Close the TarFile. In write-mode, two finishing zero blocks are</span><br><span class="line">    appended to the archive.</span><br><span class="line"></span><br><span class="line">extractall(path&#x3D;&#39;.&#39;, members&#x3D;None, *, numeric_owner&#x3D;False) method of tarfile.TarFile instance</span><br><span class="line">    Extract all members from the archive to the current working</span><br><span class="line">    directory and set owner, modification time and permissions on</span><br><span class="line">    directories afterwards. &#96;path&#39; specifies a different directory</span><br><span class="line">    to extract to. &#96;members&#39; is optional and must be a subset of the</span><br><span class="line">    list returned by getmembers(). If &#96;numeric_owner&#96; is True, only</span><br><span class="line">    the numbers for user&#x2F;group names are used and not the names.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"><span class="keyword">import</span> tarfile</span><br><span class="line">a = tarfile.open(<span class="string">'test.gz'</span>, <span class="string">'w:gz'</span>)</span><br><span class="line">a.add(<span class="string">'20.py'</span>)</span><br><span class="line">a.add(<span class="string">'30.py'</span>)</span><br><span class="line">a.close()</span><br><span class="line">print(listdir())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;2.py&#39;, &#39;20.py&#39;, &#39;30.py&#39;, &#39;b&#39;, &#39;test.gz&#39;]</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/09/2020-07-09-python第四章_正则模块/" class="prev">上一篇：python第四章_正则模块</a>
+    
+    
+    <a href="/2020/07/07/2020-07-07-python第四章_加密模块/" class="next">下一篇：python第四章_加密模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第三章_生成器 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第三章_生成器"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-30T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-01
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第三章_生成器</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#生成器"><span class="toc-number">1.</span> <span class="toc-text">生成器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#列表生成式与生成器的区别"><span class="toc-number">2.</span> <span class="toc-text">列表生成式与生成器的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数生成器"><span class="toc-number">3.</span> <span class="toc-text">函数生成器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成器传参"><span class="toc-number">4.</span> <span class="toc-text">生成器传参</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>一边循环一边计算后面的元素的机制,成为生成器: generator ,也叫惰性运算,因为是用一次生成一次.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 要循环100万次,但是循环到50次的时候我就想退出了,下面两种方式在 Python2 中对比 range(1000000)会先生</span><br><span class="line"># 成100万个元素的列表会造成浪费,而 while 是一边增加一边循环的.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for i in range(1000000):</span><br><span class="line">	if i &gt; 50:</span><br><span class="line">		break</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">count &#x3D; 0</span><br><span class="line">while count &lt; 1000000:</span><br><span class="line">    if count &gt; 50:</span><br><span class="line">        break</span><br><span class="line">    count +&#x3D; 1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="列表生成式与生成器的区别"><a href="#列表生成式与生成器的区别" class="headerlink" title="列表生成式与生成器的区别"></a>列表生成式与生成器的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">列表生成式与生成式是有区别的,前者会直接生成元素,后者保存了这个算法.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line">b = (i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">print(<span class="string">f'列表生成式:<span class="subst">&#123;a&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'生成器:<span class="subst">&#123;b&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">列表生成式:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br><span class="line">生成器:&lt;generator object &lt;genexpr&gt; at 0x035A31F0&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="函数生成器"><a href="#函数生成器" class="headerlink" title="函数生成器"></a>函数生成器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">函数生成器就是把函数当作算法保存在生成器里面,每调用一次函数,函数里面的循环才会执行一次然后中断并返回值,</span><br><span class="line">不像普通的函数一样需要等到函数循环完全执行完毕才返回.</span><br><span class="line"></span><br><span class="line">需要使用 yield 进行中断函数,后面跟需要返回的变量.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    i = <span class="string">'hah'</span></span><br><span class="line">    <span class="keyword">yield</span> i</span><br><span class="line">    i = <span class="string">'ccc'</span></span><br><span class="line">    <span class="keyword">yield</span> i</span><br><span class="line">    i = <span class="string">'bbb'</span></span><br><span class="line">    <span class="keyword">yield</span> i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = test()</span><br><span class="line"></span><br><span class="line">print(next(a, <span class="number">-1</span>))</span><br><span class="line">print(next(a, <span class="number">-1</span>))</span><br><span class="line">print(next(a, <span class="number">-1</span>))</span><br><span class="line">print(next(a, <span class="number">-1</span>))</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hah</span><br><span class="line">ccc</span><br><span class="line">bbb</span><br><span class="line">-1</span><br><span class="line">&lt;generator object test at 0x02BC31F0&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="生成器传参"><a href="#生成器传参" class="headerlink" title="生成器传参"></a>生成器传参</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">生成器内部需要用 yield 进行接收参数,生成器对象使用 generator.send(arg) 进行传参,传入参数后再使用 send 不会再次传入.</span><br><span class="line"></span><br><span class="line">在传参之前需要先传入一个 None 值,否则会报 TypeError .</span><br><span class="line"></span><br><span class="line">可以使用下面的一个方式传递一个None值:</span><br><span class="line">    generator.__next__()</span><br><span class="line">    generator.send(None)</span><br><span class="line">    next(generator)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="keyword">yield</span></span><br><span class="line">    y = <span class="keyword">yield</span></span><br><span class="line">    <span class="keyword">if</span> x <span class="keyword">and</span> y:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(x, y):</span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> range(-y, -x):</span><br><span class="line">                re = <span class="string">f"<span class="subst">&#123;i&#125;</span> + <span class="subst">&#123;v&#125;</span> = <span class="subst">&#123;i+v&#125;</span>"</span></span><br><span class="line">                <span class="keyword">yield</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = test1()</span><br><span class="line"><span class="comment"># a.__next__()</span></span><br><span class="line"><span class="comment"># a.send(None)</span></span><br><span class="line">next(a)</span><br><span class="line"></span><br><span class="line">a.send(<span class="number">5</span>)</span><br><span class="line">a.send(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">print(a.__next__())</span><br><span class="line">print(next(a))</span><br><span class="line">print(a.__next__())</span><br><span class="line">print(a.send(<span class="literal">None</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">5 + -9 &#x3D; -4</span><br><span class="line">5 + -8 &#x3D; -3</span><br><span class="line">5 + -7 &#x3D; -2</span><br><span class="line">5 + -6 &#x3D; -1</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/02/2020-07-02-python第四章_模块/" class="prev">上一篇：python第四章_模块</a>
+    
+    
+    <a href="/2020/06/30/2020-06-30-python第三章_装饰器/" class="next">下一篇：python第三章_装饰器</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

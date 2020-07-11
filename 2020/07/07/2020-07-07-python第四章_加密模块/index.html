@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_加密模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_加密模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-06T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-07
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_加密模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hashlib"><span class="toc-number">1.</span> <span class="toc-text">hashlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5"><span class="toc-number">1.1.</span> <span class="toc-text">MD5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成MD5"><span class="toc-number">1.2.</span> <span class="toc-text">生成MD5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SHA"><span class="toc-number">1.3.</span> <span class="toc-text">SHA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成SHA-1"><span class="toc-number">1.4.</span> <span class="toc-text">生成SHA-1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成SHA-256"><span class="toc-number">1.5.</span> <span class="toc-text">生成SHA-256</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="hashlib"><a href="#hashlib" class="headerlink" title="hashlib"></a>hashlib</h1><hr>
+<h2 id="MD5"><a href="#MD5" class="headerlink" title="MD5"></a>MD5</h2><p>讯息摘要演算法,一种被广泛使用的密码杂凑函数,可以产生一个128位的散列值.</p>
+<p>输入任意长度的信息,经过处理,输出为128位的信息(数字指纹);<br>不同的输入得到的不同的结果(唯一性).</p>
+<p>特点:<br>    压缩性:任意长度算出的md5的长度都是固定的.<br>    容易计算:从原数据计算出md5值很容易.<br>    抗修改性:对原数据进行任何改动,修改一个字节生成的md5区别也会很大.<br>    强抗碰撞:已知原数据和md5,想找到一个相同的md5值的数据是非常困难的.</p>
+<p>用途:<br>    数据加密<br>    防篡改<br>    防抵赖</p>
+<hr>
+<h2 id="生成MD5"><a href="#生成MD5" class="headerlink" title="生成MD5"></a>生成MD5</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">openssl_md5(...)</span><br><span class="line">    Returns a md5 hash object; optionally initialized with a string</span><br><span class="line">    返回一个md5哈希对象,可选地用字符串初始化.</span><br><span class="line"></span><br><span class="line">update(...) method of _hashlib.HASH instance</span><br><span class="line">    Update this hash object&#39;s state with the provided string.</span><br><span class="line">    _hashlib.HASH实例的方法使用提供的字符串更新此哈希对象的状态.</span><br><span class="line"></span><br><span class="line">hexdigest(...) method of _hashlib.HASH instance</span><br><span class="line">    Return the digest value as a string of hexadecimal digits.</span><br><span class="line">    以十六进制字符串形式返回摘要值.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">md5 = hashlib.md5()</span><br><span class="line">md5.update(<span class="string">b'admin'</span>)</span><br><span class="line">print(md5.hexdigest())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">21232f297a57a5a743894a0e4a801fc3</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="SHA"><a href="#SHA" class="headerlink" title="SHA"></a>SHA</h2><p>安全哈希算法,主要适用于数字签名标准里面定义的数字签名算法,对于长度小于2^64位的消息,<br>SHA1会产生一个160位的消息摘要.当接受消息的时候,这个消息摘要可以用来验证数据的完整性.</p>
+<p>后续由推出了SHA224 SHA256 SHA384 SHA512,生成的位数越长,<br>破解难度越大,同时需要的时间也就越长,目前流行的是SHA256.</p>
+<h2 id="生成SHA-1"><a href="#生成SHA-1" class="headerlink" title="生成SHA-1"></a>生成SHA-1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">openssl_sha1(...)</span><br><span class="line">    Returns a sha1 hash object; optionally initialized with a string</span><br><span class="line">    返回一个sha1哈希对象,可选地用字符串初始化.</span><br><span class="line"></span><br><span class="line">update(...) method of _hashlib.HASH instance</span><br><span class="line">    Update this hash object&#39;s state with the provided string.</span><br><span class="line">    _hashlib.HASH实例的方法使用提供的字符串更新此哈希对象的状态.</span><br><span class="line"></span><br><span class="line">hexdigest(...) method of _hashlib.HASH instance</span><br><span class="line">    Return the digest value as a string of hexadecimal digits.</span><br><span class="line">    以十六进制字符串形式返回摘要值.</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">sha1 = hashlib.sha1()</span><br><span class="line">sha1.update(<span class="string">b'admin'</span>)</span><br><span class="line">print(sha1.hexdigest())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d033e22ae348aeb5660fc2140aec35850c4da997</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成SHA-256"><a href="#生成SHA-256" class="headerlink" title="生成SHA-256"></a>生成SHA-256</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">openssl_sha256(...)</span><br><span class="line">    Returns a sha256 hash object; optionally initialized with a string</span><br><span class="line">    返回一个sha256哈希对象,可选地用字符串初始化.</span><br><span class="line"></span><br><span class="line">update(...) method of _hashlib.HASH instance</span><br><span class="line">    Update this hash object&#39;s state with the provided string.</span><br><span class="line">    _hashlib.HASH实例的方法使用提供的字符串更新此哈希对象的状态.</span><br><span class="line"></span><br><span class="line">hexdigest(...) method of _hashlib.HASH instance</span><br><span class="line">    Return the digest value as a string of hexadecimal digits.</span><br><span class="line">    以十六进制字符串形式返回摘要值.</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">sha256 = hashlib.sha256()</span><br><span class="line">sha256.update(<span class="string">b'admin'</span>)</span><br><span class="line">print(sha256.hexdigest())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/08/2020-07-08-python第四章_文件模块/" class="prev">上一篇：python第四章_文件模块</a>
+    
+    
+    <a href="/2020/07/06/2020-07-06-python第四章_序列化模块/" class="next">下一篇：python第四章_序列化模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

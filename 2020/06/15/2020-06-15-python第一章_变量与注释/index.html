@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第一章_变量与注释 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第一章_变量与注释"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-14T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-15
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第一章_变量与注释</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量"><span class="toc-number">1.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量命名"><span class="toc-number">1.2.</span> <span class="toc-text">变量命名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的道德规范"><span class="toc-number">1.2.1.</span> <span class="toc-text">变量的道德规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量"><span class="toc-number">1.2.2.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的指向"><span class="toc-number">1.2.3.</span> <span class="toc-text">变量的指向</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存回收"><span class="toc-number">1.3.</span> <span class="toc-text">内存回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存优化"><span class="toc-number">1.4.</span> <span class="toc-text">内存优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#None"><span class="toc-number">1.5.</span> <span class="toc-text">None</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注释"><span class="toc-number">2.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注释不会被执行"><span class="toc-number">2.1.</span> <span class="toc-text">注释不会被执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内联注释"><span class="toc-number">2.2.</span> <span class="toc-text">内联注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单行注释与多行注释"><span class="toc-number">2.3.</span> <span class="toc-text">单行注释与多行注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO注释"><span class="toc-number">2.4.</span> <span class="toc-text">TODO注释</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><hr>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>计算机语言中能储存计算结果,变量可以通过变量名访问。<br>变量需要先定义,后面的代码才能调用,变量存在内存里</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">4</span></span><br><span class="line">x + <span class="number">1</span> = <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><p>变量只能是字母、数字或下划线的任意组合,第一个字符不能是数字<a name='变量的命名'></a></p>
+<p>python保留的关键字[<br>‘and’, ‘assert’, ‘break’, ‘class’, ‘continue’, ‘def’, ‘elif’,<br>‘else’, ‘except’, ‘exec’, ‘finally’, ‘for’, ‘from’, ‘global’,<br>‘if’, ‘in’, ‘is’, ‘lambda’, ‘not’, ‘or’, ‘pass’, ‘raise’,<br>‘retuen’, ‘try’, ‘while’, ‘with’, ‘yield’], 变量不能使用.</p>
+<hr>
+<h3 id="变量的道德规范"><a href="#变量的道德规范" class="headerlink" title="变量的道德规范"></a>变量的道德规范</h3><p>参考:<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">PEP8</a> <a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/#" target="_blank" rel="noopener">Python风格规范</a></p>
+<ul>
+<li>避免使用长命名的变量</li>
+<li>不要使用中文、拼音作为变量</li>
+<li>避免变量名词不达意</li>
+</ul>
+<hr>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量指不变的量,因为在python中没有专门语法代表常量,所以程序员约定俗成用变量命名大写的代表常量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NAME = <span class="string">'JACK'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="变量的指向"><a href="#变量的指向" class="headerlink" title="变量的指向"></a>变量的指向</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">当定义了一个变量的时候,程序开辟了一块内存空间将1储存进去,再让变量名a指向1所在的内存地址.</span><br><span class="line">在python中可以使用内置函数id()查看变量指向的内存地址.</span><br><span class="line"></span><br><span class="line">a&#x3D;1</span><br><span class="line">变量a --指向--&gt; 1的内存地址</span><br><span class="line"></span><br><span class="line">1为变量的值,可以称之为被引用对象,也就是1被a这个变量所引用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">print(id(a))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1504404656</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; 1</span><br><span class="line">b &#x3D; a</span><br><span class="line">a &#x3D; 2</span><br><span class="line"></span><br><span class="line">上面的代码b&#x3D;a意思为a指向1的内存地址,b也指向a指向的1的内存地址,当a指向2的内存地址时,b将不变.</span><br><span class="line"></span><br><span class="line">a&#x3D;1,b&#x3D;a 意思为</span><br><span class="line">变量a --指向--&gt; 1的内存地址  &lt;--指向-- 变量b</span><br><span class="line"></span><br><span class="line">a&#x3D;2 意思为</span><br><span class="line">变量b --指向--&gt; 1的内存地址</span><br><span class="line">变量a --指向--&gt; 2的内存地址</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = a</span><br><span class="line">print(<span class="string">"a未变之前(a,b)的内存地址是"</span>, id(a), id(b))</span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">print(<span class="string">"a变了之后(a,b)的内存地址是"</span>, id(a), id(b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a未变之前(a,b)的内存地址是 1504404656 1504404656</span><br><span class="line">a变了之后(a,b)的内存地址是 1504404672 1504404656</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">内存会保存对象的引用数量，当某个对象的引用数量为0时，对象会被回收。</span><br><span class="line"></span><br><span class="line">a&#x3D;1</span><br><span class="line">a&#x3D;2</span><br><span class="line">a&#x3D;1时a指向1的内存地址,但是当a&#x3D;2时,1这个对象没有被其他变量引用,python会进行检查,</span><br><span class="line">发现引用被引用对象数量为0,1使用的内存空间就会被回收,这也是python的垃圾回收机制</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在python的解释器中,多个变量声明在[-5, 257)的范围内,那么将不会为多个变量申请不同的内存地址,而是指向同一个内存地址</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">1</span></span><br><span class="line">c = <span class="number">1</span></span><br><span class="line">print(id(a), id(b), id(c))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1865376944 1865376944 1865376944</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="None"><a href="#None" class="headerlink" title="None"></a>None</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量赋值None代表为空,也就是什么也没有.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="literal">None</span></span><br><span class="line">print(type(name))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;NoneType&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><hr>
+<h2 id="注释不会被执行"><a href="#注释不会被执行" class="headerlink" title="注释不会被执行"></a>注释不会被执行</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这句话是注释不会被执行</span></span><br><span class="line">print(<span class="string">"Hello world"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello world</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello world"</span>)  <span class="comment"># 这是内联注释</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="单行注释与多行注释"><a href="#单行注释与多行注释" class="headerlink" title="单行注释与多行注释"></a>单行注释与多行注释</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">这是一个多行注释.</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这是一个单行注释</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="TODO注释"><a href="#TODO注释" class="headerlink" title="TODO注释"></a>TODO注释</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TODO : 这是TODO注释,标记着临时的、短期解决方案的、或者足够好但不够完美的代码.</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/16/2020-06-16-python第一章_字符串/" class="prev">上一篇：python第一章_字符串</a>
+    
+    
+    <a href="/2020/06/11/2020-06-11-python练习/" class="next">下一篇：python练习</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

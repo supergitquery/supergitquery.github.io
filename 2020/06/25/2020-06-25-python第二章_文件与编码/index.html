@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第二章_文件与编码 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第二章_文件与编码"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-24T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-25
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第二章_文件与编码</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文件"><span class="toc-number">1.</span> <span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件常用操作"><span class="toc-number">1.1.</span> <span class="toc-text">文件常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#open"><span class="toc-number">1.1.1.</span> <span class="toc-text">open</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#close"><span class="toc-number">1.1.2.</span> <span class="toc-text">close</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#write"><span class="toc-number">1.1.3.</span> <span class="toc-text">write</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read"><span class="toc-number">1.1.4.</span> <span class="toc-text">read</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#readline"><span class="toc-number">1.1.5.</span> <span class="toc-text">readline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seek"><span class="toc-number">1.1.6.</span> <span class="toc-text">seek</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tell"><span class="toc-number">1.1.7.</span> <span class="toc-text">tell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flush"><span class="toc-number">1.1.8.</span> <span class="toc-text">flush</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#writable"><span class="toc-number">1.1.9.</span> <span class="toc-text">writable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#readable"><span class="toc-number">1.1.10.</span> <span class="toc-text">readable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seekable"><span class="toc-number">1.1.11.</span> <span class="toc-text">seekable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#truncate"><span class="toc-number">1.1.12.</span> <span class="toc-text">truncate</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件内容循环"><span class="toc-number">1.2.</span> <span class="toc-text">文件内容循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不占硬盘方式的文件修改"><span class="toc-number">1.3.</span> <span class="toc-text">不占硬盘方式的文件修改</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编码与解码"><span class="toc-number">2.</span> <span class="toc-text">编码与解码</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><hr>
+<h2 id="文件常用操作"><a href="#文件常用操作" class="headerlink" title="文件常用操作"></a>文件常用操作</h2><hr>
+<h3 id="open"><a href="#open" class="headerlink" title="open"></a>open</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">open(file, mode&#x3D;&#39;r&#39;, buffering&#x3D;-1, encoding&#x3D;None, errors&#x3D;None, newline&#x3D;None, closefd&#x3D;True, opener&#x3D;None)</span><br><span class="line">    打开文件并返回流。 失败时引发OSError。</span><br><span class="line">    mode 可选参数:</span><br><span class="line">    &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">    Character Meaning</span><br><span class="line">    --------- ---------------------------------------------------------------</span><br><span class="line">    &#39;r&#39;       打开以供阅读（默认）</span><br><span class="line">    &#39;w&#39;       打开进行写入，先截断文件</span><br><span class="line">    &#39;x&#39;       创建一个新文件并打开以进行写入</span><br><span class="line">    &#39;a&#39;       打开进行写入，如果存在则追加到文件末尾</span><br><span class="line">    &#39;b&#39;       二进制模式</span><br><span class="line">    &#39;t&#39;       文字模式（默认）</span><br><span class="line">    &#39;+&#39;       打开磁盘文件以进行更新（读取和写入）</span><br><span class="line">    &#39;U&#39;       通用换行模式（不建议使用）</span><br><span class="line"></span><br><span class="line">    &#39;r+&#39;      先读后写,读后再写入的内容是追加,先写后读,文件覆盖,文件不存在则报错</span><br><span class="line">    &#39;a+&#39;	  读写,打开后光标在文件末尾,文件存在从光标位置读&#x2F;写(写会追加内容到文件末尾),不存在则新建</span><br><span class="line">    &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="close"><a href="#close" class="headerlink" title="close"></a>close</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  close(self, &#x2F;)</span><br><span class="line">|      刷新并关闭IO对象。</span><br><span class="line">|</span><br><span class="line">|      如果文件已经关闭，则此方法无效。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="write"><a href="#write" class="headerlink" title="write"></a>write</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|  write(self, text, &#x2F;)</span><br><span class="line">|      将字符串写入流。</span><br><span class="line">|      返回写入的字符数（始终等于字符串的长度）。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">f.write(<span class="string">'r模式只会读文件,如果文件不存在则报FileNotFoundError错误\n'</span>)</span><br><span class="line">f.write(<span class="string">'w模式会创建一个新文件,如果文件存在则覆盖,不能读取文件内容\n'</span>)</span><br><span class="line">f.write(<span class="string">'a模式会打开文件,如果文件存在则把写入内容追加到文件末尾,不存在则新建,不允许读取文件内容\n'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="read"><a href="#read" class="headerlink" title="read"></a>read</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  read(self, size&#x3D;-1, &#x2F;)</span><br><span class="line">|      从流中读取最多n个字符。</span><br><span class="line">|</span><br><span class="line">|      从底层缓冲区读取，直到我们有n个字符或我们击中EOF(文件末尾)为止。如果n为负或省略，读取直到EOF(文件末尾)。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(f.read())</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(f.read(<span class="number">3</span>))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r模式只会读文件,如果文件不存在则报FileNotFoundError错误</span><br><span class="line">w模式会创建一个新文件,如果文件存在则覆盖,不能读取文件内容</span><br><span class="line">a模式会打开文件,如果文件存在则把写入内容追加到文件末尾,不存在则新建,不允许读取文件内容</span><br><span class="line"></span><br><span class="line">r模式</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="readline"><a href="#readline" class="headerlink" title="readline"></a>readline</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  readline(self, size&#x3D;-1, &#x2F;)</span><br><span class="line">|      阅读直到换行符或EOF。</span><br><span class="line">|</span><br><span class="line">|      如果立即击中EOF，则返回一个空字符串。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">f_line = f.readline()</span><br><span class="line">print(<span class="string">f'第一行: <span class="subst">&#123;f_line&#125;</span>'</span>)</span><br><span class="line"></span><br><span class="line">f_line = f.readline()</span><br><span class="line">print(<span class="string">f'第二行: <span class="subst">&#123;f_line&#125;</span>'</span>)</span><br><span class="line"></span><br><span class="line">f_line = f.readline(<span class="number">2</span>)</span><br><span class="line">print(<span class="string">f'第三行的前连个字符是: <span class="subst">&#123;f_line&#125;</span>'</span>)</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一行: r模式只会读文件,如果文件不存在则报FileNotFoundError错误</span><br><span class="line"></span><br><span class="line">第二行: w模式会创建一个新文件,如果文件存在则覆盖,不能读取文件内容</span><br><span class="line"></span><br><span class="line">第三行的前连个字符是: a模</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="seek"><a href="#seek" class="headerlink" title="seek"></a>seek</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">|  seek(self, cookie, whence&#x3D;0, &#x2F;)</span><br><span class="line">|      更改流的位置。</span><br><span class="line">|</span><br><span class="line">|      将流位置更改为给定的字节偏移量。 偏移是相对于wherece指示的位置进行解释的。 其中的值是：</span><br><span class="line">|</span><br><span class="line">|      * 0 -- 流的开始（默认）； 偏移量应为零或正</span><br><span class="line">|      * 1 -- 当前流位置； 偏移量可能为负</span><br><span class="line">|      * 2 -- 流结束 偏移量通常为负</span><br><span class="line">|</span><br><span class="line">|      返回新的绝对位置。</span><br><span class="line">|      通俗的说就是光标位置,打开文件时光标是0,注意的是在utf8编码的文件里,一个中文字符是3个字节,gbk中文是2个字节</span><br><span class="line">|      ps:怀疑tell和seek在计算位置时会刷新缓冲区,导致写入内容直接写入文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(<span class="string">'开始偏移4个字节后再读取第一行'</span>)</span><br><span class="line">f.seek(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">print(f.readline())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">式只会读文件,如果文件不存在则报FileNotFoundError错误</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="tell"><a href="#tell" class="headerlink" title="tell"></a>tell</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|  tell() method of _io.TextIOWrapper instance</span><br><span class="line">|      返回当前流的位置。</span><br><span class="line">|      ps:怀疑tell和seek在计算位置时会刷新缓冲区,导致写入内容直接写入文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(<span class="string">'开始偏移4个字节'</span>)</span><br><span class="line">f.seek(<span class="number">4</span>)</span><br><span class="line">poin = f.tell()</span><br><span class="line">print(<span class="string">f"当前在光标在文件的第<span class="subst">&#123;poin&#125;</span>个字节位置"</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">开始偏移4个字节</span><br><span class="line">当前在光标在文件的第4个字节位置</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="flush"><a href="#flush" class="headerlink" title="flush"></a>flush</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|  flush() method of _io.TextIOWrapper instance</span><br><span class="line">|      刷新写缓冲区（如果适用）。</span><br><span class="line">|</span><br><span class="line">|      只读流和非阻塞流未实现此功能。</span><br><span class="line">|      当open(&#39;file&#39;, &#39;w&#39;)并write的时候写的内容是在内存里不是直接写在硬盘上的,只有在f.close()的时候内容才会被存到硬盘里</span><br><span class="line">|      而flush是在没有使用f.close()的时候将内容写入硬盘</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在python console执行</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写一行,然后打开文件看是否会写入这一行</span></span><br><span class="line">f.write(<span class="string">'r模式只会读文件,如果文件不存在则报FileNotFoundError错误\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再写一行</span></span><br><span class="line">f.write(<span class="string">'w模式会创建一个新文件,如果文件存在则覆盖,不能读取文件内容\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内容写入文件</span></span><br><span class="line">f.flush()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新打开文件查看是否被写入两行</span></span><br><span class="line"></span><br><span class="line">f.write(<span class="string">'a模式会打开文件,如果文件存在则把写入内容追加到文件末尾,不存在则新建,不允许读取文件内容\n'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="writable"><a href="#writable" class="headerlink" title="writable"></a>writable</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  writable(self, &#x2F;)</span><br><span class="line">|      返回打开的对象是否能进行写入。</span><br><span class="line">|</span><br><span class="line">|      如果为False，则write（）将引发OSError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(f.writable())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="readable"><a href="#readable" class="headerlink" title="readable"></a>readable</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  readable(self, &#x2F;)</span><br><span class="line">|      返回打开的对象是否能进行读。</span><br><span class="line">|</span><br><span class="line">|      如果为False，则write（）将引发OSError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(f.readable())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="seekable"><a href="#seekable" class="headerlink" title="seekable"></a>seekable</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|  seekable(self, &#x2F;)</span><br><span class="line">|      返回对象是否支持随机访问。</span><br><span class="line">|</span><br><span class="line">|      如果为False，seek（），tell（）和truncate（）会引发OSError。此方法可能需要执行测试seek（）。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(f.seekable())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="truncate"><a href="#truncate" class="headerlink" title="truncate"></a>truncate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|  truncate(self, pos&#x3D;None, &#x2F;)</span><br><span class="line">|      将文件截断为字节大小。</span><br><span class="line">|</span><br><span class="line">|      文件指针保持不变。 如果pos为None,大小默认为tell（）报告的当前IO位置。 返回新的大小。</span><br><span class="line">|	   文件指针保持不变。 如果pos为n,则从0到n返回新的大小。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r+'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">f.truncate(<span class="number">4</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r+'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line">print(<span class="string">"截断后的文件内容为:"</span>, f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">截断后的文件内容为: r模</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="文件内容循环"><a href="#文件内容循环" class="headerlink" title="文件内容循环"></a>文件内容循环</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用for循环获取文件的每行内容</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">"./w_mode.txt"</span>, <span class="string">'r'</span>, encoding=<span class="string">'utf8'</span>)</span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">	print(line)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r模式只会读文件,如果文件不存在则报FileNotFoundError错误</span><br><span class="line"></span><br><span class="line">w模式会创建一个新文件,如果文件存在则覆盖,不能读取文件内容</span><br><span class="line"></span><br><span class="line">a模式会打开文件,如果文件存在则把写入内容追加到文件末尾,不存在则新建,不允许读取文件内容</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="不占硬盘方式的文件修改"><a href="#不占硬盘方式的文件修改" class="headerlink" title="不占硬盘方式的文件修改"></a>不占硬盘方式的文件修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当文件进行f.write时,写多少内容都不会直接写入文件,而是存储在内存里,当f.close时才把内容一次性写入硬盘,这样速度很快</span><br><span class="line"></span><br><span class="line">当对文件进行简单的修改时(old_str -&gt; new_str),就需要使用seek频繁的定需休要修改的位置然后修改,但是每次seek操作都会造成</span><br><span class="line">write的内容直接写入磁盘,修改次数多的时候,就是内存和硬盘的频繁交互,这个时候就需要临时文件了,临时文件能减少交互的操作</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成一个大数字文本</span></span><br><span class="line">f = open(<span class="string">'./1.txt'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">1000000</span>):</span><br><span class="line">	f.write(<span class="string">f'<span class="subst">&#123;i&#125;</span>\n'</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不用临时文件的方式</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">begin_time = time.time()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 目的是将数字文本里的0替换为A</span></span><br><span class="line">old_str, new_str = <span class="string">'0'</span>, <span class="string">'A'</span></span><br><span class="line">f = open(<span class="string">'./1.txt'</span>, <span class="string">'r+'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="comment"># 光标位置记录</span></span><br><span class="line">length = <span class="number">0</span></span><br><span class="line"><span class="comment"># 读取文本的每行字符</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f.readlines():</span><br><span class="line">	<span class="keyword">if</span> old_str <span class="keyword">in</span> i:</span><br><span class="line">		i = i.replace(old_str, new_str)</span><br><span class="line">		<span class="comment"># 行如果被修改了光标回到行的开头</span></span><br><span class="line">		f.seek(length)</span><br><span class="line">	<span class="comment"># 不管有没有修改过都重写</span></span><br><span class="line">	f.write(i)</span><br><span class="line">	length += len(i.encode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">end_time = time.time()</span><br><span class="line">run_time = end_time - begin_time</span><br><span class="line">print(<span class="string">"不用临时文件修改的方式花费的时间是:"</span>, run_time)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不用临时文件修改的方式花费的时间是: 11.712983131408691</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时文件方式</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">begin_time = time.time()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f_name = <span class="string">'./1.txt'</span></span><br><span class="line">f_name_tmp = <span class="string">"%s.tmp"</span> % f_name</span><br><span class="line"></span><br><span class="line">old_str, new_str = <span class="string">'0'</span>, <span class="string">'A'</span></span><br><span class="line">f = open(f_name, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">f_tmp = open(f_name_tmp, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">	<span class="keyword">if</span> old_str <span class="keyword">in</span> i:</span><br><span class="line">		f_tmp.write(i.replace(old_str, new_str))</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		f_tmp.write(i)</span><br><span class="line"></span><br><span class="line">f.close()</span><br><span class="line">f_tmp.close()</span><br><span class="line"></span><br><span class="line">os.replace(f_name_tmp, f_name)</span><br><span class="line"></span><br><span class="line">end_time = time.time()</span><br><span class="line">run_time = end_time - begin_time</span><br><span class="line">print(<span class="string">"用临时文件修改的方式花费的时间是:"</span>, run_time)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用临时文件修改的方式花费的时间是: 1.442655086517334</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GBK编码的字符转换为utf-8储存:</span><br><span class="line">GBK --decode解码--&gt; unicode --encode编码--&gt; utf-8</span><br><span class="line"></span><br><span class="line">unicode被称为万国码,也就是收录着许多国家的文字,其他国家的编码可以通过unicode进行对应转换</span><br><span class="line"></span><br><span class="line">编码与解码</span><br><span class="line">1. 任意编码转换成unicode的过程，都叫解码</span><br><span class="line">2. 把unicode转换成任意编码的过程 ，都叫编码</span><br><span class="line"></span><br><span class="line">Unicode 2-4字节,通常用两个字节表示一个字符，原有的英文编码从单字节变成双字节</span><br><span class="line"></span><br><span class="line">UTF-8： 使⽤1、2、3、4个字节表示所有字符；优先使⽤1个字节、⽆法满⾜则使增加⼀个字节，</span><br><span class="line">最多4个字节。英⽂占1个字节、欧洲语系占2个、东亚占3个，其它及特殊字符占4个</span><br><span class="line"></span><br><span class="line">GBK编码，是在GB2312-80标准基础上的内码扩展规范，使用了双字节编码方案</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cn, en, num = <span class="string">'我'</span>, <span class="string">'A'</span>, <span class="string">'1'</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"gbk一个汉字占用%s个字节"</span> % len(cn.encode(<span class="string">'gbk'</span>)))</span><br><span class="line">print(<span class="string">"gbk一个字母占用%s个字节"</span> % len(en.encode(<span class="string">'gbk'</span>)))</span><br><span class="line">print(<span class="string">"gbk一个数字占用%s个字节"</span> % len(num.encode(<span class="string">'gbk'</span>)))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"utf-8一个汉字占用%s个字节"</span> % len(cn.encode(<span class="string">'utf-8'</span>)))</span><br><span class="line">print(<span class="string">"utf-8一个字母占用%s个字节"</span> % len(en.encode(<span class="string">'utf-8'</span>)))</span><br><span class="line">print(<span class="string">"utf-8一个数字占用%s个字节"</span> % len(num.encode(<span class="string">'utf-8'</span>)))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gbk一个汉字占用2个字节</span><br><span class="line">gbk一个字母占用1个字节</span><br><span class="line">gbk一个数字占用1个字节</span><br><span class="line"></span><br><span class="line">utf-8一个汉字占用3个字节</span><br><span class="line">utf-8一个字母占用1个字节</span><br><span class="line">utf-8一个数字占用1个字节</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/26/2020-06-26-python第二章_bytes/" class="prev">上一篇：python第二章_bytes</a>
+    
+    
+    <a href="/2020/06/24/2020-06-24-python第二章_哈希/" class="next">下一篇：python第二章_哈希</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

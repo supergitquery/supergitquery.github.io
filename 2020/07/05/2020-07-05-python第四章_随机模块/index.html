@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_随机模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_随机模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-04T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-05
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_随机模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#random"><span class="toc-number">1.</span> <span class="toc-text">random</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#randrange"><span class="toc-number">1.1.</span> <span class="toc-text">randrange</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#randint"><span class="toc-number">1.2.</span> <span class="toc-text">randint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#random-1"><span class="toc-number">1.3.</span> <span class="toc-text">random</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#choice"><span class="toc-number">1.4.</span> <span class="toc-text">choice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sample"><span class="toc-number">1.5.</span> <span class="toc-text">sample</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shuffle"><span class="toc-number">1.6.</span> <span class="toc-text">shuffle</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="random"><a href="#random" class="headerlink" title="random"></a>random</h1><hr>
+<h2 id="randrange"><a href="#randrange" class="headerlink" title="randrange"></a>randrange</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">randrange(start, stop&#x3D;None, step&#x3D;1, _int&#x3D;&lt;class &#39;int&#39;&gt;) method of random.Random instance</span><br><span class="line">    Choose a random item from range(start, stop[, step]).</span><br><span class="line">    从范围中选择一个随机数（(start, stop[, step]).</span><br><span class="line"></span><br><span class="line">    This fixes the problem with randint() which includes the</span><br><span class="line">    endpoint; in Python this is usually not what you want.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randrange</span><br><span class="line"></span><br><span class="line">print(randrange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>))</span><br><span class="line">print(randrange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>))</span><br><span class="line">print(randrange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>))</span><br><span class="line">print(randrange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">2</span><br><span class="line">0</span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="randint"><a href="#randint" class="headerlink" title="randint"></a>randint</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">randint(a, b) method of random.Random instance</span><br><span class="line">    Return random integer in range [a, b], including both end points.</span><br><span class="line">    返回范围为[a，b]的随机整数，包括两个端点.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> randint</span><br><span class="line">print(randint(<span class="number">1</span>, <span class="number">10</span>))</span><br><span class="line">print(randint(<span class="number">1</span>, <span class="number">10</span>))</span><br><span class="line">print(randint(<span class="number">1</span>, <span class="number">10</span>))</span><br><span class="line">print(randint(<span class="number">1</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">6</span><br><span class="line">6</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="random-1"><a href="#random-1" class="headerlink" title="random"></a>random</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">random(...) method of random.Random instance</span><br><span class="line">    random() -&gt; x in the interval [0, 1).</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line">print(random())</span><br><span class="line">print(random())</span><br><span class="line">print(random())</span><br><span class="line">print(random())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0.20303794612344217</span><br><span class="line">0.6920215214957545</span><br><span class="line">0.5207071828582173</span><br><span class="line">0.14566177138836078</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="choice"><a href="#choice" class="headerlink" title="choice"></a>choice</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">choice(seq) method of random.Random instance</span><br><span class="line">    Choose a random element from a non-empty sequence.</span><br><span class="line">    从非空序列中选择一个随机元素。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line">print(choice(<span class="string">'sdkafdj'</span>))</span><br><span class="line">print(choice(<span class="string">'sdkafdj'</span>))</span><br><span class="line">print(choice(<span class="string">'sdkafdj'</span>))</span><br><span class="line">print(choice(<span class="string">'sdkafdj'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s</span><br><span class="line">f</span><br><span class="line">s</span><br><span class="line">d</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="sample"><a href="#sample" class="headerlink" title="sample"></a>sample</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sample(population, k) method of random.Random instance</span><br><span class="line">    Chooses k unique random elements from a population sequence or set.</span><br><span class="line">    从总体序列或集合中选择k个唯一的随机元素.</span><br><span class="line"></span><br><span class="line">    Returns a new list containing elements from the population while</span><br><span class="line">    leaving the original population unchanged.  The resulting list is</span><br><span class="line">    in selection order so that all sub-slices will also be valid random</span><br><span class="line">    samples.  This allows raffle winners (the sample) to be partitioned</span><br><span class="line">    into grand prize and second place winners (the subslices).</span><br><span class="line">    返回一个新列表，其中包含总体中的元素，而保留原始总体不变.</span><br><span class="line">    结果列表按选择顺序排列，因此所有子切片也将是有效的随机样本.</span><br><span class="line"></span><br><span class="line">    To choose a sample in a range of integers, use range as an argument.</span><br><span class="line">    This is especially fast and space efficient for sampling from a</span><br><span class="line">    large population:   sample(range(10000000), 60)</span><br><span class="line">    要选择整数范围内的样本，请使用range作为参数.</span><br><span class="line">    这是特别快速，节省空间的采样方式 sample(range(10000000), 60)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> sample</span><br><span class="line">print(sample(<span class="string">'sadfnf'</span>, <span class="number">1</span>))</span><br><span class="line">print(sample(<span class="string">'sadfnf'</span>, <span class="number">2</span>))</span><br><span class="line">print(sample(<span class="string">'sadfnf'</span>, <span class="number">3</span>))</span><br><span class="line">print(sample(<span class="string">'sadfnf'</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[&#39;f&#39;]</span><br><span class="line">[&#39;d&#39;, &#39;f&#39;]</span><br><span class="line">[&#39;s&#39;, &#39;f&#39;, &#39;a&#39;]</span><br><span class="line">[&#39;n&#39;, &#39;f&#39;, &#39;s&#39;, &#39;f&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle"></a>shuffle</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">shuffle(x, random&#x3D;None) method of random.Random instance</span><br><span class="line">    Shuffle list x in place, and return None.</span><br><span class="line">    将列表x随机排序，然后返回None.</span><br><span class="line"></span><br><span class="line">    Optional argument random is a 0-argument function returning a</span><br><span class="line">    random float in [0.0, 1.0); if it is the default None, the</span><br><span class="line">    standard random.random will be used.</span><br><span class="line">    可选参数random是一个0参数的函数，返回一个[0.0, 1.0）中的随机浮点数； 如果是默认值None，则</span><br><span class="line">    将使用标准random.random.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> shuffle</span><br><span class="line">a = list(range(<span class="number">10</span>))</span><br><span class="line">shuffle(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[4, 6, 1, 8, 2, 3, 9, 7, 0, 5]</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/06/2020-07-06-python第四章_序列化模块/" class="prev">上一篇：python第四章_序列化模块</a>
+    
+    
+    <a href="/2020/07/04/2020-07-04-python第四章_时间模块/" class="next">下一篇：python第四章_时间模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>apache | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="apache"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-04-26T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-04-27
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">apache</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Perfork-MPM-工作原理"><span class="toc-number">1.1.</span> <span class="toc-text">Perfork MPM 工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Worker-MPM-工作原理"><span class="toc-number">1.2.</span> <span class="toc-text">Worker MPM 工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Perfork与Worker的区别"><span class="toc-number">1.3.</span> <span class="toc-text">Perfork与Worker的区别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用yum源安装"><span class="toc-number">2.1.</span> <span class="toc-text">使用yum源安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用源码安装"><span class="toc-number">2.2.</span> <span class="toc-text">使用源码安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软件依赖包解决"><span class="toc-number">2.2.1.</span> <span class="toc-text">软件依赖包解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apache源码安装"><span class="toc-number">2.2.2.</span> <span class="toc-text">apache源码安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码安装后的配置"><span class="toc-number">2.2.3.</span> <span class="toc-text">源码安装后的配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务运行参数配置"><span class="toc-number">3.1.</span> <span class="toc-text">服务运行参数配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作模块参数配置"><span class="toc-number">3.2.</span> <span class="toc-text">工作模块参数配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录访问限制配置"><span class="toc-number">3.3.</span> <span class="toc-text">目录访问限制配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件类型访问配置"><span class="toc-number">3.4.</span> <span class="toc-text">文件类型访问配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟主机访问配置"><span class="toc-number">3.5.</span> <span class="toc-text">虚拟主机访问配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟目录访问配置"><span class="toc-number">3.6.</span> <span class="toc-text">虚拟目录访问配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他配置"><span class="toc-number">3.7.</span> <span class="toc-text">其他配置</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Apache HTTP server是Apache软件基金会的一个开源的网页服务器,可以运行在几乎所有广泛使用的计算机平台上,由于其跨平台和安全性被广泛使用,是目前最流行的Web服务器之一.</p>
+<hr>
+<h2 id="Perfork-MPM-工作原理"><a href="#Perfork-MPM-工作原理" class="headerlink" title="Perfork MPM 工作原理"></a>Perfork MPM 工作原理</h2><p>每辆汽车都有自己的发动机引擎,不同的引擎,对于车子运行效率也不一样,同样Apache也类似的工作引擎或者处理请求的模块,称之为多路处理模块(multi-processing modules,MPM),Apache Web服务器有三种处理模块:Prefork MPM、Worker MPM、Event MPM.</p>
+<p>默认Apache 处理模块为Prefork MPM方式，Prefork采用的预派生子进程方式，Prefork 用单独的子进程来处理不同的请求，进程之间是彼此独立的，所以比较稳定，但是占用的内存也较高.</p>
+<p>控制进程Master(主进程)创建设置的StartServers(子进程数),然后创建MinSpareServers(最小空闲进程),首先会创建一个空闲进程,等待一秒钟,继续创建两个,在等待一秒钟,继续创建四个,依次递增,最多每秒创建32个空闲进程,知道满足至少有MinSpareServers设置的为止.</p>
+<hr>
+<h2 id="Worker-MPM-工作原理"><a href="#Worker-MPM-工作原理" class="headerlink" title="Worker MPM 工作原理"></a>Worker MPM 工作原理</h2><p>相对于 Prefork MPM,Worker方式支持多线程和多进程混合模型的MPM,由于使用线程来处理,所以可以处理海量的HTTP请求,而系统资源的开销要小于基于 Prefork多进程的方式,Worker也是基于多进程,但每个进程又生成多个线程,这样可以保证多线程获得进程的稳定性.</p>
+<p>控制进程Master在最初建立 StartServers (子进程数),每个进程会创建 ThreadsPreChild 设置的线程数,多个线程共享该进程内存空间,同时每个线程独立地处理用户的请求.为了不在请求到来时在生成线程,Worker MPM也可以设置最大空闲线程.</p>
+<p>Worker MPM模式下同时处理的请求总数=进程总数 * ThreadsPreChild,也就是 MaxClients.如果服务器负载很高,当前进程不满足需求,Master控制台会fork新的进程,最大进程数不能超过 ServerLimit 数,如果需要调整 StartServers进程数,须同时调整 ServerLimit值.</p>
+<hr>
+<h2 id="Perfork与Worker的区别"><a href="#Perfork与Worker的区别" class="headerlink" title="Perfork与Worker的区别"></a>Perfork与Worker的区别</h2><table>
+<thead>
+<tr>
+<th>引擎</th>
+<th>Prefork MPM</th>
+<th>Worker MPM</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>多进程</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>多线程</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>稳定</td>
+<td>内存占用小</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>内存开销大</td>
+<td>一个线程崩溃整个进程一起崩溃</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><hr>
+<h2 id="使用yum源安装"><a href="#使用yum源安装" class="headerlink" title="使用yum源安装"></a>使用yum源安装</h2><p>yum 源的安装非常简单,直接执行下面命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum install -y httpd</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="使用源码安装"><a href="#使用源码安装" class="headerlink" title="使用源码安装"></a>使用源码安装</h2><hr>
+<h3 id="软件依赖包解决"><a href="#软件依赖包解决" class="headerlink" title="软件依赖包解决"></a>软件依赖包解决</h3><p>首先要安装以下apache依赖的软件包,不然无法完成编译安装:</p>
+<ul>
+<li><a href="http://apr.apache.org" target="_blank" rel="noopener">apr</a> 对后端服务软件进行优化的  </li>
+<li><a href="http://apr.apache.org" target="_blank" rel="noopener">apr-util</a> 在apr的基础上提供了更多的数据结构和操作系统封装接口  </li>
+<li><a href="http://pcre.org" target="_blank" rel="noopener">pcre</a> 提供正则表达式查找和匹配的功能  </li>
+</ul>
+<p>解决依赖的方法一(yum安装):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y apr apr-devel apr-util apr-util-devel pcre pcre-devel</span><br></pre></td></tr></table></figure>
+
+<p>解决依赖的方法二(源码安装):</p>
+<ol>
+<li>编译安装apr(需自行去官方下载源码包解压后)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> apr-1.5.2/</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/apr &amp;&amp; make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译安装apr-util(需自行去官方下载源码包解压后)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> apr-util-1.5.4</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/apr-util --with-apr=/usr/<span class="built_in">local</span>/apr &amp;&amp; make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>编译安装pcre(需自行去官方下载源码包解压后)</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> pcre-8.37</span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/pcre &amp;&amp; make -j 2 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="apache源码安装"><a href="#apache源码安装" class="headerlink" title="apache源码安装"></a>apache源码安装</h3><p>yum源安装解决依赖使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/apache    \</span><br><span class="line">            --with-mpm=worker             \</span><br><span class="line">            --with-pcre                   \</span><br><span class="line">            --<span class="built_in">enable</span>-so                   \</span><br><span class="line">            --<span class="built_in">enable</span>-rewrite              \</span><br><span class="line">            --<span class="built_in">enable</span>-modules=most         \</span><br><span class="line">            --<span class="built_in">enable</span>-mpms-shared=all </span><br><span class="line">make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>源码安装解决依赖使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/apache    \</span><br><span class="line">            --with-apr=/usr/<span class="built_in">local</span>/apr     \</span><br><span class="line">            --with-apr-util=/usr/<span class="built_in">local</span>/apr-util \</span><br><span class="line">            --with-pcre=/usr/<span class="built_in">local</span>/pcre   \</span><br><span class="line">            --with-mpm=worker             \</span><br><span class="line">            --<span class="built_in">enable</span>-so                   \</span><br><span class="line">            --<span class="built_in">enable</span>-rewrite              \</span><br><span class="line">            --<span class="built_in">enable</span>-modules=most         \</span><br><span class="line">            --<span class="built_in">enable</span>-mpms-shared=all </span><br><span class="line">make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>编译参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">--prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;apache           #  安装位置</span><br><span class="line"></span><br><span class="line">--with-pcre&#x3D;&#x2F;usr&#x2F;local&#x2F;pcre          #  pcre路径或者是prce-config的具体位置</span><br><span class="line"></span><br><span class="line">--with-apr&#x3D;&#x2F;usr&#x2F;local&#x2F;apr            #  apr安装路径或者是apr-config的具体位置</span><br><span class="line"></span><br><span class="line">--with-apr-util&#x3D;&#x2F;usr&#x2F;local&#x2F;apr-util  #  apr-util安装路径或者是apu-config的具体位置</span><br><span class="line"></span><br><span class="line">--enable-so                          #  支持动态加载模块</span><br><span class="line"></span><br><span class="line">--enable-rewrite                     #  支持网站地址重写</span><br><span class="line"></span><br><span class="line">--enable-ssl                         #  支持SSL加密</span><br><span class="line"></span><br><span class="line">--enable-modules&#x3D;most                #  支持动态启用的模块</span><br><span class="line"></span><br><span class="line">--enable-mpms-shared&#x3D;all             #  要启用的MPM模块,MPM-LIST&#x3D;list | &quot;all&quot;</span><br><span class="line">                                     #  all时所有此平台支持的 MPM 都会以模块的形式安装,可以启用切换</span><br><span class="line"></span><br><span class="line">--with-mpm&#x3D;event                     #  选择默认的工作模式&#123;event|worker|prefork|winnt&#125;</span><br><span class="line">                                     #  event模式需要apr1.5以上大版本</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="源码安装后的配置"><a href="#源码安装后的配置" class="headerlink" title="源码安装后的配置"></a>源码安装后的配置</h3><ul>
+<li>设置开机自启 - 复制服务控制脚本到系统服务启动目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/<span class="built_in">local</span>/apache/bin/apachectl  /etc/init.d/apache</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置开机自启 - 将以下添加到服务控制脚本头部第一行后</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># <span class="number">2345</span>是开机启动级别,<span class="number">64</span>是开机顺序,<span class="number">36</span>是关闭顺序,大多数服务都要启动晚于网络,关闭早于网络</span><br><span class="line"># chkconfi<span class="variable">g:2345</span> <span class="number">64</span> <span class="number">36</span></span><br><span class="line"># description: Apache2.<span class="number">4.16</span> start script </span><br><span class="line"># 描述字段，有了这两个字段，就可以用chkconfig命令控制</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置开机自启 - 添加chkconfig控制</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig apache on</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置服务运行用户 - 添加一个系统用户 apache</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -M -s /sbin/nologin apache</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置服务运行用户 - 修改主配置文件运行用户改为 apache</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">162</span> User apache</span><br><span class="line"><span class="number">163</span> Group apache</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更改web目录所属为apache用户</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R apache. /usr/<span class="built_in">local</span>/apache/htdocs/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最后重启使配置生效</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart apache</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><hr>
+<h2 id="服务运行参数配置"><a href="#服务运行参数配置" class="headerlink" title="服务运行参数配置"></a>服务运行参数配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">ServerName localhos<span class="variable">t:80</span>     #  服务器主机名</span><br><span class="line"></span><br><span class="line">Timeout <span class="number">60</span>                  #  不论接收或者发送,当持续连接等待超过<span class="number">60</span>秒则该次连接就中断</span><br><span class="line"></span><br><span class="line">KeepAlive Off               #  是否允许一个永久的链接，设置为 OFF 的时候，</span><br><span class="line">                            #  不能保持连接功能，传输效率比较低，设置为 ON </span><br><span class="line">                            #  时，可以提高服务器传输文件的效率，建议开启</span><br><span class="line"></span><br><span class="line">MaxKeepAliveRequests <span class="number">100</span>    #  设置 KeepAlive 为 ON 时，设置客户端每次连接允许</span><br><span class="line">                            #  请求相应最大文件数，默认 <span class="number">100</span> 个</span><br><span class="line"></span><br><span class="line">KeepAliveTimeout <span class="number">15</span>         #  超时时间，同一个客户端下一个请求 <span class="number">15</span>s 没收到就超时</span><br><span class="line"></span><br><span class="line">Listen <span class="number">80</span>                   #  监听端口，默认本地 IP，如果指定 ip 写上如: <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">80</span></span><br><span class="line"></span><br><span class="line">Options Indexes FollowSymLinks #  Options 后面为下面可选项</span><br><span class="line">#  Indexes                     如果请求映射到目录的URL并没有默认页面（<span class="built_in">index</span>.html）在该目录中，将返回目录列表</span><br><span class="line">#  Includes                    允许提供服务器端包含</span><br><span class="line">#  FollowSymLinks              服务器将遵循此目录中的符号链接</span><br><span class="line">#  SymLinksifOwnerMatch        服务器将仅遵循符号链接,这些符号链接的目标文件或目录由与该链接相同的用户标识拥有。</span><br><span class="line">#  ExecCGI                     mod_cgi允许使用执行CGI脚本。</span><br><span class="line">#  MultiViews                  允许多重内容被浏览，如果你的目录下有一个叫做foo.txt的文件，那么你可以通过</span><br><span class="line">                               /foo来访问到它，这对于一个多语言内容的站点比较有用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AllowOverride None          #  设置为 none时，忽略.htaccess文件(针对目录的分布式配置文件)里的指令</span><br><span class="line">                            #  可选All|AuthConfig|FileInfo|Indexes|Limit|none</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">User apache                 #  以哪个身份运行,这里为以apache的系统用户运行</span><br><span class="line"></span><br><span class="line">Group apache                #  以哪个组的身份运行,这里为以apache的系统用户组运行</span><br><span class="line"></span><br><span class="line">DirectoryIndex <span class="built_in">index</span>.html   #  指定访问时默认展示的页面,这里设置为<span class="built_in">index</span>.html</span><br><span class="line"></span><br><span class="line">DocumentRoot <span class="string">"/var/www/html"</span>  #  默认主目录,修改需要同步修改相应目录配置,在前端访问,</span><br><span class="line">                              #  系统目录资源需要可执行权限,文件资源需要可读权限</span><br><span class="line"></span><br><span class="line">ServerSignature Off           #  可选值On|Off|EMail,ServerSignature指令允许您配置服务器端生 </span><br><span class="line">                              #  成文档的页脚（错误信息、mod_proxy的ftp目录列表、mod_info的输出）。</span><br><span class="line"></span><br><span class="line">ServerTokens Full             #  可选值为ProductOnly|Major|Minor|Minimal|OS|Full,显示apache的版本信息</span><br><span class="line">                              #  从左到右选项显示的信息就越全面</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="工作模块参数配置"><a href="#工作模块参数配置" class="headerlink" title="工作模块参数配置"></a>工作模块参数配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MPM 工作模式的切换(yum)</span><br><span class="line">    <span class="keyword">vim</span> /etc/httpd/<span class="keyword">conf</span>.modules.d/<span class="number">00</span>-mpm.<span class="keyword">conf</span>   #  对需要的模块取消注释,其他模块注释</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MPM 工作模式的切换(编译)(编译时需要安装多个工作模块才能切换)</span><br><span class="line">    <span class="keyword">vim</span> /usr/local/apache/<span class="keyword">conf</span>/httpd.<span class="keyword">conf</span>  #  选择MPM模块，只需取消注释需要的工作模块,注释掉其他的工作模块</span><br><span class="line">    </span><br><span class="line">    #LoadModule mpm_prefork_module modules/mod_mpm_prefork.<span class="keyword">so</span></span><br><span class="line">    LoadModule mpm_worker_module modules/mod_mpm_worker.<span class="keyword">so</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#  StartServers               启动的子进程数</span><br><span class="line">#  MinSpareServers            最小的服务空闲进程</span><br><span class="line">#  MaxSpareServers            最大的服务空闲进程</span><br><span class="line">#  MaxRequestWorkers          允许启动的最大服务器进程数</span><br><span class="line">#  ThreadsPerChild            每个子进程创建的线程数</span><br><span class="line">#  MaxConnectionsPerChild  处理多少个请求后该进程自动销毁，默认值<span class="number">0</span>意味着永不销毁</span><br><span class="line">#                          为了使每个进程处理更多的请求，避免销毁、创建进程的开销，</span><br><span class="line">#                          一般建议设置为<span class="number">0</span>或较大的数字。但是也要注意可能会造成进程</span><br><span class="line">#                          占用的内存不能得到释放，所以这个值不能设置得太大，也不</span><br><span class="line">#                          能太小，大了会影响资源的释放，小了会导致Apache不断地</span><br><span class="line">#                          fork进程。建议值：<span class="number">1</span>分钟pv（访问量）/MaxClients</span><br><span class="line">#Apache2.<span class="number">3.1</span>以前的版本MaxRequestWorkers被称为MaxClients,旧版参数任然可用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Prefork(多进程) MPM 默认的工作模式</span><br><span class="line">用单独的子进程来处理请求,子进程之间互相独立,互不影响,大大提高了稳定性,</span><br><span class="line">但每个进程都会占用内存,所以消耗资源过高;(处理速度快,但是同时处理数量小)</span><br><span class="line"></span><br><span class="line">&lt;IfModule mpm_prefork_module&gt;</span><br><span class="line">    StartServers             <span class="number">5</span></span><br><span class="line">    MinSpareServers          <span class="number">5</span></span><br><span class="line">    MaxSpareServers         <span class="number">10</span></span><br><span class="line">    MaxRequestWorkers      <span class="number">250</span></span><br><span class="line">    MaxConnectionsPerChild   <span class="number">0</span></span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Worker MPM(多进程多线程)</span><br><span class="line">由线程处理HTTP请求,效率非常高,而对系统的开销也相对较低,worker mpm也是基于</span><br><span class="line">多进程的,但是每个进程会生成多个线程和一个监听线程,由线程来处理请求,这样可以保证多线程可以</span><br><span class="line">获得进程的稳定性,线程会共享进程的内存资源(处理速度慢,但是同时处理数量多)</span><br><span class="line">&lt;IfModule mpm_worker_module&gt;</span><br><span class="line">    StartServers             <span class="number">3</span></span><br><span class="line">    MinSpareThreads         <span class="number">75</span></span><br><span class="line">    MaxSpareThreads        <span class="number">250</span></span><br><span class="line">    ThreadsPerChild         <span class="number">25</span></span><br><span class="line">    MaxRequestWorkers      <span class="number">400</span></span><br><span class="line">    MaxConnectionsPerChild   <span class="number">0</span></span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Event MPM</span><br><span class="line">event mpm会派生出子进程,每个子进程会生成多个线程处理请求,与前两个工作模式不同</span><br><span class="line">的是,他解决了keep-alive场景下被占用的线程的资源浪费问题. Event mpm 会有一个专</span><br><span class="line">门的线程来管理这些keep-alived类型的线程,当有真实请求过来的时候,将请求传递给服</span><br><span class="line">务器线程,执行完毕后,又允许释放.</span><br><span class="line">&lt;IfModule mpm_event_module&gt;</span><br><span class="line">    StartServers             <span class="number">3</span></span><br><span class="line">    MinSpareThreads         <span class="number">75</span></span><br><span class="line">    MaxSpareThreads        <span class="number">250</span></span><br><span class="line">    ThreadsPerChild         <span class="number">25</span></span><br><span class="line">    MaxRequestWorkers      <span class="number">400</span></span><br><span class="line">    MaxConnectionsPerChild   <span class="number">0</span></span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="目录访问限制配置"><a href="#目录访问限制配置" class="headerlink" title="目录访问限制配置"></a>目录访问限制配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#  目录访问限制(旧写法白名单)</span><br><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    Order allow,deny              #  设置拒绝允许匹配优先级,这里为deny匹配的规则优先大于allow     </span><br><span class="line">    allow from <span class="number">192.168</span>.<span class="number">18.0</span>/<span class="number">24</span>    #  从哪里来的允许访问,有多个单独ip用空格隔开</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">#  目录访问限制(旧写法黑名单)</span><br><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    Order deny,allow              #  设置拒绝允许匹配优先级,这里为allow匹配的规则优先大于deny   </span><br><span class="line">    deny from <span class="number">192.168</span>.<span class="number">18.0</span>/<span class="number">24</span>     #  从哪里来的拒绝访问,有多个单独ip用空格隔开</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#  目录访问限制(黑名单)</span><br><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    <span class="symbol">&lt;RequireAll&gt;</span></span><br><span class="line">        Require <span class="keyword">all</span> granted           #  granted允许所有访问,denied为拒绝</span><br><span class="line">        Require not ip <span class="number">192.168</span>.<span class="number">247.3</span>  #  拒绝访问的ip,有多个单独ip用空格隔开</span><br><span class="line">    &lt;/RequireAll&gt;</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">#  目录访问限制(白名单)</span><br><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    <span class="symbol">&lt;RequireAll&gt;</span></span><br><span class="line">        Require ip <span class="number">192.168</span>.<span class="number">247.3</span>      #  允许访问的ip,有多个单独ip用空格隔开</span><br><span class="line">    &lt;/RequireAll&gt;</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="文件类型访问配置"><a href="#文件类型访问配置" class="headerlink" title="文件类型访问配置"></a>文件类型访问配置</h2><p>Files与FilesMatch效果相同</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    Order allow,deny               </span><br><span class="line">    allow from <span class="number">192.168</span>.<span class="number">18.0</span>/<span class="number">24</span>    </span><br><span class="line">    &lt;Files ~ <span class="string">".txt$"</span>&gt;       # 匹配访问文件名</span><br><span class="line">        Order allow,deny</span><br><span class="line">        Deny from <span class="keyword">all</span>       # 拒绝访问</span><br><span class="line">    &lt;/Files&gt;</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">"/usr/local/apache/htdocs/test"</span>&gt;</span><br><span class="line">    Order allow,deny               </span><br><span class="line">    allow from <span class="number">192.168</span>.<span class="number">18.0</span>/<span class="number">24</span> </span><br><span class="line">    &lt;FilesMatch <span class="string">"\.(jpg|jpeg)$"</span>&gt;   # 匹配访问文件名</span><br><span class="line">           Order allow,deny      </span><br><span class="line">           Deny from <span class="keyword">all</span>           # 拒绝访问</span><br><span class="line">    &lt;/FilesMatch&gt;</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="虚拟主机访问配置"><a href="#虚拟主机访问配置" class="headerlink" title="虚拟主机访问配置"></a>虚拟主机访问配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#  同一服务器上,基于不同端口访问不同站点</span><br><span class="line">Listen <span class="number">8080</span></span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">247.100</span>:<span class="number">8080</span>&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/html/web1/"</span></span><br><span class="line">    ServerName www.example.<span class="keyword">com</span></span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#  同一服务器上,基于不同IP访问不同站点</span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">247.10</span>:<span class="number">80</span>&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/html/web2/"</span></span><br><span class="line">    ServerName <span class="number">192.168</span>.<span class="number">247.10</span></span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#  同一服务器上,基于不同域名访问不同站点</span><br><span class="line">&lt;VirtualHost <span class="number">192.168</span>.<span class="number">247.100</span>:<span class="number">80</span>&gt;</span><br><span class="line">    DocumentRoot <span class="string">"/var/www/html/web3/"</span></span><br><span class="line">    ServerName example.<span class="keyword">com</span></span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="虚拟目录访问配置"><a href="#虚拟目录访问配置" class="headerlink" title="虚拟目录访问配置"></a>虚拟目录访问配置</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">格式: Alias URL访问路径(/自定义/)   PATH物理路径</span><br><span class="line"></span><br><span class="line">Alias /vdir/ <span class="string">"/usr/local/test/"</span></span><br><span class="line">&lt;Directory <span class="string">"/usr/local/test/"</span>&gt;</span><br><span class="line">        Options Indexes FollowSymLinks</span><br><span class="line">        AllowOverride None</span><br><span class="line">        Require <span class="keyword">all</span> granted</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><ul>
+<li>查看服务运行状态</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Location /server-status&gt;</span><br><span class="line">        SetHandler server-status</span><br><span class="line">        Order Deny,Allow</span><br><span class="line">        Deny from nothing</span><br><span class="line">        Allow from <span class="number">192.168</span>.<span class="number">247.3</span></span><br><span class="line">&lt;/Location&gt;</span><br><span class="line"></span><br><span class="line">访问: http://IP/server-status</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>禁止欢迎界面</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当访问错误的时候会跳转到Testing界面,会有一些版本信息</span><br><span class="line">注释/etc/httpd/<span class="keyword">conf</span>.d/welcome.<span class="keyword">conf</span>文件里的所有行</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>禁止查看目录列表(不允许查看web目录列表)</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">去掉Indexes或者写为-Indexes(可全局配置或针对单独目录)</span><br><span class="line">&lt;Directory <span class="string">"/web/docs"</span>&gt;</span><br><span class="line">  Options Indexes</span><br><span class="line">&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/05/03/2020-05-03-php/" class="prev">上一篇：php</a>
+    
+    
+    <a href="/2020/04/26/2020-04-26-nginx/" class="next">下一篇：nginx</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

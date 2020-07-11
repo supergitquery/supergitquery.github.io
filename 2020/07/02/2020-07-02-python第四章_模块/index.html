@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-01T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-02
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模块"><span class="toc-number">1.</span> <span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块导入"><span class="toc-number">1.1.</span> <span class="toc-text">模块导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义模块"><span class="toc-number">1.2.</span> <span class="toc-text">自定义模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方模块安装"><span class="toc-number">1.3.</span> <span class="toc-text">第三方模块安装</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>模块就是工具包,工具包里有许多的工具可以使用.</p>
+<p>模块便于管理,一个 py 文件就是一个模块.</p>
+<p>模块的分类:<br>    标准模块 内置模块 库<br>    第三方模块  安装可以使用 (pip install)<br>    自定义模块(自己写的)</p>
+<hr>
+<h2 id="模块导入"><a href="#模块导入" class="headerlink" title="模块导入"></a>模块导入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">模块的导入 &amp; 调用:</span><br><span class="line">    import module  # 导入</span><br><span class="line">    from module import xx</span><br><span class="line">    from module.xx.xx import xx as rename  # 导入后重命名</span><br><span class="line">    from module.xx.xx import *  # 导入一个模块下的所有方法,不建议使用</span><br><span class="line">    module.xx  # 调用</span><br><span class="line">注意: 模块一但被调用,就相当于执行了另一个py文件里的代码.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下面不同方式导入</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> os.path <span class="keyword">import</span> abspath</span><br><span class="line"><span class="keyword">from</span> os.path <span class="keyword">import</span> abspath <span class="keyword">as</span> abs_p</span><br><span class="line"><span class="keyword">from</span> os.path <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一个 py 文件就可以是一个模块.</span><br><span class="line"></span><br><span class="line">导入自定义模块和模块的查找路径有关,可以用(sys.path)查看,</span><br><span class="line">需要全局都能导入模块可以将模块放在 site-packages(第三方库) 下.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># module_a.py 里的内容</span></span><br><span class="line">name = <span class="string">"Jack"</span></span><br><span class="line">print(<span class="string">'This is module_a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># module_b.py 导入 module_a</span></span><br><span class="line"><span class="keyword">from</span> module_a <span class="keyword">import</span> say_hi</span><br><span class="line"></span><br><span class="line">say_hi(<span class="string">'Admin'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">This is module_a</span><br><span class="line">Hi, Admin</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第三方模块安装"><a href="#第三方模块安装" class="headerlink" title="第三方模块安装"></a>第三方模块安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;pypi.org&#x2F;  # 可以搜索下载第三方模块</span><br><span class="line"></span><br><span class="line">安装方式:</span><br><span class="line">    1. 下载源码后编译源码</span><br><span class="line">        python setup.py build</span><br><span class="line">    2. 下载源码后安装源码</span><br><span class="line">        python setup.py install</span><br><span class="line">    3. pip 命令自动下载模块完成安装</span><br><span class="line">        pip install &lt;module&gt;</span><br><span class="line">    4. pip 指定源安装</span><br><span class="line">        pip install -i &lt;源地址&gt; &lt;module&gt; --trusted_host &lt;访问的主机&gt;</span><br><span class="line">            -i 指定仓库</span><br><span class="line">            --trusted_host 信任主机</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 建议使用 pip 安装, pip 是 python 的包管理工具, 在系统终端上执行</span></span><br><span class="line">pip install qrcode</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/03/2020-07-03-python第四章_系统调用模块/" class="prev">上一篇：python第四章_系统调用模块</a>
+    
+    
+    <a href="/2020/07/01/2020-07-01-python第三章_生成器/" class="next">下一篇：python第三章_生成器</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

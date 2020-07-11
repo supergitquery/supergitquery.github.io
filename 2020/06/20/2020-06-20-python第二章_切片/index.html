@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第二章_切片 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第二章_切片"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-19T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-20
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第二章_切片</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#切片"><span class="toc-number">1.</span> <span class="toc-text">切片</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#正向切片"><span class="toc-number">1.1.</span> <span class="toc-text">正向切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反向切片"><span class="toc-number">1.2.</span> <span class="toc-text">反向切片 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切片方向与步长的正负"><span class="toc-number">1.3.</span> <span class="toc-text">切片方向与步长的正负</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">S[start&#x3D;None:end&#x3D;None:step&#x3D;None]</span><br><span class="line"></span><br><span class="line">从序列中截取部分片段,然后按切的先后排序,start是切片的起始位置,end是切片的结束位置但是不包括,step为方向与步长.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="正向切片"><a href="#正向切片" class="headerlink" title="正向切片"></a>正向切片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">切片默认是从左往右的顺序提取,然后按提取的顺序排列从左到右排序</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">b = a[<span class="number">1</span>:<span class="number">3</span>:<span class="number">1</span>]</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="反向切片"><a href="#反向切片" class="headerlink" title="反向切片  "></a>反向切片 <a name='反向切片'> </a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">反向切片可以从右往左切片,然后按顺序,这样就可以形成序列里的元素反转</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">b = a[::<span class="number">-1</span>]</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[5, 4, 3, 2, 1, 0]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="切片方向与步长的正负"><a href="#切片方向与步长的正负" class="headerlink" title="切片方向与步长的正负"></a>切片方向与步长的正负</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">coordinate = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line">positive_direction_1 = coordinate[<span class="number">1</span>:<span class="number">4</span>:<span class="number">1</span>]</span><br><span class="line">negative_direction_1 = coordinate[<span class="number">1</span>:<span class="number">4</span>:<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">positive_direction_2 = coordinate[<span class="number">-1</span>:<span class="number">-4</span>:<span class="number">-1</span>]</span><br><span class="line">negative_direction_2 = coordinate[<span class="number">-1</span>:<span class="number">-4</span>:<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">positive_direction_3 = coordinate[<span class="number">1</span>:<span class="number">-1</span>:<span class="number">1</span>]</span><br><span class="line">negative_direction_3 = coordinate[<span class="number">1</span>:<span class="number">-1</span>:<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">reverse_coordinate = coordinate[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">print(positive_direction_1)</span><br><span class="line">print(negative_direction_1)</span><br><span class="line"></span><br><span class="line">print(positive_direction_2)</span><br><span class="line">print(negative_direction_2)</span><br><span class="line"></span><br><span class="line">print(positive_direction_3)</span><br><span class="line">print(negative_direction_3)</span><br><span class="line"></span><br><span class="line">print(reverse_coordinate)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3]</span><br><span class="line">[]</span><br><span class="line"></span><br><span class="line">[6, 5, 4]</span><br><span class="line">[]</span><br><span class="line"></span><br><span class="line">[1, 2, 3, 4, 5]</span><br><span class="line">[]</span><br><span class="line"></span><br><span class="line">[6, 5, 4, 3, 2, 1, 0]</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/21/2020-06-21-python第二章_元组/" class="prev">上一篇：python第二章_元组</a>
+    
+    
+    <a href="/2020/06/19/2020-06-19-python第一章_流程控制/" class="next">下一篇：python第一章_流程控制</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

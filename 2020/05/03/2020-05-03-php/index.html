@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>php | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="php"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-05-02T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-05-03
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">php</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#yum源安装"><span class="toc-number">1.</span> <span class="toc-text">yum源安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源码安装"><span class="toc-number">2.</span> <span class="toc-text">源码安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单安装-不支持其他服务"><span class="toc-number">2.1.</span> <span class="toc-text">简单安装,不支持其他服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持apache"><span class="toc-number">2.2.</span> <span class="toc-text">支持apache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持mysql"><span class="toc-number">2.3.</span> <span class="toc-text">支持mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持nginx"><span class="toc-number">2.4.</span> <span class="toc-text">支持nginx</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#预编译参数"><span class="toc-number">3.</span> <span class="toc-text">预编译参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#php单模块安装"><span class="toc-number">4.</span> <span class="toc-text">php单模块安装</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="yum源安装"><a href="#yum源安装" class="headerlink" title="yum源安装"></a>yum源安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y php</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libxml2-devel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="简单安装-不支持其他服务"><a href="#简单安装-不支持其他服务" class="headerlink" title="简单安装,不支持其他服务"></a>简单安装,不支持其他服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-config-file-path=/usr/<span class="built_in">local</span>/php56</span><br><span class="line"></span><br><span class="line">make -j 4 &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"> 最后复制配置文件到安装时指定的config目录 </span><br><span class="line">cp /usr/<span class="built_in">local</span>/php-7.2/php.ini-development /usr/<span class="built_in">local</span>/php/php.ini</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="支持apache"><a href="#支持apache" class="headerlink" title="支持apache"></a>支持apache</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-config-file-path=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-apxs2=/usr/<span class="built_in">local</span>/apache2.4/bin/apxs</span><br><span class="line"></span><br><span class="line">make -j 4 &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"> apache模块目录存在两个模块表示成功</span><br><span class="line">ls -l /usr/<span class="built_in">local</span>/apache2.4/modules/httpd.exp</span><br><span class="line">ls -l /usr/<span class="built_in">local</span>/apache2.4/modules/libphp5.so</span><br><span class="line"></span><br><span class="line"> 在apache配置文件添加</span><br><span class="line">LoadModule php5_module modules/libphp5.so</span><br><span class="line">DirectoryIndex index.php</span><br><span class="line">AddType application/x-httpd-php .php</span><br><span class="line">AddType application/x-httpd-php-source .phps</span><br><span class="line"></span><br><span class="line"> 最后复制配置文件到安装时指定的config目录 </span><br><span class="line">cp /usr/<span class="built_in">local</span>/php-7.2/php.ini-development /usr/<span class="built_in">local</span>/php/php.ini</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="支持mysql"><a href="#支持mysql" class="headerlink" title="支持mysql"></a>支持mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-config-file-path=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-mysql=/usr/<span class="built_in">local</span>/mysql/  \</span><br><span class="line">--with-mysqli=/usr/<span class="built_in">local</span>/mysql/bin/mysql_config</span><br><span class="line"></span><br><span class="line">make -j 4 &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"> 最后复制配置文件到安装时指定的config目录 </span><br><span class="line">cp /usr/<span class="built_in">local</span>/php-7.2/php.ini-development /usr/<span class="built_in">local</span>/php/php.ini</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="支持nginx"><a href="#支持nginx" class="headerlink" title="支持nginx"></a>支持nginx</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--with-config-file-path=/usr/<span class="built_in">local</span>/php56 \</span><br><span class="line">--<span class="built_in">enable</span>-fpm</span><br><span class="line"></span><br><span class="line">make -j 4 &amp;&amp; make install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 生成php和php-fpm配置文件</span><br><span class="line">cp /usr/<span class="built_in">local</span>/php-5.6.13/php.ini-production /usr/<span class="built_in">local</span>/php/php.ini</span><br><span class="line">cp /usr/<span class="built_in">local</span>/php/etc/php-fpm.conf&#123;.default,&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 添加nginx服务的运行用户</span><br><span class="line">useradd -M -s /sbin/nologins nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> nginx修改运行用户配置</span><br><span class="line">vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br><span class="line">	<span class="comment">#user  nobody;</span></span><br><span class="line">	user nginx nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> nginx修改为支持php配置</span><br><span class="line">vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br><span class="line">	location / &#123;</span><br><span class="line">		root   html;</span><br><span class="line">        index  index.php index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  nginx找到下面这些去掉注释并修改fastcgi_param为web文件的目录</span><br><span class="line">vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           html;</span><br><span class="line">    fastcgi_pass   127.0.0.1:9000;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line">    <span class="comment">#fastcgi_param SCRIPT_FILENAME /scripts$fastcgi_script_name;</span></span><br><span class="line">    fastcgi_param  SCRIPT_FILENAME /usr/<span class="built_in">local</span>/nginx/html<span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">    include        fastcgi_params;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 修改php-fpm的运行用户,nginx为运行nginx服务创建的用户</span><br><span class="line">vim /usr/<span class="built_in">local</span>/php/etc/php-fpm.conf</span><br><span class="line">	user = nginx</span><br><span class="line">	group = nginx</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 添加开机自启</span><br><span class="line"><span class="built_in">echo</span> <span class="string">'/usr/local/php/bin/php-fpm'</span> &gt;&gt; /etc/rc.d/rc.local</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 启动php-fpm</span><br><span class="line">cp /usr/<span class="built_in">local</span>/php-5.6.13/sapi/fpm/php-fpm /usr/<span class="built_in">local</span>/php/bin</span><br><span class="line">/usr/<span class="built_in">local</span>/php/bin/php-fpm</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 验证fpm运行端口</span><br><span class="line">ss -tnl | grep 9000</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="预编译参数"><a href="#预编译参数" class="headerlink" title="预编译参数"></a>预编译参数</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">--prefix=$                    安装位置</span><br><span class="line">--with-config-<span class="keyword">file</span>-path=$     php配置文件位置</span><br><span class="line">--with-mysql=$                支持mysql,指定mysql安装目录,如果值是mysqlnd或空值,将使用mysql原始驱动</span><br><span class="line">--with-mysqli=$               支持mysqli,mysql增强扩展,指定mysql_config位置,如值是mysqlnd或空值,将使用mysql原始驱动</span><br><span class="line">--with-<span class="built_in">iconv</span>-dir=$         	 支持字符集间的转换</span><br><span class="line">--with-freetype-dir=$         支持freetype字体库的支持</span><br><span class="line">--with-jpeg-dir=$             支持jpeg图片</span><br><span class="line">--with-png-dir=$              支持png图片</span><br><span class="line">--with-zlib=$                 支持gzip压缩输出</span><br><span class="line">--with-libxml-dir=$           支持解析xml     </span><br><span class="line">--with-mcrypt=$               支持mcrypt算法扩展</span><br><span class="line">--with-curl                   支持curl工具</span><br><span class="line">--with-gettext=$              支持gettexe            </span><br><span class="line">--with-gd=$                   支持php处理图形的扩展库</span><br><span class="line">--with-openssl                支持ssl</span><br><span class="line">--with-mhash                  支持mhash算法</span><br><span class="line">--with-xmlrpc                 支持xml-rpc的<span class="keyword">c</span>语言</span><br><span class="line">--disable-rpath               关闭额外的运行库文件</span><br><span class="line">--enable-xml                  启用xml文档</span><br><span class="line">--enable-bcmath               启用图片大小调整</span><br><span class="line">--enable-shmop                启用共享内存操作函数</span><br><span class="line">--enable-sysvsem              启用处理IPC函数</span><br><span class="line">--enable-inline-optimization  启用优化线程</span><br><span class="line">--enable-mbregex              启用多字节正则表达式</span><br><span class="line">--enable-fpm                  启用cgi方式安装的启动程序(php-fpm服务)</span><br><span class="line">--enable-mbstring             启用多字节,字符串的支持</span><br><span class="line">--enable-mysqlnd              启用Mysql Native驱动 </span><br><span class="line">--enable-gd-native-ttf        启用TrueType字符串函数库</span><br><span class="line">--enable-pcntl                启用freeTDS需要的,pcntl扩展可以支持php的多线程操作</span><br><span class="line">--enable-sockets              启用sockets</span><br><span class="line">--enable-zip                  启用zip压缩</span><br><span class="line">--enable-soap                 启用soap协议</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="php单模块安装"><a href="#php单模块安装" class="headerlink" title="php单模块安装"></a>php单模块安装</h1><p>进入到php源码模块目录(如bcmath)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/php-5.6.40/ext/bcmath</span><br></pre></td></tr></table></figure>
+
+<p>在当前目录下执行安装好的php的phpize命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/php/bin/phpize</span><br></pre></td></tr></table></figure>
+
+<p>生成编译文件,需要指定安装好php的php-config的位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --with-php-config=/usr/<span class="built_in">local</span>/php/bin/php-config</span><br></pre></td></tr></table></figure>
+
+<p>编译安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j 4 &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<p>配置文件里启动模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/php/php.ini</span><br><span class="line">; For example, on Windows:</span><br><span class="line">;</span><br><span class="line">;   extension=msql.dll</span><br><span class="line">;</span><br><span class="line">; ... or under UNIX:</span><br><span class="line">;</span><br><span class="line">;   extension=msql.so</span><br><span class="line">extension=bcmath.so</span><br></pre></td></tr></table></figure>
+
+<p>验证模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/php/bin/php -m | grep bcmath</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/05/10/2020-05-10-mysql/" class="prev">上一篇：mysql</a>
+    
+    
+    <a href="/2020/04/27/2020-04-27-apache/" class="next">下一篇：apache</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

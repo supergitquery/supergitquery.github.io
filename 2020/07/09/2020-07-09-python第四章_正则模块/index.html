@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_正则模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_正则模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-08T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-09
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_正则模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#re"><span class="toc-number">1.</span> <span class="toc-text">re</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#match"><span class="toc-number">1.1.</span> <span class="toc-text">match</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#search"><span class="toc-number">1.2.</span> <span class="toc-text">search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#findall"><span class="toc-number">1.3.</span> <span class="toc-text">findall</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">1.4.</span> <span class="toc-text">split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sub"><span class="toc-number">1.5.</span> <span class="toc-text">sub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fullmatch"><span class="toc-number">1.6.</span> <span class="toc-text">fullmatch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#compile"><span class="toc-number">1.7.</span> <span class="toc-text">compile</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="re"><a href="#re" class="headerlink" title="re"></a>re</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">常用的表达式规则:</span><br><span class="line"></span><br><span class="line">    .     默认匹配除\n之外的任意一个字符.</span><br><span class="line">    ^     匹配字符开头.</span><br><span class="line">    $     匹配字符结尾.</span><br><span class="line">    \*    匹配\*号前的字符0次或多次.</span><br><span class="line">    +     匹配+号前的字符1次或多次.</span><br><span class="line">    ?     匹配前一个字符1次或0次.</span><br><span class="line">    &#123;m&#125;   匹配前一个字符m次.</span><br><span class="line">    &#123;n,m&#125; 匹配前一个字符n到m次.</span><br><span class="line">    |     匹配|左或右的字符.</span><br><span class="line">    (...) 分组匹配.</span><br><span class="line">    [...] 匹配中括号里面的任意字符.</span><br><span class="line"></span><br><span class="line">    \A    只从字符开头匹配.</span><br><span class="line">    \Z    匹配字符结尾,同$.</span><br><span class="line">    \d    匹配数字0-9.</span><br><span class="line">    \D    匹配非数字.</span><br><span class="line">    \w    匹配[A-Za-z0-9].</span><br><span class="line">    \W    匹配非[A-Za-z0-9].</span><br><span class="line">    \s    匹配空白字符 \t \n \r.</span><br><span class="line">    \S    匹配非空白字符.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    (?:pattern)  非捕获分组,不会将分组的值保存下来.</span><br><span class="line"></span><br><span class="line">    (?&#x3D;pattern)  正向肯定预查,捕获以pattern结尾的内容,这是一个非获取匹配.</span><br><span class="line">    (?&lt;&#x3D;pattern) 反向肯定预查,捕获以pattern开头的内容,需要确认pattern的长度,这是一个非获取匹配.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    (?!pattern)  正向否定预查,捕获不以pattern结尾的内容,非获取匹配.</span><br><span class="line">    (?&lt;!pattern) 反向否定预查,捕获不以pattern开头的内容,非获取匹配.</span><br><span class="line"></span><br><span class="line">    (?P&lt;name&gt;pattern)) 分组匹配,将匹配到的值赋一个名字.</span><br><span class="line">    (?P&#x3D;name)          引用已经赋值的分组匹配.</span><br><span class="line">    (?(id&#x2F;name)yes|no) 如果(id&#x2F;name)的组匹配,则匹配yes模式,否则匹配(可选)no模式.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    贪婪匹配</span><br><span class="line">        在量词范围允许的情况下,尽量多的匹配内容</span><br><span class="line">        .*x  表示匹配任意字符 任意多次数 遇到最后一个x才停下来</span><br><span class="line">    非贪婪(惰性)匹配</span><br><span class="line">        .*?x  表示匹配任意字符 任意多次数 但是一旦遇到x就停下来</span><br><span class="line"></span><br><span class="line">Flags标志符:</span><br><span class="line">    re.I(re.IGNORECASE):忽略大小写</span><br><span class="line">    re.M(MULTILINE):以多行模式匹配,改变&#39;^&#39;和&#39;$&#39;的行为</span><br><span class="line">    re.S(DOTALL):改变&#39;.&#39;的行为,&#39;\n&#39;也能匹配</span><br><span class="line">    re.X(VERBOSE):可以给表达式写注释</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">match(pattern, string, flags&#x3D;0)</span><br><span class="line">    Try to apply the pattern at the start of the string,</span><br><span class="line">    returning a Match object, or None if no match was found.</span><br><span class="line">    尝试在字符串的开头应用模式,返回Match对象,如果找不到匹配项,则返回None.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.match(<span class="string">'i'</span>, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">None</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">search(pattern, string, flags&#x3D;0)</span><br><span class="line">    Scan through string looking for a match to the pattern, returning</span><br><span class="line">    a Match object, or None if no match was found.</span><br><span class="line">    扫描字符串以查找与模式的匹配项,并返回Match对象；如果未找到匹配项,则返回None.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.search(<span class="string">'i'</span>, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span&#x3D;(1, 2), match&#x3D;&#39;i&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="findall"><a href="#findall" class="headerlink" title="findall"></a>findall</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">findall(pattern, string, flags&#x3D;0)</span><br><span class="line">    Return a list of all non-overlapping matches in the string.</span><br><span class="line">    返回字符串中所有不重叠匹配项的列表.</span><br><span class="line"></span><br><span class="line">    If one or more capturing groups are present in the pattern, return</span><br><span class="line">    a list of groups; this will be a list of tuples if the pattern</span><br><span class="line">    has more than one group.</span><br><span class="line">    如果模式中存在一个或多个捕获组,则返回一个组列表；否则,返回一个列表. 如果模式包含多个组,则这将是一个元组列表.</span><br><span class="line"></span><br><span class="line">    Empty matches are included in the result.</span><br><span class="line">    空匹配项包含在结果中.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.findall(<span class="string">'i\w'</span>, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;ie&#39;, &#39;io&#39;, &#39;ia&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">split(pattern, string, maxsplit&#x3D;0, flags&#x3D;0)</span><br><span class="line">    Split the source string by the occurrences of the pattern,</span><br><span class="line">    returning a list containing the resulting substrings.</span><br><span class="line">    通过模式的出现来拆分源字符串,返回包含结果子字符串的列表.</span><br><span class="line">    If capturing parentheses are used in pattern, then the text of all</span><br><span class="line">    groups in the pattern are also returned as part of the resulting</span><br><span class="line">    list.  If maxsplit is nonzero, at most maxsplit splits occur,</span><br><span class="line">    and the remainder of the string is returned as the final element</span><br><span class="line">    of the list.</span><br><span class="line">    如果在模式中使用了捕获括号,则模式中所有组的文本也将作为结果列表的一部分返回. 如果maxsplit不为零,则最多会发生maxsplit分割,并将字符串的其余部分作为列表的最后一个元素返回.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.split(<span class="string">'\d+'</span>, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#39;AiefjVioeiabc&#39;, &#39;Kshj&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="sub"><a href="#sub" class="headerlink" title="sub"></a>sub</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sub(pattern, repl, string, count&#x3D;0, flags&#x3D;0)</span><br><span class="line">    Return the string obtained by replacing the leftmost</span><br><span class="line">    non-overlapping occurrences of the pattern in string by the</span><br><span class="line">    replacement repl.  repl can be either a string or a callable;</span><br><span class="line">    if a string, backslash escapes in it are processed.  If it is</span><br><span class="line">    a callable, it&#39;s passed the Match object and must return</span><br><span class="line">    a replacement string to be used.</span><br><span class="line">    返回通过用替换repl替换字符串中模式中最左边的非重叠出现而获得的字符串. repl可以是字符串,也可以是可调用的；如果为字符串,则处理其中的反斜杠转义. 如果它是可调用的,则将其传递给Match对象,并且必须返回要使用的替换字符串.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.sub(<span class="string">'\d'</span>, <span class="string">'--'</span>,test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AiefjVioeiabc----Kshj</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="fullmatch"><a href="#fullmatch" class="headerlink" title="fullmatch"></a>fullmatch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fullmatch(pattern, string, flags&#x3D;0)</span><br><span class="line">    Try to apply the pattern to all of the string, returning</span><br><span class="line">    a Match object, or None if no match was found.</span><br><span class="line">    尝试将模式应用于所有字符串.返回Match对象.如果找不到匹配项.则返回None.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">print(re.fullmatch(<span class="string">'\w+\d+\w+'</span>, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span&#x3D;(0, 19), match&#x3D;&#39;AiefjVioeiabc19Kshj&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="compile"><a href="#compile" class="headerlink" title="compile"></a>compile</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">compile(pattern, flags&#x3D;0)</span><br><span class="line">    Compile a regular expression pattern, returning a Pattern object.</span><br><span class="line">    编译一个正则表达式模式,返回一个Pattern对象.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">test_str = <span class="string">'AiefjVioeiabc19Kshj'</span></span><br><span class="line">pattern = re.compile(<span class="string">'(\d+)'</span>)</span><br><span class="line">print(re.search(pattern, test_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;re.Match object; span&#x3D;(13, 15), match&#x3D;&#39;19&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    
+    <a href="/2020/07/08/2020-07-08-python第四章_文件模块/" class="next">下一篇：python第四章_文件模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_时间模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_时间模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-03T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-04
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_时间模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#时间模块"><span class="toc-number">1.</span> <span class="toc-text">时间模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#time"><span class="toc-number">1.1.</span> <span class="toc-text">time</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#time-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localtime"><span class="toc-number">1.1.2.</span> <span class="toc-text">localtime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gmtime"><span class="toc-number">1.1.3.</span> <span class="toc-text">gmtime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mktime"><span class="toc-number">1.1.4.</span> <span class="toc-text">mktime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sleep"><span class="toc-number">1.1.5.</span> <span class="toc-text">sleep</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asctime"><span class="toc-number">1.1.6.</span> <span class="toc-text">asctime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ctime"><span class="toc-number">1.1.7.</span> <span class="toc-text">ctime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strftime"><span class="toc-number">1.1.8.</span> <span class="toc-text">strftime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strptime"><span class="toc-number">1.1.9.</span> <span class="toc-text">strptime</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#datetime"><span class="toc-number">1.2.</span> <span class="toc-text">datetime</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">1.2.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#datetime-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">datetime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timedelta"><span class="toc-number">1.2.3.</span> <span class="toc-text">timedelta</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="时间模块"><a href="#时间模块" class="headerlink" title="时间模块"></a>时间模块</h1><p>程序对时间的处理可以归为以下3种:</p>
+<ol>
+<li>时间的显示,在屏幕显示和记录日志等</li>
+<li>时间的转换,比如把字符串格式的日期转成Python中的日期类型</li>
+<li>时间的运算,计算两个日期间的查值等</li>
+</ol>
+<hr>
+<h2 id="time"><a href="#time" class="headerlink" title="time"></a>time</h2><hr>
+<h3 id="time-1"><a href="#time-1" class="headerlink" title="time"></a>time</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">time(...)</span><br><span class="line">    time() -&gt; floating point number</span><br><span class="line"></span><br><span class="line">    Return the current time in seconds since the Epoch.</span><br><span class="line">    Fractions of a second may be present if the system clock provides them.</span><br><span class="line">    以秒为单位返回当前时间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">print(time.time())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1593697181.0212908</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="localtime"><a href="#localtime" class="headerlink" title="localtime"></a>localtime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">localtime(...)</span><br><span class="line">    localtime([seconds]) -&gt; (tm_year,tm_mon,tm_mday,tm_hour,tm_min,</span><br><span class="line">                              tm_sec,tm_wday,tm_yday,tm_isdst)</span><br><span class="line"></span><br><span class="line">    Convert seconds since the Epoch to a time tuple expressing local time.</span><br><span class="line">    When &#39;seconds&#39; is not passed in, convert the current time instead.</span><br><span class="line">    将自时间戳开始以来的秒数转换为表示本地时间的时间元组.如果未传递&quot;秒数&quot;,则改为转换当前时间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.localtime())</span><br><span class="line">print(time.localtime(<span class="number">100000</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;7, tm_mday&#x3D;2, tm_hour&#x3D;21, tm_min&#x3D;30, tm_sec&#x3D;48, tm_wday&#x3D;3, tm_yday&#x3D;184, tm_isdst&#x3D;0)</span><br><span class="line">time.struct_time(tm_year&#x3D;1970, tm_mon&#x3D;1, tm_mday&#x3D;2, tm_hour&#x3D;11, tm_min&#x3D;46, tm_sec&#x3D;40, tm_wday&#x3D;4, tm_yday&#x3D;2, tm_isdst&#x3D;0)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gmtime"><a href="#gmtime" class="headerlink" title="gmtime"></a>gmtime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gmtime(...)</span><br><span class="line">    gmtime([seconds]) -&gt; (tm_year, tm_mon, tm_mday, tm_hour, tm_min,</span><br><span class="line">                           tm_sec, tm_wday, tm_yday, tm_isdst)</span><br><span class="line"></span><br><span class="line">    Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.</span><br><span class="line">    GMT).  When &#39;seconds&#39; is not passed in, convert the current time instead.</span><br><span class="line">    将时间戳以来的秒数转换为表示UTC（又称为GMT）的时间元组. 如果未传递&quot;秒&quot;,请改为转换当前时间.</span><br><span class="line"></span><br><span class="line">    If the platform supports the tm_gmtoff and tm_zone, they are available as</span><br><span class="line">    attributes only.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">print(time.localtime())</span><br><span class="line">print(time.gmtime())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;7, tm_mday&#x3D;2, tm_hour&#x3D;21, tm_min&#x3D;35, tm_sec&#x3D;10, tm_wday&#x3D;3, tm_yday&#x3D;184, tm_isdst&#x3D;0)</span><br><span class="line">time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;7, tm_mday&#x3D;2, tm_hour&#x3D;13, tm_min&#x3D;35, tm_sec&#x3D;10, tm_wday&#x3D;3, tm_yday&#x3D;184, tm_isdst&#x3D;0)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="mktime"><a href="#mktime" class="headerlink" title="mktime"></a>mktime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mktime(...)</span><br><span class="line">    mktime(tuple) -&gt; floating point number</span><br><span class="line"></span><br><span class="line">    Convert a time tuple in local time to seconds since the Epoch.</span><br><span class="line">    将当地时间的时间元组转换为自时间戳以来的秒数.</span><br><span class="line"></span><br><span class="line">    Note that mktime(gmtime(0)) will not generally return zero for most</span><br><span class="line">    time zones; instead the returned value will either be equal to that</span><br><span class="line">    of the timezone or altzone attributes on the time module.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = time.localtime()</span><br><span class="line"></span><br><span class="line">print(time.mktime(t1))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1593699822.0</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="sleep"><a href="#sleep" class="headerlink" title="sleep"></a>sleep</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sleep(...)</span><br><span class="line">    sleep(seconds)</span><br><span class="line"></span><br><span class="line">    Delay execution for a given number of seconds.  The argument may be</span><br><span class="line">    a floating point number for subsecond precision.</span><br><span class="line">    将执行延迟指定的秒数. 自变量可以是浮点数,用于亚秒级精度.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.time())</span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">print(time.time())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1593700024.4860823</span><br><span class="line">1593700029.4869728</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="asctime"><a href="#asctime" class="headerlink" title="asctime"></a>asctime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">asctime(...)</span><br><span class="line">    asctime([tuple]) -&gt; string</span><br><span class="line"></span><br><span class="line">    Convert a time tuple to a string, e.g. &#39;Sat Jun 06 16:26:11 1998&#39;.</span><br><span class="line">    When the time tuple is not present, current time as returned by localtime()</span><br><span class="line">    is used.</span><br><span class="line">    将时间元组转换为字符串,例如 &#39;Sat Jun 06 16:26:11 1998&#39;.</span><br><span class="line">    如果不存在时间元组,则使用localtime（）返回的当前时间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">print(time.asctime())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thu Jul  2 22:29:30 2020</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="ctime"><a href="#ctime" class="headerlink" title="ctime"></a>ctime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ctime(...)</span><br><span class="line">    ctime(seconds) -&gt; string</span><br><span class="line"></span><br><span class="line">    Convert a time in seconds since the Epoch to a string in local time.</span><br><span class="line">    This is equivalent to asctime(localtime(seconds)). When the time tuple is</span><br><span class="line">    not present, current time as returned by localtime() is used.</span><br><span class="line">    将时间戳(秒)转换为本地时间的字符串.这等效于asctime（localtime（seconds））.</span><br><span class="line">    如果不存在时间元组,则使用localtime（）返回的当前时间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">print(time.ctime(<span class="number">10000000</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mon Apr 27 01:46:40 1970</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="strftime"><a href="#strftime" class="headerlink" title="strftime"></a>strftime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">strftime(...)</span><br><span class="line">    strftime(format[, tuple]) -&gt; string</span><br><span class="line"></span><br><span class="line">    Convert a time tuple to a string according to a format specification.</span><br><span class="line">    See the library reference manual for formatting codes. When the time tuple</span><br><span class="line">    is not present, current time as returned by localtime() is used.</span><br><span class="line">    根据格式规范将时间元组转换为字符串.</span><br><span class="line">    有关格式代码,请参见库参考手册. 如果不存在时间元组,则使用localtime（）返回的当前时间.</span><br><span class="line"></span><br><span class="line">    Commonly used format codes:</span><br><span class="line"></span><br><span class="line">    %Y  Year with century as a decimal number.</span><br><span class="line">    %y  Year without century as a decimal number [00,99].</span><br><span class="line">    %m  Month as a decimal number [01,12].</span><br><span class="line">    %d  Day of the month as a decimal number [01,31].</span><br><span class="line">    %H  Hour (24-hour clock) as a decimal number [00,23].</span><br><span class="line">    %M  Minute as a decimal number [00,59].</span><br><span class="line">    %S  Second as a decimal number [00,61].</span><br><span class="line">    %z  Time zone offset from UTC.</span><br><span class="line">    %Z  Time zone name (no characters if no time zone exists).</span><br><span class="line">    %a  Locale&#39;s abbreviated weekday name.</span><br><span class="line">    %A  Locale&#39;s full weekday name.</span><br><span class="line">    %b  Locale&#39;s abbreviated month name.</span><br><span class="line">    %B  Locale&#39;s full month name.</span><br><span class="line">    %c  Locale&#39;s appropriate date and time representation.</span><br><span class="line">    %I  Hour (12-hour clock) as a decimal number [01,12].</span><br><span class="line">    %p  Locale&#39;s equivalent of either AM or PM.</span><br><span class="line">    %U  Week number of the year (Sunday as the first day of the week) as a decimal number [00,53]. </span><br><span class="line">        All days in a new year preceding the first Sunday are considered to be in week 0.</span><br><span class="line">    %w  Weekday as a decimal number [0(Sunday),6].</span><br><span class="line">    %x  Locale’s appropriate date representation.</span><br><span class="line">    %X  Locale’s appropriate time representation.</span><br><span class="line"></span><br><span class="line">    Other codes may be available on your platform.  See documentation for</span><br><span class="line">    the C library strftime function.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time_str = time.strftime(<span class="string">'%Y-%m-%d'</span>, time.localtime(<span class="number">10000000000</span>))</span><br><span class="line">print(time_str)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2286-11-21</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="strptime"><a href="#strptime" class="headerlink" title="strptime"></a>strptime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">strptime(...)</span><br><span class="line">    strptime(string, format) -&gt; struct_time</span><br><span class="line"></span><br><span class="line">    Parse a string to a time tuple according to a format specification.</span><br><span class="line">    See the library reference manual for formatting codes (same as</span><br><span class="line">    strftime()).</span><br><span class="line">    根据格式规范将字符串解析为时间元组.</span><br><span class="line">    请参阅库参考手册以获取格式代码（与strftime（）相同）.</span><br><span class="line"></span><br><span class="line">    Commonly used format codes:</span><br><span class="line"></span><br><span class="line">    %Y  Year with century as a decimal number.</span><br><span class="line">    %m  Month as a decimal number [01,12].</span><br><span class="line">    %d  Day of the month as a decimal number [01,31].</span><br><span class="line">    %H  Hour (24-hour clock) as a decimal number [00,23].</span><br><span class="line">    %M  Minute as a decimal number [00,59].</span><br><span class="line">    %S  Second as a decimal number [00,61].</span><br><span class="line">    %z  Time zone offset from UTC.</span><br><span class="line">    %a  Locale&#39;s abbreviated weekday name.</span><br><span class="line">    %A  Locale&#39;s full weekday name.</span><br><span class="line">    %b  Locale&#39;s abbreviated month name.</span><br><span class="line">    %B  Locale&#39;s full month name.</span><br><span class="line">    %c  Locale&#39;s appropriate date and time representation.</span><br><span class="line">    %I  Hour (12-hour clock) as a decimal number [01,12].</span><br><span class="line">    %p  Locale&#39;s equivalent of either AM or PM.</span><br><span class="line"></span><br><span class="line">    Other codes may be available on your platform.  See documentation for</span><br><span class="line">    the C library strftime function.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t1 = <span class="string">"2020-06-30 12:12:12"</span></span><br><span class="line">print(time.strptime(t1, <span class="string">'%Y-%m-%d %H:%M:%S'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.struct_time(tm_year&#x3D;2020, tm_mon&#x3D;6, tm_mday&#x3D;30, tm_hour&#x3D;12, tm_min&#x3D;12, tm_sec&#x3D;12, tm_wday&#x3D;1, tm_yday&#x3D;182, tm_isdst&#x3D;-1)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h2><hr>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date 获取日期的类,常用的属性有year,month,day</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">print(datetime.date.today())</span><br><span class="line">print(datetime.date.today().replace(day=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2020-07-02</span><br><span class="line">2020-07-01</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="datetime-1"><a href="#datetime-1" class="headerlink" title="datetime"></a>datetime</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime 类,用于表示日期.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line">print(datetime.datetime.now())</span><br><span class="line">print(datetime.datetime.now().replace(day=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2020-07-02 23:30:38.385609</span><br><span class="line">2020-07-01 23:30:38.385609</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="timedelta"><a href="#timedelta" class="headerlink" title="timedelta"></a>timedelta</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedelta 类,用于两个日期时间值之间的差异。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">now = datetime.datetime.now()</span><br><span class="line">print(<span class="string">'now = '</span>, now)</span><br><span class="line">print(now - datetime.timedelta(days=<span class="number">3</span>, minutes=<span class="number">-5</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">now &#x3D;  2020-07-02 23:26:10.454865</span><br><span class="line">2020-06-29 23:31:10.454865</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/05/2020-07-05-python第四章_随机模块/" class="prev">上一篇：python第四章_随机模块</a>
+    
+    
+    <a href="/2020/07/03/2020-07-03-python第四章_系统调用模块/" class="next">下一篇：python第四章_系统调用模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

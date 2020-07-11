@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第一章_字符串 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第一章_字符串"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-15T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-16
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第一章_字符串</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#拼接"><span class="toc-number">2.</span> <span class="toc-text">拼接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#段落与多行"><span class="toc-number">3.</span> <span class="toc-text">段落与多行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用方法"><span class="toc-number">4.</span> <span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#capitalize"><span class="toc-number">4.1.</span> <span class="toc-text">capitalize</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upper"><span class="toc-number">4.2.</span> <span class="toc-text">upper </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lower"><span class="toc-number">4.3.</span> <span class="toc-text">lower</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swapcase"><span class="toc-number">4.4.</span> <span class="toc-text">swapcase</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#center"><span class="toc-number">4.5.</span> <span class="toc-text">center</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ljust"><span class="toc-number">4.6.</span> <span class="toc-text">ljust</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rjust"><span class="toc-number">4.7.</span> <span class="toc-text">rjust</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#count"><span class="toc-number">4.8.</span> <span class="toc-text">count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#index"><span class="toc-number">4.9.</span> <span class="toc-text">index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rindex"><span class="toc-number">4.10.</span> <span class="toc-text">rindex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-number">4.11.</span> <span class="toc-text">find</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rfind"><span class="toc-number">4.12.</span> <span class="toc-text">rfind</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#startswith"><span class="toc-number">4.13.</span> <span class="toc-text">startswith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#endswith"><span class="toc-number">4.14.</span> <span class="toc-text">endswith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#format"><span class="toc-number">4.15.</span> <span class="toc-text">format</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isdigit"><span class="toc-number">4.16.</span> <span class="toc-text">isdigit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#islower"><span class="toc-number">4.17.</span> <span class="toc-text">islower</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isupper"><span class="toc-number">4.18.</span> <span class="toc-text">isupper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#isspace"><span class="toc-number">4.19.</span> <span class="toc-text">isspace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#join"><span class="toc-number">4.20.</span> <span class="toc-text">join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split"><span class="toc-number">4.21.</span> <span class="toc-text">split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rsplit"><span class="toc-number">4.22.</span> <span class="toc-text">rsplit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#strip"><span class="toc-number">4.23.</span> <span class="toc-text">strip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lstrip"><span class="toc-number">4.24.</span> <span class="toc-text">lstrip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rstrip"><span class="toc-number">4.25.</span> <span class="toc-text">rstrip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">4.26.</span> <span class="toc-text">replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zfill"><span class="toc-number">4.27.</span> <span class="toc-text">zfill</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#格式化打印"><span class="toc-number">5.</span> <span class="toc-text">格式化打印</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>引号括起来的就是字符串,引号可以是单引号,多引号,三引号</p>
+<hr>
+<h1 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h1><p>字符串与字符串之间可以进行拼接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remind_str = <span class="string">'字符串可以拼接'</span> + <span class="string">'重要的事情说三遍!'</span></span><br><span class="line">print(remind_str * <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字符串可以拼接,重要的事情说三遍!</span><br><span class="line">字符串可以拼接,重要的事情说三遍!</span><br><span class="line">字符串可以拼接,重要的事情说三遍!</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="段落与多行"><a href="#段落与多行" class="headerlink" title="段落与多行"></a>段落与多行</h1><p>用三引号括起来的字符串可以写多行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">remind_str = (<span class="string">"""</span></span><br><span class="line"><span class="string">字符串可以拼接,重要的事情说三遍!</span></span><br><span class="line"><span class="string">字符串可以拼接,重要的事情说三遍!</span></span><br><span class="line"><span class="string">字符串可以拼接,重要的事情说三遍!</span></span><br><span class="line"><span class="string">"""</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><hr>
+<h2 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a>capitalize</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">capitalize(self, &#x2F;)</span><br><span class="line">    返回字符串的大写版本。</span><br><span class="line"></span><br><span class="line">    更具体地说，使第一个字符的大小写为大写，其余字符的大小写为小写。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"mY NAME IS LIHUA"</span></span><br><span class="line">print(title_str.capitalize())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">My name is lihua</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="upper"><a href="#upper" class="headerlink" title="upper "></a>upper <a name='upper'></a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">upper(self, &#x2F;)</span><br><span class="line">    返回转换为大写的字符串的副本。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"my name is lihua"</span></span><br><span class="line">print(title_str.upper())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MY NAME IS LIHUA</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="lower"><a href="#lower" class="headerlink" title="lower"></a>lower</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lower(self, &#x2F;)</span><br><span class="line">    返回转换为小写的字符串的副本。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"MY NAME IS LIHUA"</span></span><br><span class="line">print(title_str.lower())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my name is lihua</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="swapcase"><a href="#swapcase" class="headerlink" title="swapcase"></a>swapcase</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">swapcase(self, &#x2F;)</span><br><span class="line">    将大写字符转换为小写，将小写字符转换为大写。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"mY nAME iS iIHUA"</span></span><br><span class="line">print(title_str.swapcase())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">My Name Is Lihua</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="center"><a href="#center" class="headerlink" title="center"></a>center</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">center(self, width, fillchar&#x3D;&#39; &#39;, &#x2F;)</span><br><span class="line">    返回一个长宽居中字符串。</span><br><span class="line"></span><br><span class="line">    填充使用指定的填充字符完成（默认为空格）。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.center(<span class="number">20</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.center(<span class="number">20</span>, <span class="string">'-'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  Today is monday</span><br><span class="line"></span><br><span class="line">--Today is monday---</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="ljust"><a href="#ljust" class="headerlink" title="ljust"></a>ljust</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ljust(self, width, fillchar&#x3D;&#39; &#39;, &#x2F;)</span><br><span class="line">    返回长度宽度为左对齐的字符串。</span><br><span class="line"></span><br><span class="line">    填充使用指定的填充字符完成（默认为空格）。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.ljust(<span class="number">20</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.ljust(<span class="number">20</span>, <span class="string">'-'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Today is monday</span><br><span class="line"></span><br><span class="line">Today is monday-----</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rjust"><a href="#rjust" class="headerlink" title="rjust"></a>rjust</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rjust(self, width, fillchar&#x3D;&#39; &#39;, &#x2F;)</span><br><span class="line">    返回长度宽度为右对齐的字符串。</span><br><span class="line"></span><br><span class="line">    填充使用指定的填充字符完成（默认为空格）。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.rjust(<span class="number">20</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.rjust(<span class="number">20</span>, <span class="string">'-'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">     Today is monday</span><br><span class="line"></span><br><span class="line">-----Today is monday</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">count(...)</span><br><span class="line">    S.count(sub[, start[, end]]) -&gt; int</span><br><span class="line"></span><br><span class="line">    返回字符串 S 中子字符串 sub 的不重叠出现次数[start：end].  可选参数start和end被解释为切片表示法。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"nononononon"</span></span><br><span class="line">print(title_str.count(<span class="string">'non'</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.count(<span class="string">'non'</span>, <span class="number">2</span>, ))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">index(...)</span><br><span class="line">    S.index(sub[, start[, end]]) -&gt; int</span><br><span class="line"></span><br><span class="line">    返回 S 中找到子字符 sub 的最低索引，需要确认 sub 包含在 S [start：end]中. 可选参数start和end被解释为切片表示法。</span><br><span class="line"></span><br><span class="line">    找不到子字符串时引发ValueError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.index(<span class="string">'o'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rindex"><a href="#rindex" class="headerlink" title="rindex"></a>rindex</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rindex(...)</span><br><span class="line">    S.rindex(sub[, start[, end]]) -&gt; int</span><br><span class="line"></span><br><span class="line">    返回 S 中找到子字符 sub 的最高索引，需要确认 sub 包含在 S [start：end]中. 可选参数start和end被解释为切片表示法。</span><br><span class="line"></span><br><span class="line">    找不到子字符串时引发ValueError。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.rindex(<span class="string">'o'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find(...)</span><br><span class="line">    S.find(sub[, start[, end]]) -&gt; int</span><br><span class="line"></span><br><span class="line">    返回 S 中找到子字符 sub 的最低索引，需要确认 sub 包含在 S [start：end]中. 可选参数start和end被解释为切片表示法。</span><br><span class="line"></span><br><span class="line">    失败时返回-1。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.find(<span class="string">'o'</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.find(<span class="string">'None'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line"></span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rfind"><a href="#rfind" class="headerlink" title="rfind"></a>rfind</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rfind(...)</span><br><span class="line">    S.rfind(sub[, start[, end]]) -&gt; int</span><br><span class="line"></span><br><span class="line">    返回 S 中找到子字符 sub 的最高索引，需要确认 sub 包含在 S [start：end]中. 可选参数start和end被解释为切片表示法。</span><br><span class="line"></span><br><span class="line">    失败时返回-1。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.rfind(<span class="string">'o'</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.rfind(<span class="string">'None'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line"></span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="startswith"><a href="#startswith" class="headerlink" title="startswith"></a>startswith</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">startswith(...)</span><br><span class="line">    S.startswith(prefix[, start[, end]]) -&gt; bool</span><br><span class="line"></span><br><span class="line">    如果S以指定的前缀开头，则返回True，否则返回False。</span><br><span class="line">    可选开始位置，测试从那个位置开始。可选结束位置，停止在该位置比较S。</span><br><span class="line">    前缀也可以是要尝试的字符串元组。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.startswith(<span class="string">'T'</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.startswith((<span class="string">'T'</span>, <span class="string">'A'</span>, <span class="string">'o'</span>)))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">True</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="endswith"><a href="#endswith" class="headerlink" title="endswith"></a>endswith</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">endswith(...)</span><br><span class="line">    S.endswith(suffix[, start[, end]]) -&gt; bool</span><br><span class="line"></span><br><span class="line">    如果S以指定的后缀结尾，则返回True，否则返回False。</span><br><span class="line">    可选开始位置，测试从那个位置开始。可选结束位置，停止在该位置比较S。</span><br><span class="line">    后缀也可以是要尝试的字符串元组。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.endswith(<span class="string">'y'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="format"><a href="#format" class="headerlink" title="format"></a>format</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">format(...)</span><br><span class="line">    S.format(*args, **kwargs) -&gt; str</span><br><span class="line"></span><br><span class="line">    使用args和kwargs的替换返回S的格式化版本。</span><br><span class="line">    替换大括号（&#39;&#123;&#39;and&#39;&#125;&#39;）标识。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"&#123;0&#125; &#123;his&#125; &#123;1&#125; to help me. No.&#123;2&#125;"</span></span><br><span class="line">print(title_str.format(<span class="string">"I"</span>, <span class="string">"someone"</span>, <span class="string">'25'</span>, his=<span class="string">'need'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I need someone to help me. No.25</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit"></a>isdigit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isdigit(self, &#x2F;)</span><br><span class="line">    如果字符串是数字字符串，则返回True；否则返回False。</span><br><span class="line"></span><br><span class="line">    如果字符串中的所有字符都是数字，并且字符串中至少有一个字符，则字符串是数字字符串。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num_str = <span class="string">'1510'</span></span><br><span class="line">print(num_str.isdigit())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="islower"><a href="#islower" class="headerlink" title="islower"></a>islower</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">islower(self, &#x2F;)</span><br><span class="line">    如果字符串是小写字符串，则返回True，否则返回False。</span><br><span class="line"></span><br><span class="line">    如果字符串中的所有大小写字符都是小写的，并且字符串中至少有一个大小写字符，则字符串为小写。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.islower())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">False</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="isupper"><a href="#isupper" class="headerlink" title="isupper"></a>isupper</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isupper(self, &#x2F;)</span><br><span class="line">    如果字符串是大写字符串，则返回True；否则返回False。</span><br><span class="line"></span><br><span class="line">    如果字符串中的所有大小写字符都是大写，并且字符串中至少有一个大小写字符，则字符串为大写。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.isupper())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">False</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="isspace"><a href="#isspace" class="headerlink" title="isspace"></a>isspace</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isspace(self, &#x2F;)</span><br><span class="line">    如果字符串是空白字符串，则返回True，否则返回False。</span><br><span class="line"></span><br><span class="line">    如果字符串中的所有字符都是空白，并且字符串中至少有一个字符，则字符串为空白。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.isspace())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">False</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">join(self, iterable, &#x2F;)</span><br><span class="line">    连接任意数量的字符串。</span><br><span class="line"></span><br><span class="line">    调用其方法的字符串插入到每个给定字符串之间。</span><br><span class="line">    结果将作为新字符串返回。</span><br><span class="line"></span><br><span class="line">    例子: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(<span class="string">" "</span>.join(title_str))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T o d a y   i s   m o n d a y</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="split"><a href="#split" class="headerlink" title="split"></a>split</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">split(self, &#x2F;, sep&#x3D;None, maxsplit&#x3D;-1)</span><br><span class="line">    返回字符串中的单词列表，使用sep作为分隔符字符串。</span><br><span class="line"></span><br><span class="line">    sep</span><br><span class="line">      用于拆分字符串。无（默认值）意味着根据任意空格拆分，并从结果中丢弃空字符串。</span><br><span class="line">    maxsplit</span><br><span class="line">      要执行的最大拆分数。</span><br><span class="line">      -1 （默认值）表示无限制。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.split(<span class="string">' '</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.split(<span class="string">' '</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&#39;Today&#39;, &#39;is&#39;, &#39;monday&#39;]</span><br><span class="line"></span><br><span class="line">[&#39;Today&#39;, &#39;is monday&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rsplit"><a href="#rsplit" class="headerlink" title="rsplit"></a>rsplit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rsplit(self, &#x2F;, sep&#x3D;None, maxsplit&#x3D;-1)</span><br><span class="line">    使用sep作为分隔符字符串，返回字符串中单词的列表。</span><br><span class="line"></span><br><span class="line">      sep</span><br><span class="line">        分隔字符串的定界符。无（默认值）表示根据任何空格进行分隔，并从结果中丢弃空字符串。</span><br><span class="line">      maxsplit</span><br><span class="line">        要执行的最大拆分数。</span><br><span class="line">        -1 （默认值）表示无限制。</span><br><span class="line"></span><br><span class="line">    分割从字符串的末尾开始一直到最前面。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.rsplit(<span class="string">' '</span>))</span><br><span class="line">print()</span><br><span class="line">print(title_str.rsplit(<span class="string">' '</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&#39;Today&#39;, &#39;is&#39;, &#39;monday&#39;]</span><br><span class="line"></span><br><span class="line">[&#39;Today is&#39;, &#39;monday&#39;]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="strip"><a href="#strip" class="headerlink" title="strip"></a>strip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">strip(self, chars&#x3D;None, &#x2F;)</span><br><span class="line">    返回带有前导和尾随空格删除的字符串的副本。</span><br><span class="line"></span><br><span class="line">    如果给定chars而不是None，则改为删除chars中的字符。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"\t    Today is monday     \t"</span></span><br><span class="line">print(title_str.strip())</span><br><span class="line">print()</span><br><span class="line">print(title_str.strip(<span class="string">' '</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Today is monday</span><br><span class="line"></span><br><span class="line">            Today is monday</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="lstrip"><a href="#lstrip" class="headerlink" title="lstrip"></a>lstrip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lstrip(self, chars&#x3D;None, &#x2F;)</span><br><span class="line">    返回删除前导空格的字符串副本。</span><br><span class="line"></span><br><span class="line">    如果给定chars而不是None，则改为删除chars中的字符。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"\t    Today is monday     \t"</span></span><br><span class="line">print(title_str.lstrip())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Today is monday</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="rstrip"><a href="#rstrip" class="headerlink" title="rstrip"></a>rstrip</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rstrip(self, chars&#x3D;None, &#x2F;)</span><br><span class="line">    返回删除了尾随空白的字符串副本。</span><br><span class="line"></span><br><span class="line">    如果给定chars而不是None，则改为删除chars中的字符。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"\t    Today is monday     \t"</span></span><br><span class="line">print(title_str.rstrip())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Today is monday</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">replace(self, old, new, count&#x3D;-1, &#x2F;)</span><br><span class="line">    返回一个副本，其中所有出现的子字符串old都替换为new。</span><br><span class="line"></span><br><span class="line">      count</span><br><span class="line">        要替换的最大次数。</span><br><span class="line">        -1 （默认值）表示替换所有匹配项。</span><br><span class="line"></span><br><span class="line">    如果给出了可选的参数count，则仅替换第一个出现的计数。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"Today is monday"</span></span><br><span class="line">print(title_str.replace(<span class="string">'monday'</span>, <span class="string">'friday'</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Today is friday</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="zfill"><a href="#zfill" class="headerlink" title="zfill"></a>zfill</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zfill(self, width, &#x2F;)</span><br><span class="line">    用左边的零填充数字字符串，以填充给定宽度的字段。</span><br><span class="line"></span><br><span class="line">    该字符串永远不会被截断。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title_str = <span class="string">"10101100101"</span></span><br><span class="line">print(title_str.zfill(<span class="number">16</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0000010101100101</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="格式化打印"><a href="#格式化打印" class="headerlink" title="格式化打印"></a>格式化打印</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">name = input(<span class="string">"输入你的名字:"</span>)</span><br><span class="line">age = input(<span class="string">"输入你的年龄/岁:"</span>)</span><br><span class="line">height = input(<span class="string">"输入你的身高/cm:"</span>)</span><br><span class="line"></span><br><span class="line">name = name <span class="keyword">if</span> name <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">age = int(age) <span class="keyword">if</span> age.isdigit() <span class="keyword">and</span> int(age) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">height = int(height) <span class="keyword">if</span> height.isdigit() <span class="keyword">and</span> int(height) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">mes = <span class="string">'''</span></span><br><span class="line"><span class="string">------------Information--------------</span></span><br><span class="line"><span class="string">Name   : %s</span></span><br><span class="line"><span class="string">Age    : %d</span></span><br><span class="line"><span class="string">Height : %d</span></span><br><span class="line"><span class="string">---------------End-------------------</span></span><br><span class="line"><span class="string">'''</span> % (name, age, height)</span><br><span class="line"></span><br><span class="line">print(mes)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输入你的名字:jack</span><br><span class="line">输入你的年龄&#x2F;岁:11</span><br><span class="line">输入你的身高&#x2F;cm:170</span><br><span class="line"></span><br><span class="line">------------Information--------------</span><br><span class="line">Name   : jack</span><br><span class="line">Age    : 11</span><br><span class="line">Height : 170</span><br><span class="line">---------------End-------------------</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/17/2020-06-17-python第一章_列表/" class="prev">上一篇：python第一章_列表</a>
+    
+    
+    <a href="/2020/06/15/2020-06-15-python第一章_变量与注释/" class="next">下一篇：python第一章_变量与注释</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

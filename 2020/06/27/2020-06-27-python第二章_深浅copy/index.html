@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第二章_深浅copy | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第二章_深浅copy"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-06-26T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-06-27
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第二章_深浅copy</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#可变与不可变数据类型"><span class="toc-number">1.</span> <span class="toc-text">可变与不可变数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浅copy"><span class="toc-number">2.</span> <span class="toc-text">浅copy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#深copy"><span class="toc-number">3.</span> <span class="toc-text">深copy</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="可变与不可变数据类型"><a href="#可变与不可变数据类型" class="headerlink" title="可变与不可变数据类型"></a>可变与不可变数据类型</h1><p>可变的数据类型有:列表,字典,集合<br>不可变的数据类型有:字符串,数字,元组</p>
+<p>当声明一种数据类型变量时,内存地址都是唯一的,可变是只数据类型里的元素是可变的,<br>可变数据类型就像是一个容器,这个容器地址和不可变数据类型一样是唯一的,但是容器<br>可以存其他的元素,这些元素也有自己的地址,但是这些元素的修改并不影响容器本身,<br>所以当多个变量引用同一个容器时,一个修改了里面的内容,其他变量也修改了.</p>
+<hr>
+<h1 id="浅copy"><a href="#浅copy" class="headerlink" title="浅copy"></a>浅copy</h1><p>当声明了一个可变数据类型时,想要拷贝一份做比较,如果数据少可以重新赋值声明,但是当数据<br>多的时候就需要copy了,copy也叫浅拷贝,浅拷贝就像是复制了一个容器,复制的容器与被复制的<br>容器内存地址不同修改互不影响.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 未使用浅拷贝</span><br><span class="line">a &#x3D; [1, 2]</span><br><span class="line">b &#x3D; a</span><br><span class="line">a[0] &#x3D; 10</span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"># 输出:</span><br><span class="line">[10, 2]</span><br><span class="line">[10, 2]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[10, 2]</span><br><span class="line">[1, 2]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="深copy"><a href="#深copy" class="headerlink" title="深copy"></a>深copy</h1><p>浅拷贝只是复制了最外面的容器,容器里面元素的内存地址是不变的,如果容器里面还有个小容器<br>[1, [2, 3]],也就是说当浅拷贝后,两个容器里面储存的都是相同的小容器内存地址,<br>当一个修改了小容器的内容另一个容器里小容器的内容也会改变,因为都是指向同一个内存地址.</p>
+<p>这个时候就需要深拷贝,也就是把容器里面的小容器也复制一份,保证不管是容器还是小容器都是独立的.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 使用浅拷贝</span><br><span class="line">a &#x3D; [1, [2, 3]]</span><br><span class="line">b &#x3D; a.copy()</span><br><span class="line">a[1][0] &#x3D; 20</span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"># 输出:</span><br><span class="line">[1, [20, 3]]</span><br><span class="line">[1, [20, 3]]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用浅拷贝</span></span><br><span class="line"><span class="keyword">from</span> copy <span class="keyword">import</span> deepcopy</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line">b = deepcopy(a)</span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, [20, 3]]</span><br><span class="line">[1, [2, 3]]</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/06/28/2020-06-28-python第三章_函数/" class="prev">上一篇：python第三章_函数</a>
+    
+    
+    <a href="/2020/06/26/2020-06-26-python第二章_bytes/" class="next">下一篇：python第二章_bytes</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>
