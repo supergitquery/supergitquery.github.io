@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第四章_正则模块 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第四章_正则模块"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-09T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-10
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第四章_正则模块</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#logging"><span class="toc-number">1.</span> <span class="toc-text">logging</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#日志等级"><span class="toc-number">1.1.</span> <span class="toc-text">日志等级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志输出到文件"><span class="toc-number">1.2.</span> <span class="toc-text">日志输出到文件</span></a></li></ol></li></ol>
+    </div>
+    
+    <h1 id="logging"><a href="#logging" class="headerlink" title="logging"></a>logging</h1><p>logging 是一个日志模块,支持格式化输出到屏幕和文件,能自定义日志格式,支持日志级别过滤等等功能.</p>
+<p>logging 依次从轻到重分为5个级别:  </p>
+<ol>
+<li>logging.DEBUG  </li>
+<li>logging.INFO    </li>
+<li>logging.WARNING  </li>
+<li>logging.ERROR  </li>
+<li>logging.CRIRICAL  </li>
+</ol>
+<h2 id="日志等级"><a href="#日志等级" class="headerlink" title="日志等级"></a>日志等级</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">debug(msg, *args, **kwargs)</span><br><span class="line">    Log a message with severity &#39;DEBUG&#39; on the root logger. If the logger has</span><br><span class="line">    no handlers, call basicConfig() to add a console handler with a pre-defined</span><br><span class="line">    format.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">info(msg, *args, **kwargs)</span><br><span class="line">    Log a message with severity &#39;INFO&#39; on the root logger. If the logger has</span><br><span class="line">    no handlers, call basicConfig() to add a console handler with a pre-defined</span><br><span class="line">    format.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">warning(msg, *args, **kwargs)</span><br><span class="line">    Log a message with severity &#39;WARNING&#39; on the root logger. If the logger has</span><br><span class="line">    no handlers, call basicConfig() to add a console handler with a pre-defined</span><br><span class="line">    format.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">error(msg, *args, **kwargs)</span><br><span class="line">    Log a message with severity &#39;ERROR&#39; on the root logger. If the logger has</span><br><span class="line">    no handlers, call basicConfig() to add a console handler with a pre-defined</span><br><span class="line">    format.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">critical(msg, *args, **kwargs)</span><br><span class="line">    Log a message with severity &#39;CRITICAL&#39; on the root logger. If the logger</span><br><span class="line">    has no handlers, call basicConfig() to add a console handler with a</span><br><span class="line">    pre-defined format.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.debug(<span class="string">'DEBUG message'</span>)</span><br><span class="line">logging.info(<span class="string">'INFO message'</span>)</span><br><span class="line">logging.warning(<span class="string">'WARNING message'</span>)</span><br><span class="line">logging.error(<span class="string">'ERROR message'</span>)</span><br><span class="line">logging.critical(<span class="string">'CRITICAL message'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 因为logging默认日志级别是warning,所以低于warning的日志不会输出.</span><br><span class="line">WARNING:root:WARNING message</span><br><span class="line">ERROR:root:ERROR message</span><br><span class="line">CRITICAL:root:CRITICAL message</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="日志输出到文件"><a href="#日志输出到文件" class="headerlink" title="日志输出到文件"></a>日志输出到文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">basicConfig(**kwargs)</span><br><span class="line">    Do basic configuration for the logging system.</span><br><span class="line">    对日志系统进行基本配置.</span><br><span class="line">    </span><br><span class="line">    This function does nothing if the root logger already has handlers</span><br><span class="line">    configured. It is a convenience method intended for use by simple scripts</span><br><span class="line">    to do one-shot configuration of the logging package.</span><br><span class="line">    </span><br><span class="line">    The default behaviour is to create a StreamHandler which writes to</span><br><span class="line">    sys.stderr, set a formatter using the BASIC_FORMAT format string, and</span><br><span class="line">    add the handler to the root logger.</span><br><span class="line">    </span><br><span class="line">    A number of optional keyword arguments may be specified, which can alter</span><br><span class="line">    the default behaviour.</span><br><span class="line">    可以指定许多可选的关键字参数,这可以更改默认行为.</span><br><span class="line">    </span><br><span class="line">    filename  Specifies that a FileHandler be created, using the specified</span><br><span class="line">              filename, rather than a StreamHandler.</span><br><span class="line">    filemode  Specifies the mode to open the file, if filename is specified</span><br><span class="line">              (if filemode is unspecified, it defaults to &#39;a&#39;).</span><br><span class="line">    format    Use the specified format string for the handler.</span><br><span class="line">    datefmt   Use the specified date&#x2F;time format.</span><br><span class="line">    style     If a format string is specified, use this to specify the</span><br><span class="line">              type of format string (possible values &#39;%&#39;, &#39;&#123;&#39;, &#39;$&#39;, for</span><br><span class="line">              %-formatting, :meth:&#96;str.format&#96; and :class:&#96;string.Template&#96;</span><br><span class="line">              - defaults to &#39;%&#39;).</span><br><span class="line">    level     Set the root logger level to the specified level.</span><br><span class="line">    stream    Use the specified stream to initialize the StreamHandler. Note</span><br><span class="line">              that this argument is incompatible with &#39;filename&#39; - if both</span><br><span class="line">              are present, &#39;stream&#39; is ignored.</span><br><span class="line">    handlers  If specified, this should be an iterable of already created</span><br><span class="line">              handlers, which will be added to the root handler. Any handler</span><br><span class="line">              in the list which does not have a formatter assigned will be</span><br><span class="line">              assigned the formatter created in this function.</span><br><span class="line"></span><br><span class="line">    常用参数:</span><br><span class="line">    filename 输出文件名.</span><br><span class="line"></span><br><span class="line">    datefmt  使用指定的datetime格式.</span><br><span class="line"></span><br><span class="line">    level    设置输出的日志级别.</span><br><span class="line"></span><br><span class="line">    format 格式输出日志,可选格式:</span><br><span class="line">                %(levelno)s     数字形式的日志级别</span><br><span class="line">                %(levelname)s   文本形式的日志级别</span><br><span class="line">                %(pathname)s    调用日志输出函数的模块的完整路径名</span><br><span class="line">                %(filename)s    调用日志输出函数的模块的文件名</span><br><span class="line">                %(module)s      调用日志输出函数的模块名</span><br><span class="line">                %(funcName)s    调用日志输出函数的函数名</span><br><span class="line">                %(lineno)d      调用日志输出函数语句所在的代码行</span><br><span class="line">                %(created)f     当前时间,用UNIX标准时间的浮点数表示</span><br><span class="line">                %(relativeCreated)d 输出日志信息时的,自Logger创建以来的毫秒数</span><br><span class="line">                %(asctime)s     字符串形式的当前时间,默认格式是&#39;2003-07-08 16:33:34,444&#39;</span><br><span class="line">                %(thread)d      线程id,可能没有</span><br><span class="line">                %(threadName)s  线程名,可能没有</span><br><span class="line">                %(process)d     进程ID,可能没有</span><br><span class="line">                %(message)s     用户输出的消息</span><br><span class="line">                %(name)s        用户名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">logging.basicConfig(filename=<span class="string">'test.log'</span>, level=logging.INFO, </span><br><span class="line">                    format=<span class="string">'%(asctime)s %(levelno)s %(filename)s %(process)d %(name)s'</span>,</span><br><span class="line">                    datefmt=<span class="string">'%Y-%m-%d'</span>)</span><br><span class="line">logging.debug(<span class="string">'DEBUG message'</span>)</span><br><span class="line">logging.info(<span class="string">'INFO message'</span>)</span><br><span class="line">logging.warning(<span class="string">'WARNING message'</span>)</span><br><span class="line">logging.error(<span class="string">'ERROR message'</span>)</span><br><span class="line">logging.critical(<span class="string">'CRITICAL message'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    
+    <a href="/2020/07/09/2020-07-09-python第四章_正则模块/" class="next">下一篇：python第四章_正则模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>
