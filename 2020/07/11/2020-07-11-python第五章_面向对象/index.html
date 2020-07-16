@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_面向对象 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_面向对象"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+    </div>
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-10T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-11
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_面向对象</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc">
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面向过程"><span class="toc-number">1.</span> <span class="toc-text">面向过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象"><span class="toc-number">2.</span> <span class="toc-text">面向对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类"><span class="toc-number">3.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类的定义"><span class="toc-number">3.1.</span> <span class="toc-text">类的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的名称空间"><span class="toc-number">3.2.</span> <span class="toc-text">类的名称空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类属性调用"><span class="toc-number">3.3.</span> <span class="toc-text">类属性调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类属性操作"><span class="toc-number">3.4.</span> <span class="toc-text">类属性操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象"><span class="toc-number">4.</span> <span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例化对象"><span class="toc-number">4.1.</span> <span class="toc-text">实例化对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定制化对象"><span class="toc-number">4.2.</span> <span class="toc-text">定制化对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#self"><span class="toc-number">4.3.</span> <span class="toc-text">self</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类中的数据属性"><span class="toc-number">4.4.</span> <span class="toc-text">类中的数据属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类中的函数属性"><span class="toc-number">4.5.</span> <span class="toc-text">类中的函数属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性查找"><span class="toc-number">4.6.</span> <span class="toc-text">属性查找</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最后总结"><span class="toc-number">5.</span> <span class="toc-text">最后总结</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h1><p>核心是过程,过程是解决问题的步骤,机械式的思维方式,不需要经常改动.</p>
+<p>优点:复杂的问题流程化,进而简单化<br>缺点:可扩展性差</p>
+<hr>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>核心就是对象二字,对象就是特征与技能的结合体.</p>
+<p>优点:可扩展性强<br>缺点:编程复杂度高<br>应用场景:用户需求经常变化,互联网应用,游戏,企业内部应用</p>
+<p>需要注意的是面向对象与面向过程是根据实际情况选择的,<br>如果一般流程问题就能解决的问题使用面向对象无疑是将解决问题复杂化,造成过度设计的问题.</p>
+<hr>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>类就是一系列对象相似的特征与技能的结合体,在程序中:一定要先定义类,后再调用对象</p>
+<p>在生活中我们是将一个个的对象拥有相似的特征或者技能分为一类,<br>但在程序中是先定义类,类就像是一个模板,不断的用模板生成对象.</p>
+<hr>
+<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用class Name定义一个类,name是自定义的,但是需要使用驼峰命名法,这是编码规范.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义一个Study的模板也就是类,这个模板有名字是who,性别是man,年龄是18的特征,技能是eat和sleep</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    name = <span class="string">'who'</span></span><br><span class="line">    sex = <span class="string">'man'</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(Study)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;__main__.Study&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="类的名称空间"><a href="#类的名称空间" class="headerlink" title="类的名称空间"></a>类的名称空间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">定义了一个函数,函数体并不会直接执行,只有在调用的时候才会执行并产生局部名称空间,</span><br><span class="line">但是类不一样,类在定义的时候就已经运行了,并产生了名称空间.</span><br><span class="line"></span><br><span class="line">查看类的名称空间: classname.__dict__,会得到一个字典,里面是定义时候产生的名称空间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    name = <span class="string">'who'</span></span><br><span class="line">    sex = <span class="string">'man'</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'调用 Study'</span>)  <span class="comment"># 会在一开始就会运行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(Study.__dict__)</span><br><span class="line">print(Study.__dict__[<span class="string">'name'</span>])  <span class="comment"># 查看name的属性</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">调用 Study</span><br><span class="line">&#123;&#39;__module__&#39;: &#39;__main__&#39;, &#39;name&#39;: &#39;who&#39;, &#39;sex&#39;: &#39;man&#39;, &#39;age&#39;: 18, &#39;eat&#39;: &lt;function Study.eat at 0x031638A0&gt;, &#39;sleep&#39;: &lt;function Study.sleep at 0x03163930&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Study&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Study&#39; objects&gt;, &#39;__doc__&#39;: None&#125;</span><br><span class="line">who</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="类属性调用"><a href="#类属性调用" class="headerlink" title="类属性调用"></a>类属性调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在类中的特征也就是定义的变量称之为数据属性,对象的技能也就是定义的函数称之为函数属性.</span><br><span class="line"></span><br><span class="line">类属性的调用虽然可以向上面这样 Study.__dict__[&#39;name&#39;]调用,但是python有专门的调用方法,</span><br><span class="line">使用 类.类属性 的方式调用,使用点表示类下的某某属性.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    name = <span class="string">'who'</span></span><br><span class="line">    sex = <span class="string">'man'</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(Study.name)  <span class="comment"># 调用类下的name</span></span><br><span class="line">print(Study.sex)   <span class="comment"># 调用类下的sex</span></span><br><span class="line">print(Study.age)   <span class="comment"># 调用类下的age</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">who</span><br><span class="line">man</span><br><span class="line">18</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="类属性操作"><a href="#类属性操作" class="headerlink" title="类属性操作"></a>类属性操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">通过类的名称空间可以看到,类的名称空间是类属性的名称作为健的字典,当我们需要对类的属性增删改查的时候,</span><br><span class="line">其实就是是对这个字典进行操作.</span><br><span class="line"></span><br><span class="line">在字典中是 dict[key] 进行查询, 在类中 Study.key 进行属性调用</span><br><span class="line">在字典中是 dict[key] &#x3D; value 增加或修改, 在类中 Study.key &#x3D; value 增加或修改</span><br><span class="line">在字典中是 dict.pop 或者 del dict[key] 删除, 在类中 del Study.key 进行属性删除</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    name = <span class="string">'who'</span></span><br><span class="line">    sex = <span class="string">'man'</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Study.name = <span class="string">'xiaohong'</span>  <span class="comment"># name属性的修改操作</span></span><br><span class="line">print(Study.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xiaohong</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>上面已经说到,在程序中需要先有类才会有对象,因为对象是类实例化出来的,实例化就像是工厂使用模板(类)造出一个个的商品,每一个商品就是一个对象.</p>
+<hr>
+<h2 id="实例化对象"><a href="#实例化对象" class="headerlink" title="实例化对象"></a>实例化对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在函数中,执行函数是函数名加括号,但是在类中不是,类在定义的时候就执行了,类的实例化是类名加括号,与函数不同.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">比如说 Study 实例化出 xiaohong, xiaoming 两个Study对象出来.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    name = <span class="string">'who'</span></span><br><span class="line">    sex = <span class="string">'man'</span></span><br><span class="line">    age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaohong = Study()  <span class="comment"># 实例化</span></span><br><span class="line">xiaoming = Study()  <span class="comment"># 实例化</span></span><br><span class="line">print(xiaohong)</span><br><span class="line">print(xiaoming)</span><br><span class="line">print(xiaohong.name)</span><br><span class="line">print(xiaoming.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;__main__.Study object at 0x00DAEE90&gt;</span><br><span class="line">&lt;__main__.Study object at 0x031060D0&gt;</span><br><span class="line">who</span><br><span class="line">who</span><br><span class="line"></span><br><span class="line"># 可以看到实例化的对象拥有不同的内存地址,也就证明了这是两个不同的对象.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="定制化对象"><a href="#定制化对象" class="headerlink" title="定制化对象"></a>定制化对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">通过上面的 实例化对象 我们可以发现xiaohong与xiaoming虽然是两个不同的对象,但是他们的特征都相同,name&#x3D;who,sex&#x3D;man,age&#x3D;18,</span><br><span class="line">xiaohong的名字是小红才对,xiaoming的名字是小明才行,而其他的特征也应该是不相同的,那如何修改不同的特征属性呢?</span><br><span class="line">是通过一个一个对象的属性进行修改吗?如果生成很多对象怎么办?</span><br><span class="line"></span><br><span class="line">这个时候就需要定制化对象,我们知道在通过函数传参的时候是 函数名(参数)的形式得到不同结果,在类中我们定制化对象的时候我们也可以通过传递参数定制不同的对象.</span><br><span class="line">在类中定义一个 __init() 的函数,这个函数只有在实例化对象的时候才会执行,而我们通过这个函数传递特征参数.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sex, age)</span>:</span>  <span class="comment"># 实例化对象的时候执行,执行的时候需要接收self, name, sex, age参数</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaohong = Study(<span class="string">'小红'</span>, <span class="string">'woman'</span>, <span class="string">'18'</span>)  <span class="comment"># 定制不同的实例化对象</span></span><br><span class="line">xiaoming = Study(<span class="string">'小明'</span>, <span class="string">'man'</span>, <span class="string">'19'</span>)    <span class="comment"># 定制不同的实例化对象</span></span><br><span class="line">print(xiaohong.name)</span><br><span class="line">print(xiaoming.name)</span><br><span class="line"></span><br><span class="line">print(xiaohong.__dict__)</span><br><span class="line">print(xiaoming.__dict__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">小红</span><br><span class="line">小明</span><br><span class="line">&#123;&#39;name&#39;: &#39;小红&#39;, &#39;sex&#39;: &#39;woman&#39;, &#39;age&#39;: &#39;18&#39;&#125;</span><br><span class="line">&#123;&#39;name&#39;: &#39;小明&#39;, &#39;sex&#39;: &#39;man&#39;, &#39;age&#39;: &#39;19&#39;&#125;</span><br><span class="line"></span><br><span class="line"># 可以看到两个对象的特征是不同的</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="self"><a href="#self" class="headerlink" title="self"></a>self</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">上面代码为什么会出现一个self,什么是self?为什么需要传递self?</span><br><span class="line"></span><br><span class="line">在函数实例化过程是这样的例如 xiaohong &#x3D; Study(&#39;小红&#39;, &#39;woman&#39;, &#39;18&#39;) </span><br><span class="line">1.比如说生成一个对象 xh 传递给xiaohong这个变量</span><br><span class="line">2.然后再调用__init__函数,传递参数的时候self就是 xh 这个实例化产生的对象,其实一共传递了四个参数 (xh, &#39;小红&#39;, &#39;woman&#39;, &#39;18&#39;) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">传递参数xiaohong &#x3D; Study(&#39;小红&#39;, &#39;woman&#39;, &#39;18&#39;) 相当于:</span><br><span class="line"></span><br><span class="line">不传递参数的</span><br><span class="line">xiaohong &#x3D; Study() # 实例化对象赋值给xiaohong</span><br><span class="line">xiaohong.name &#x3D; &#39;小红&#39;  # 修改xiaohong的name属性</span><br><span class="line">xiaohong.sex &#x3D; &#39;woman&#39;  # 修改xiaohong的sex属性</span><br><span class="line">xiaohong.age &#x3D; 18       # 修改xiaohong的age属性</span><br><span class="line"></span><br><span class="line">传参后就像是对象批量属性生成的意思,把传递的属性绑定在刚刚生成的对象上,不需要我们自己一个一个属性的去修改.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">()</span>:</span>  <span class="comment"># 我们可以把传参都去除看看执行会发生什么</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaohong = Study() </span><br><span class="line">xiaoming = Study()</span><br><span class="line">print(xiaohong.name)</span><br><span class="line">print(xiaoming.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TypeError: __init__() takes 0 positional arguments but 1 was given</span><br><span class="line"></span><br><span class="line"># 我们可以看到init是默认是需要1个参数的,也就是默认是需要一个实例化对象的self参数</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="类中的数据属性"><a href="#类中的数据属性" class="headerlink" title="类中的数据属性"></a>类中的数据属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类中的数据属性:是所有对象共有的</span><br><span class="line"></span><br><span class="line">在类中的数据属性是所有实例化对象共有的,也就是说对象访问的都是同一个数据属性,这个属性存在类的名称空间里.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span></span><br><span class="line">    school = <span class="string">'python'</span>  <span class="comment"># 数据属性</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sex, age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaohong = Study(<span class="string">'小红'</span>, <span class="string">'woman'</span>, <span class="string">'18'</span>)</span><br><span class="line">xiaoming = Study(<span class="string">'小明'</span>, <span class="string">'man'</span>, <span class="string">'19'</span>)</span><br><span class="line">print(Study.__dict__, id(Study.school))</span><br><span class="line">print(xiaohong.__dict__, id(xiaohong.school))</span><br><span class="line">print(xiaoming.__dict__, id(xiaoming.school))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;__module__&#39;: &#39;__main__&#39;, &#39;school&#39;: &#39;python&#39;, &#39;__init__&#39;: &lt;function Study.__init__ at 0x00E938A0&gt;, &#39;eat&#39;: &lt;function Study.eat at 0x00E938E8&gt;, &#39;sleep&#39;: &lt;function Study.sleep at 0x00E93930&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Study&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Study&#39; objects&gt;, &#39;__doc__&#39;: None&#125; 7688256</span><br><span class="line">&#123;&#39;name&#39;: &#39;小红&#39;, &#39;sex&#39;: &#39;woman&#39;, &#39;age&#39;: &#39;18&#39;&#125; 7688256</span><br><span class="line">&#123;&#39;name&#39;: &#39;小明&#39;, &#39;sex&#39;: &#39;man&#39;, &#39;age&#39;: &#39;19&#39;&#125; 7688256</span><br><span class="line"></span><br><span class="line"># 可以看到都是指向 7688256 这个内存地址.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="类中的函数属性"><a href="#类中的函数属性" class="headerlink" title="类中的函数属性"></a>类中的函数属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">类中的函数属性:是绑定给对象使用的,绑定到不同的对象是不同的绑定方法,对象调用绑定方法时,会把对象本身当作第一个传入,传给self.</span><br><span class="line"></span><br><span class="line">也就是说不同对象使用的其实是一个内存地址的相同代码,但是不同对象使用的时候,对象会把自身传入给self,表示这个对象在调用,</span><br><span class="line">这样不同对象使用会得到不同的结果.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span>    </span><br><span class="line">    school = <span class="string">'python'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sex, age)</span>:</span>  <span class="comment"># 函数属性</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span>  <span class="comment"># 函数属性</span></span><br><span class="line">        print(self.name, <span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span>  <span class="comment"># 函数属性</span></span><br><span class="line">        print(self.name, <span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xiaohong = Study(<span class="string">'小红'</span>, <span class="string">'woman'</span>, <span class="string">'18'</span>)</span><br><span class="line">xiaoming = Study(<span class="string">'小明'</span>, <span class="string">'man'</span>, <span class="string">'19'</span>)</span><br><span class="line">print(Study.eat)</span><br><span class="line">print(xiaohong.eat)</span><br><span class="line">print(xiaoming.eat)</span><br><span class="line"></span><br><span class="line">print()</span><br><span class="line">xiaohong.eat()  <span class="comment"># 调用相同的方法得到不同的特定对象的结果</span></span><br><span class="line">xiaoming.eat()</span><br><span class="line"></span><br><span class="line">print()</span><br><span class="line">print(id(Study.eat))</span><br><span class="line">print(id(xiaohong.eat))</span><br><span class="line">print(id(xiaoming.eat))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;function Study.eat at 0x00F038E8&gt;</span><br><span class="line">&lt;bound method Study.eat of &lt;__main__.Study object at 0x00EB6F70&gt;&gt;</span><br><span class="line">&lt;bound method Study.eat of &lt;__main__.Study object at 0x00EB6C30&gt;&gt;</span><br><span class="line"># 可以看到bound method(绑定方法) 在不同的内存地址</span><br><span class="line"></span><br><span class="line">小红 我会吃饭</span><br><span class="line">小明 我会吃饭</span><br><span class="line"># 执行结果是不同的</span><br><span class="line"></span><br><span class="line">15743208</span><br><span class="line">7881432</span><br><span class="line">7881432</span><br><span class="line"># 为什么对象方法id是相同的? id是python的实现机制,并不能真实反映内存地址,如果有内存地址,还是以内存地址为准</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="属性查找"><a href="#属性查找" class="headerlink" title="属性查找"></a>属性查找</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我们知道函数在定义的时候就运行并生成名称空间,对象的实例化后也有对象的名称空间,当我们在调用属性的时候也像函数一样如果</span><br><span class="line">本地不存在就去上层找,对象属性查找的顺序是 对象自身的名称空间 --&gt; 类的名称空间 --&gt; 父类的名称空间, 注意并不会去全局里查找.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>:</span>    </span><br><span class="line">    school = <span class="string">'python'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, sex, age)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span>  <span class="comment"># 函数属性</span></span><br><span class="line">        print(self.name, <span class="string">'我会吃饭'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self)</span>:</span>  <span class="comment"># 函数属性</span></span><br><span class="line">        print(self.name, <span class="string">'我会睡觉'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">'haha'</span></span><br><span class="line">xiaohong = Study(<span class="string">'小红'</span>, <span class="string">'woman'</span>, <span class="string">'18'</span>)</span><br><span class="line"></span><br><span class="line">xiaohong.h = <span class="number">165</span>  <span class="comment"># 对象和类同时定义相同名称的属性</span></span><br><span class="line">Study.h = <span class="number">180</span></span><br><span class="line"></span><br><span class="line">print(xiaohong.h)</span><br><span class="line">print(xiaohong.a)  <span class="comment"># 查看一个不存在但是全局存在相同名称的属性</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">165</span><br><span class="line"># 可以看到根据优先级,本地存在就不会向上查找</span><br><span class="line"></span><br><span class="line">AttributeError: &#39;Study&#39; object has no attribute &#39;a&#39;</span><br><span class="line"># 可以看到如果对象和类都不存在也不会在全局查找,直接报错</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h1><ol>
+<li>站的角度不同,定义出的类是不同的</li>
+<li>现实中的类并不完全等于程序中的类</li>
+<li>为了编程需求,程序也可以定义现实中不存在的类,比如策略类</li>
+</ol>
+<p>在python3中一切皆对象,在python3中统一了类与类型的概念.</p>
+<p>例如列表(list)类型,它其实也是一种类(列表类),在我们创建列表的时候有这种方法 a = list([1,2,3]),<br>对应类的概念，那 a = list() 就是实例化对象,a.append 就是使用对象的绑定方法,那除了列表还有字符串<br>元组 字典 集合等等,每个定义的时候就是生成了一个个对象,所以一切皆对象.</p>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    
+    <a href="/2020/07/10/2020-07-10-python第四章_日志模块/" class="next">下一篇：python第四章_日志模块</a>
+    
+  </nav>
+
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

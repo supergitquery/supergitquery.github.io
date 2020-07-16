@@ -1345,6 +1345,9 @@ a:hover {
     float: none;
     margin: 0;
     max-width: 100%;
+    position: fixed;
+    right: 20px;
+    z-index: 1;
   }
 }
 .post-toc {
