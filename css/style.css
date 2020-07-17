@@ -1345,9 +1345,6 @@ a:hover {
     float: none;
     margin: 0;
     max-width: 100%;
-    position: fixed;
-    right: 20px;
-    z-index: 1;
   }
 }
 .post-toc {
@@ -1359,6 +1356,10 @@ a:hover {
   border: 1px solid #e2e2e2;
   font-size: 14px;
   background-color: #fff;
+/*固定目录窗口*/
+  position: fixed;
+  right: 70px;
+  z-index: 1;
 }
 .post-toc .toc-title {
   font-weight: bold;
