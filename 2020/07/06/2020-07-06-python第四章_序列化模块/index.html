@@ -35,6 +35,8 @@
 
 <body>
   <div class="container">
+
+
     <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
       <div class="intrude-less">
         <header id="header" class="inner">
@@ -72,7 +74,11 @@
           </nav>
         </header>
       </div>
+
     </div>
+
+
+
     <div class="mid-col">
       <div class="mid-col-container">
         <div id="content" class="inner">
@@ -103,41 +109,41 @@
     
     <div class="post-toc">
       <div class="toc-title">TOC</div>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pickle"><span class="toc-number">1.</span> <span class="toc-text">pickle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dumps"><span class="toc-number">1.1.</span> <span class="toc-text">dumps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loads"><span class="toc-number">1.2.</span> <span class="toc-text">loads</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dump"><span class="toc-number">1.3.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#load"><span class="toc-number">1.4.</span> <span class="toc-text">load</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#json"><span class="toc-number"></span> <span class="toc-text">json</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dumps-1"><span class="toc-number">1.</span> <span class="toc-text">dumps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loads-1"><span class="toc-number">2.</span> <span class="toc-text">loads</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dump-1"><span class="toc-number">3.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#load-1"><span class="toc-number">4.</span> <span class="toc-text">load</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pickle"><span class="toc-number">1.</span> <span class="toc-text">pickle</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dumps"><span class="toc-number">1.1.</span> <span class="toc-text">dumps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loads"><span class="toc-number">1.2.</span> <span class="toc-text">loads</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dump"><span class="toc-number">1.3.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#load"><span class="toc-number">1.4.</span> <span class="toc-text">load</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#json"><span class="toc-number">2.</span> <span class="toc-text">json</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dumps-1"><span class="toc-number">2.1.</span> <span class="toc-text">dumps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#loads-1"><span class="toc-number">2.2.</span> <span class="toc-text">loads</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dump-1"><span class="toc-number">2.3.</span> <span class="toc-text">dump</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#load-1"><span class="toc-number">2.4.</span> <span class="toc-text">load</span></a></li></ol></li></ol>
     </div>
     
     <hr>
-<h2 id="pickle"><a href="#pickle" class="headerlink" title="pickle"></a>pickle</h2><p>只支持python,支持python里所有数据类型</p>
+<h1 id="pickle"><a href="#pickle" class="headerlink" title="pickle"></a>pickle</h1><p>只支持python,支持python里所有数据类型</p>
 <hr>
-<h3 id="dumps"><a href="#dumps" class="headerlink" title="dumps"></a>dumps</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dumps(obj, protocol&#x3D;None, *, fix_imports&#x3D;True)</span><br><span class="line">    Return the pickled representation of the object as a bytes object.</span><br><span class="line">    将对象的序列化形式作为字节对象返回.</span><br></pre></td></tr></table></figure>
+<h2 id="dumps"><a href="#dumps" class="headerlink" title="dumps"></a>dumps</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dumps(obj, protocol&#x3D;None, *, fix_imports&#x3D;True)</span><br><span class="line">    Return the pickled representation of the object as a bytes object.</span><br><span class="line">    将对象的序列化形式作为字节对象返回.</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'alis'</span>,</span><br><span class="line">    <span class="string">'age'</span>: <span class="string">'18'</span></span><br><span class="line">&#125;</span><br><span class="line">print(pickle.dumps(data))</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b&#39;\x80\x03&#125;q\x00(X\x04\x00\x00\x00nameq\x01X\x04\x00\x00\x00alisq\x02X\x03\x00\x00\x00ageq\x03X\x02\x00\x00\x0018q\x04u.&#39;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="loads"><a href="#loads" class="headerlink" title="loads"></a>loads</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loads(data, *, fix_imports&#x3D;True, encoding&#x3D;&#39;ASCII&#39;, errors&#x3D;&#39;strict&#39;)</span><br><span class="line">    Read and return an object from the given pickle data.</span><br><span class="line">    从给定的序列化数据中读取并返回一个对象.</span><br></pre></td></tr></table></figure>
+<h2 id="loads"><a href="#loads" class="headerlink" title="loads"></a>loads</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loads(data, *, fix_imports&#x3D;True, encoding&#x3D;&#39;ASCII&#39;, errors&#x3D;&#39;strict&#39;)</span><br><span class="line">    Read and return an object from the given pickle data.</span><br><span class="line">    从给定的序列化数据中读取并返回一个对象.</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">print(pickle.loads(<span class="string">b'\x80\x03K\x01.'</span>))</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dump(obj, file, protocol&#x3D;None, *, fix_imports&#x3D;True)</span><br><span class="line">    Write a pickled representation of obj to the open file object file.</span><br><span class="line">    将obj的序列化形式写入打开的文件目标文件.</span><br></pre></td></tr></table></figure>
+<h2 id="dump"><a href="#dump" class="headerlink" title="dump"></a>dump</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dump(obj, file, protocol&#x3D;None, *, fix_imports&#x3D;True)</span><br><span class="line">    Write a pickled representation of obj to the open file object file.</span><br><span class="line">    将obj的序列化形式写入打开的文件目标文件.</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">a = pickle.dumps([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'list.pkl'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(a, f)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># list.pkl文件</span><br><span class="line"></span><br><span class="line">�C�]q (KKKKe.q .</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="load"><a href="#load" class="headerlink" title="load"></a>load</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">load(file, *, fix_imports&#x3D;True, encoding&#x3D;&#39;ASCII&#39;, errors&#x3D;&#39;strict&#39;)</span><br><span class="line">    Read and return an object from the pickle data stored in a file.</span><br><span class="line">    从文件中存储的序列化数据读取并返回对象.</span><br></pre></td></tr></table></figure>
+<h2 id="load"><a href="#load" class="headerlink" title="load"></a>load</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">load(file, *, fix_imports&#x3D;True, encoding&#x3D;&#39;ASCII&#39;, errors&#x3D;&#39;strict&#39;)</span><br><span class="line">    Read and return an object from the pickle data stored in a file.</span><br><span class="line">    从文件中存储的序列化数据读取并返回对象.</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'list.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    a = pickle.load(f)</span><br><span class="line">    print(pickle.loads(a))</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>所有语言都支持,只支持常规数据类型,str,int,dict,set,list,tuple</p>
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>所有语言都支持,只支持常规数据类型,str,int,dict,set,list,tuple  </p>
 <hr>
 <h2 id="dumps-1"><a href="#dumps-1" class="headerlink" title="dumps"></a>dumps</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dumps(obj, *, skipkeys&#x3D;False, ensure_ascii&#x3D;True, check_circular&#x3D;True, allow_nan&#x3D;True, cls&#x3D;None, indent&#x3D;None, separators&#x3D;None, default&#x3D;None, sort_keys&#x3D;False, **kw)</span><br><span class="line">    Serialize &#96;&#96;obj&#96;&#96; to a JSON formatted &#96;&#96;str&#96;&#96;.</span><br><span class="line">    将obj序列化为JSON格式的str.</span><br></pre></td></tr></table></figure>
 
