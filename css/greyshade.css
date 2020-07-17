@@ -298,9 +298,9 @@ a:hover {
   font-size: 14px;
   background-color: #fff;
 /*固定目录窗口*/
-  position: fixed;
+/*  position: fixed;
   right: 70px;
-  z-index: 1;
+  z-index: 1;*/
 }
 .post-toc .toc-title {
   font-weight: bold;
