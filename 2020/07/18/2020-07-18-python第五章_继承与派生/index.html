@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_继承与派生 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="bolg">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_继承与派生"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">bolg</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-17T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-18
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_继承与派生</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#继承"><span class="toc-number">1.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#单继承与多继承"><span class="toc-number">1.1.</span> <span class="toc-text">单继承与多继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典类与新式类"><span class="toc-number">1.2.</span> <span class="toc-text">经典类与新式类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承与重用性"><span class="toc-number">1.3.</span> <span class="toc-text">继承与重用性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承属性查找"><span class="toc-number">1.4.</span> <span class="toc-text">继承属性查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#派生"><span class="toc-number">1.5.</span> <span class="toc-text">派生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承的实现原理"><span class="toc-number">1.6.</span> <span class="toc-text">继承的实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在子类中调用父类的方法"><span class="toc-number">1.7.</span> <span class="toc-text">在子类中调用父类的方法</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p>继承指的是类与类之间的关系,是一种”是”什么的关系,继承的功能之一就是用来解决代码重用问题,<br>继承是一种创建新类的方式,在python中,新建的类可以继承一个或多个父类,父类又可以成为基类或超类,<br>新建的类称为派生类或子类.</p>
+<p>查看继承关系可以使用 class.__bases__</p>
+<hr>
+<h2 id="单继承与多继承"><a href="#单继承与多继承" class="headerlink" title="单继承与多继承"></a>单继承与多继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">继承分为单继承和多继承.</span><br><span class="line"></span><br><span class="line">单继承,也就是只继承一个父类.</span><br><span class="line">多继承,也就是继承多个父类.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span>  <span class="comment"># 定义一个父类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span>  <span class="comment"># 定义一个父类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span>  <span class="comment"># 单继承</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(A, B)</span>:</span>  <span class="comment"># 多继承</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(C.__bases__)  <span class="comment"># 查看继承</span></span><br><span class="line">print(D.__bases__)  <span class="comment"># 查看继承</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(&lt;class &#39;__main__.A&#39;&gt;,)</span><br><span class="line">(&lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="经典类与新式类"><a href="#经典类与新式类" class="headerlink" title="经典类与新式类"></a>经典类与新式类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在python2中:</span><br><span class="line">    经典类:没有继承object的类,以及它的子类都称之为经典类</span><br><span class="line">    新式类:继承object的类,以及它的子类都称之为新式类</span><br><span class="line"></span><br><span class="line">在python3中:</span><br><span class="line">    默认为新式类,默认继承object</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">新式类:如果没有指定基类,python的类会默认继承object类,object是所有python类的基类,</span><br><span class="line">它提供了一些常见方法(如__str__)的实现.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python2</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span>  <span class="comment"># 经典类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(object)</span>:</span>  <span class="comment"># 新式类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(A.__bases__)</span><br><span class="line">print(B.__bases__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">()</span><br><span class="line">(&lt;type &#39;object&#39;&gt;,)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python3</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span>  <span class="comment"># 新式类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(object)</span>:</span>  <span class="comment"># 新式类</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(A.__bases__)</span><br><span class="line">print(B.__bases__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(&lt;type &#39;object&#39;&gt;,)</span><br><span class="line">(&lt;type &#39;object&#39;&gt;,)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="继承与重用性"><a href="#继承与重用性" class="headerlink" title="继承与重用性"></a>继承与重用性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过继承的方式新建类B,让B继承A,B会&#39;遗传&#39;A的所有属性(数据属性和函数属性),实现代码重用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    name = <span class="string">'test'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'Hi A'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">print(b.name)</span><br><span class="line">b.say()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test</span><br><span class="line">Hi A</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="继承属性查找"><a href="#继承属性查找" class="headerlink" title="继承属性查找"></a>继承属性查找</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">继承的属性查找也是先从对象名称空间查找,再到类的名称空间,再到父类的名称空间.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    name = <span class="string">'test'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'Hi A'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.say()  <span class="comment"># 注意这里相当于 b.say(),say在B类下有,所以会执行的是B类下的say而不是A的say</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'Hi B'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.call()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi B</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="派生"><a href="#派生" class="headerlink" title="派生"></a>派生</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">子类可以重新定义自己的属性,当定义的属性与父类重名,那么调用新增的属性时,就以自己为准.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    name = <span class="string">'A'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    name = <span class="string">'B'</span>  <span class="comment"># 重新定义name</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">print(b.name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="继承的实现原理"><a href="#继承的实现原理" class="headerlink" title="继承的实现原理"></a>继承的实现原理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">定义的每一个类,python会计算出一个方法解析顺序(MRO)列表.</span><br><span class="line">这个列表就是一个简单的所有基类的线性顺序列表.</span><br><span class="line">通过这个表顺序查找,直到找到匹配这个属性的类为止.</span><br><span class="line"></span><br><span class="line">查看顺序表的方式: class.__mro__ &#x3D;&#x3D; class.mro(), 只有新式类才能使用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查找三条准则:</span><br><span class="line">    1.子类会先于父类被检查</span><br><span class="line">    2.多个父类会根据他们在列表中的顺序被检查</span><br><span class="line">    3.如果对下一个类存在两个合法的选择,选择第一个父类</span><br><span class="line"></span><br><span class="line">当类是经典类时,多继承的情况下,在要查找属性不存在时,会按照深度优先的方式查找下去.</span><br><span class="line">当类是新式类时,多继承的请款下,在要查找属性不存在时,会按照广度优先的方式查找下去.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span>  <span class="comment"># A下面子类: B,C</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'from A'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span>  <span class="comment"># B下面子类: D</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'from B'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span>  <span class="comment"># C下面子类: E</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'from C'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'from D'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span><span class="params">(C)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'from E'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">F</span><span class="params">(D, E)</span>:</span>  <span class="comment"># 继承D,E,依据属性查找规则然后不断通过注释test函数的方法查看查找的顺序</span></span><br><span class="line">    <span class="comment"># def test(self):</span></span><br><span class="line">    <span class="comment">#     print('from F')</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f1 = F()</span><br><span class="line">f1.test()</span><br><span class="line">print(F.__mro__)  <span class="comment"># 只有新式才有这个属性可以查看线性列表,经典类没有这个属性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#新式类继承顺序(广度优先):F-&gt;D-&gt;B-&gt;E-&gt;C-&gt;A</span></span><br><span class="line"><span class="comment">#经典类继承顺序(深度优先):F-&gt;D-&gt;B-&gt;A-&gt;E-&gt;C</span></span><br><span class="line"><span class="comment">#python3中统一都是新式类</span></span><br><span class="line"><span class="comment">#pyhon2中才分新式类与经典类</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from D</span><br><span class="line">(&lt;class &#39;__main__.F&#39;&gt;, &lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.E&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;)</span><br><span class="line"></span><br><span class="line"># 可以看到类的查找顺序</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="在子类中调用父类的方法"><a href="#在子类中调用父类的方法" class="headerlink" title="在子类中调用父类的方法"></a>在子类中调用父类的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在子类派生出的新方法中,往往需要重用父类的方法,我们有两种方式实现.</span><br><span class="line"></span><br><span class="line">方式一：指名道姓,即父类名.父类方法(), 与继承没有关系</span><br><span class="line">方式二：super(),这是依赖继承关系的,且即使没有直接继承关系,super仍然会按照mro继续往后查找</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一：指名道姓,即父类名.父类方法()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stuent</span>:</span>  <span class="comment"># 定义一个学生类,需要姓名,年龄,性别</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CollegeStudents</span><span class="params">(Stuent)</span>:</span>  <span class="comment"># 定义一个大学生类,继承学生类,但是需要增加课程信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex, subject)</span>:</span></span><br><span class="line">        Stuent.__init__(self, name, age, sex)  <span class="comment"># 直接调用父类的方法</span></span><br><span class="line">        self.subject = subject</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xh = CollegeStudents(<span class="string">'小红'</span>, <span class="number">20</span>, <span class="string">'女'</span>, <span class="string">'Python'</span>)</span><br><span class="line">print(xh.name)</span><br><span class="line">print(xh.age)</span><br><span class="line">print(xh.sex)</span><br><span class="line">print(xh.subject)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">小红</span><br><span class="line">20</span><br><span class="line">女</span><br><span class="line">Python</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式二：super()</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stuent</span>:</span>  <span class="comment"># 定义一个学生类,需要姓名,年龄,性别</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CollegeStudents</span><span class="params">(Stuent)</span>:</span>  <span class="comment"># 定义一个大学生类,继承学生类,但是需要增加课程信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex, subject)</span>:</span></span><br><span class="line">        <span class="comment"># super(CollegeStudents, self).__init__(name, age, sex) 固定格式写法,下面的是简写的方式</span></span><br><span class="line">        super().__init__(name, age, sex)  <span class="comment"># super相当于获取父类,也可以说是相当于当前类mro表的下一个类</span></span><br><span class="line">        self.subject = subject</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">xh = CollegeStudents(<span class="string">'小红'</span>, <span class="number">20</span>, <span class="string">'女'</span>, <span class="string">'Python'</span>)</span><br><span class="line">print(xh.name)</span><br><span class="line">print(xh.age)</span><br><span class="line">print(xh.sex)</span><br><span class="line">print(xh.subject)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">小红</span><br><span class="line">20</span><br><span class="line">女</span><br><span class="line">Python</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 再来看一个super例子,</span></span><br><span class="line"><span class="comment"># 在父类A有一个test方法输出A,D也有一个test方法输出D,X继承D,E,F类,当X调用super().test()会输出什么?</span></span><br><span class="line"><span class="comment">#     A</span></span><br><span class="line"><span class="comment">#    / \</span></span><br><span class="line"><span class="comment">#   B   C  </span></span><br><span class="line"><span class="comment">#   |   |</span></span><br><span class="line"><span class="comment">#   D   E F</span></span><br><span class="line"><span class="comment">#    \ /  |</span></span><br><span class="line"><span class="comment">#     X ---</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        name = <span class="string">'A'</span></span><br><span class="line">        print(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span> </span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        name = <span class="string">'D'</span></span><br><span class="line">        print(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">E</span><span class="params">(C)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">F</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span><span class="params">(D, E, F)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().test()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">d = X()</span><br><span class="line">d.test()</span><br><span class="line">print(X.mro())</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D</span><br><span class="line">[&lt;class &#39;__main__.X&#39;&gt;, &lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.E&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;__main__.F&#39;&gt;, &lt;class &#39;object&#39;&gt;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 可以看到super其实就是按照mro()表顺序进行方法查找,A的的顺序在D后面,所以super().test()执行的是D下面的方法</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    
+    <a href="/2020/07/11/2020-07-11-python第五章_面向对象/" class="next">下一篇：python第五章_面向对象</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>
