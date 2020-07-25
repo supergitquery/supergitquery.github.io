@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_多态与多态性和鸭子类型 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_多态与多态性和鸭子类型"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-20T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-21
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_多态与多态性和鸭子类型</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多态与多态性"><span class="toc-number">1.</span> <span class="toc-text">多态与多态性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">1.1.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态性"><span class="toc-number">1.2.</span> <span class="toc-text">多态性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优点"><span class="toc-number">1.3.</span> <span class="toc-text">优点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#鸭子类型"><span class="toc-number">2.</span> <span class="toc-text">鸭子类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="多态与多态性"><a href="#多态与多态性" class="headerlink" title="多态与多态性"></a>多态与多态性</h1><hr>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">多态指的是一类事物有多种形态,比如</span><br><span class="line"></span><br><span class="line">动物有多种形态：人,狗,猪</span><br><span class="line">文件有多种形态：文本文件,可执行文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> abc</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span><span class="params">(metaclass=abc.ABCMeta)</span>:</span> <span class="comment">#同一类事物:文件</span></span><br><span class="line"><span class="meta">    @abc.abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">click</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Text</span><span class="params">(File)</span>:</span> <span class="comment">#文件的形态之一:文本文件</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">click</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'open file'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExeFile</span><span class="params">(File)</span>:</span> <span class="comment">#文件的形态之二:可执行文件</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">click</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'execute file'</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">什么是多态动态绑定(在继承的背景下使用时,有时也称为多态性)</span><br><span class="line"></span><br><span class="line">多态性是指在不考虑实例类型的情况下使用实例,多态性分为静态多态性和动态多态性</span><br><span class="line"></span><br><span class="line">静态多态性：如任何类型都可以用运算符+进行运算</span><br><span class="line"></span><br><span class="line">动态多态性：如下</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> abc</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(metaclass=abc.ABCMeta)</span>:</span> <span class="comment">#同一类事物:动物</span></span><br><span class="line"><span class="meta">    @abc.abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span><span class="params">(Animal)</span>:</span> <span class="comment">#动物的形态之一:人</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'say hello'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">(Animal)</span>:</span> <span class="comment">#动物的形态之二:狗</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'say wangwang'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span><span class="params">(Animal)</span>:</span> <span class="comment">#动物的形态之三:猪</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'say aoao'</span>)</span><br><span class="line"></span><br><span class="line">peo=People()</span><br><span class="line">dog=Dog()</span><br><span class="line">pig=Pig()</span><br><span class="line"></span><br><span class="line"><span class="comment">#peo、dog、pig都是动物,只要是动物肯定有talk方法</span></span><br><span class="line"><span class="comment">#于是我们可以不用考虑它们三者的具体是什么类型,而直接使用</span></span><br><span class="line">peo.talk()</span><br><span class="line">dog.talk()</span><br><span class="line">pig.talk()</span><br><span class="line"></span><br><span class="line"><span class="comment">#更进一步,我们可以定义一个统一的接口来使用</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(obj)</span>:</span></span><br><span class="line">    obj.talk()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.增加了程序的灵活性</span><br><span class="line"></span><br><span class="line">　　以不变应万变,不论对象千变万化,使用者都是同一种形式去调用,如func(animal)</span><br><span class="line"></span><br><span class="line">2.增加了程序额可扩展性</span><br><span class="line"></span><br><span class="line">　通过继承animal类创建了一个新的类,使用者无需更改自己的代码,还是用func(animal)去调用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="class"><span class="keyword">class</span> <span class="title">Cat</span><span class="params">(Animal)</span>:</span> <span class="comment">#属于动物的另外一种形态：猫</span></span><br><span class="line"><span class="meta">... </span>    <span class="function"><span class="keyword">def</span> <span class="title">talk</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="meta">... </span>        print(<span class="string">'say miao'</span>)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(animal)</span>:</span> <span class="comment">#对于使用者来说,自己的代码根本无需改动</span></span><br><span class="line"><span class="meta">... </span>    animal.talk()</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cat1=Cat() <span class="comment">#实例出一只猫</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>func(cat1) <span class="comment">#甚至连调用方式也无需改变,就能调用猫的talk功能</span></span><br><span class="line">say miao</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">这样我们新增了一个形态Cat,由Cat类产生的实例cat1,使用者可以在完全不需要修改自己代码的情况下.使用和人、狗、猪一样的方式调用cat1的talk方法,即func(cat1)</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="鸭子类型"><a href="#鸭子类型" class="headerlink" title="鸭子类型"></a>鸭子类型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Python崇尚鸭子类型,即&#39;如果看起来像、叫声像而且走起路来像鸭子,那么它就是鸭子&#39;</span><br><span class="line"></span><br><span class="line">python程序员通常根据这种行为来编写程序.例如,如果想编写现有对象的自定义版本,可以继承该对象</span><br><span class="line"></span><br><span class="line">也可以创建一个外观和行为像,但与它无任何关系的全新对象,后者通常用于保存程序组件的松耦合度.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用标准库中定义的各种'与文件类似'的对象,尽管这些对象的工作方式像文件,但他们没有继承内置文件对象的方法</span></span><br><span class="line"><span class="comment"># 二者都像鸭子,二者看起来都像文件,因而就可以当文件一样去用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TxtFile</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DiskFile</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 序列类型有多种形态：字符串,列表,元组,但他们直接没有直接的继承关系</span></span><br><span class="line"><span class="comment">#str,list,tuple都是序列类型</span></span><br><span class="line">s=str(<span class="string">'hello'</span>)</span><br><span class="line">l=list([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">t=tuple((<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#我们可以在不考虑三者类型的前提下使用s,l,t</span></span><br><span class="line">s.__len__()</span><br><span class="line">l.__len__()</span><br><span class="line">t.__len__()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 应用归一化的概念设置统一一个接口函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">len</span><span class="params">(obj)</span>:</span></span><br><span class="line">    obj.__len__()</span><br><span class="line"></span><br><span class="line">len(s)</span><br><span class="line">len(l)</span><br><span class="line">len(t)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">很多都是概念,总结下来就是说这样去归一化去设计相似类的相似功能用相同的函数名,</span><br><span class="line">他们看起来相似,我们就可以统一一个接口,方便我们调用,增加相似类调用方式也不变.</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/22/2020-07-22-python第五章_封装与property/" class="prev">上一篇：python第五章_封装与property</a>
+    
+    
+    <a href="/2020/07/20/2020-07-20-python第五章_抽象类/" class="next">下一篇：python第五章_抽象类</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

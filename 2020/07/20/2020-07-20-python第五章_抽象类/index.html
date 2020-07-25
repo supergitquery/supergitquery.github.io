@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_抽象类 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_抽象类"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-19T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-20
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_抽象类</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#接口与归一化设计"><span class="toc-number">1.</span> <span class="toc-text">接口与归一化设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是接口"><span class="toc-number">1.1.</span> <span class="toc-text">什么是接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么需要用接口"><span class="toc-number">1.2.</span> <span class="toc-text">为什么需要用接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模仿接口"><span class="toc-number">1.3.</span> <span class="toc-text">模仿接口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类"><span class="toc-number">2.</span> <span class="toc-text">抽象类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是抽象类"><span class="toc-number">2.1.</span> <span class="toc-text">什么是抽象类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要有抽象类"><span class="toc-number">2.2.</span> <span class="toc-text">为什么要有抽象类</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="接口与归一化设计"><a href="#接口与归一化设计" class="headerlink" title="接口与归一化设计"></a>接口与归一化设计</h1><hr>
+<h2 id="什么是接口"><a href="#什么是接口" class="headerlink" title="什么是接口"></a>什么是接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">程序的接口是指提供给调用者来调用功能的方式\方法\入口.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="为什么需要用接口"><a href="#为什么需要用接口" class="headerlink" title="为什么需要用接口"></a>为什么需要用接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">接口提取了一群类共同的函数,可以把接口当做一个函数的集合,然后让子类去实现接口中的函数.</span><br><span class="line"></span><br><span class="line">父类:定制一套统一的规范</span><br><span class="line">子类:遵循父类统一的规范.</span><br><span class="line">注意:再python中不会强制限制子类必须遵循父类的规范.(要引入抽象类)</span><br><span class="line"></span><br><span class="line">这么做的意义在于归一化,什么叫归一化,就是只要是基于同一个接口实现的类,那么所有的这些类产生的对象在使用时,从用法上来说都一样.</span><br><span class="line"></span><br><span class="line">归一化的好处在于：</span><br><span class="line">    归一化让使用者无需关心对象的类是什么,只需要的知道这些对象都具备某些功能就可以了,这极大地降低了使用者的使用难度.</span><br><span class="line">    归一化使得高层的外部使用者可以不加区分的处理所有接口兼容的对象集合</span><br><span class="line"></span><br><span class="line">就好象linux的泛文件概念一样,所有东西都可以当文件处理,不必关心它是内存、磁盘、网络还是屏幕(当然,</span><br><span class="line">对底层设计者,当然也可以区分出&quot;字符设备&quot;和&quot;块设备&quot;,然后做出针对性的设计：细致到什么程度,视需求而定).</span><br><span class="line"></span><br><span class="line">再比如：我们有一个汽车接口,里面定义了汽车所有的功能,然后由本田汽车的类,奥迪汽车的类,大众汽车的类,他们都实现了汽车接口,这样就好办了,</span><br><span class="line">大家只需要学会了怎么开汽车,那么无论是本田,还是奥迪,还是大众我们都会开了,开的时候根本无需关心我开的是哪一类车,操作手法(函数调用)都一样</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="模仿接口"><a href="#模仿接口" class="headerlink" title="模仿接口"></a>模仿接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">模仿接口的方式:</span><br><span class="line"></span><br><span class="line">一：继承基类的方法,并且做出自己的改变或者扩展(代码重用)：实践中,继承的这种用途意义并不很大,甚至常常是有害的.因为它使得子类与基类出现强耦合.</span><br><span class="line"></span><br><span class="line">二：声明某个子类兼容于某基类,定义一个接口类(模仿java的Interface),接口类中定义了一些接口名(就是函数名)且并未实现接口的功能,子类继承接口类,并且实现接口中的功能</span><br><span class="line"></span><br><span class="line">在python中根本就没有一个叫做interface的关键字,如果非要去模仿接口的概念</span><br><span class="line">可以借助第三方模块：http:&#x2F;&#x2F;pypi.python.org&#x2F;pypi&#x2F;zope.interface</span><br><span class="line"></span><br><span class="line">这样做也就是说告诉用户只要是基于同一个接口实现的类,那么所有的这些类产生的对象在使用时,从用法上来说都一样,方便使用.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Interface</span>:</span>  <span class="comment"># 定义接口Interface类来模仿接口的概念,python中压根就没有interface关键字来定义一个接口.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span>  <span class="comment"># 定接口函数read</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span>  <span class="comment"># 定义接口函数write</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">(Interface)</span>:</span>  <span class="comment"># 文本,具体实现read和write</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span> </span><br><span class="line">        print(<span class="string">'文本数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'文本数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sata</span><span class="params">(Interface)</span>:</span>  <span class="comment"># 磁盘,具体实现read和write</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'硬盘数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'硬盘数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 上面的代码只是看起来像接口,其实并没有起到接口的作用,子类完全可以不用去实现接口 ,这就用到了抽象类</span></span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><hr>
+<h2 id="什么是抽象类"><a href="#什么是抽象类" class="headerlink" title="什么是抽象类"></a>什么是抽象类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">与java一样,python也有抽象类的概念但是同样需要借助模块实现,抽象类是一个特殊的类,它的特殊之处在于只能被继承,不能被实例化</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="为什么要有抽象类"><a href="#为什么要有抽象类" class="headerlink" title="为什么要有抽象类"></a>为什么要有抽象类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">如果说类是从一堆对象中抽取相同的内容而来的,那么抽象类就是从一堆类中抽取相同的内容而来的,内容包括数据属性和函数属性.</span><br><span class="line"></span><br><span class="line">比如我们有香蕉的类,有苹果的类,有桃子的类,从这些类抽取相同的内容就是水果这个抽象的类,你吃水果时,要么是吃一个具体的香蕉,要么是吃一个具体的桃子.你永远无法吃到一个叫做水果的东西.</span><br><span class="line"></span><br><span class="line">从设计角度去看,如果类是从现实对象抽象而来的,那么抽象类就是基于类抽象而来的.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">从实现角度来看,抽象类与普通类的不同之处在于：抽象类中只能有抽象方法(没有实现功能),该类不能被实例化,</span><br><span class="line">只能被继承,且子类必须实现抽象方法.这一点与接口有点类似,但其实是不同的.</span><br><span class="line"></span><br><span class="line">抽象类的本质还是类,指的是一组类的相似性,包括数据属性(如all_type)和函数属性(如read、write),而接口只强调函数属性的相似性.</span><br><span class="line"></span><br><span class="line">抽象类是一个介于类和接口直接的一个概念,同时具备类和接口的部分特性,可以用来实现归一化设计.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">抽象类重点在于相似,抽象类既然是相似的,那子类下面的相似属性必定是存在的.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一切皆文件</span></span><br><span class="line"><span class="keyword">import</span> abc <span class="comment">#利用abc模块实现抽象类</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">All_file</span><span class="params">(metaclass=abc.ABCMeta)</span>:</span></span><br><span class="line">    all_type=<span class="string">'file'</span></span><br><span class="line"><span class="meta">    @abc.abstractmethod #定义抽象方法,无需实现功能</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment">#   '子类必须定义读功能'</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abc.abstractmethod #定义抽象方法,无需实现功能</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment">#   '子类必须定义写功能'</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># class Txt(All_file):</span></span><br><span class="line"><span class="comment">#     pass</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># t1=Txt() #报错,子类没有定义抽象方法</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Txt</span><span class="params">(All_file)</span>:</span> <span class="comment">#子类继承抽象类,但是必须定义read和write方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'文本数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'文本数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sata</span><span class="params">(All_file)</span>:</span> <span class="comment">#子类继承抽象类,但是必须定义read和write方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'硬盘数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'硬盘数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Process</span><span class="params">(All_file)</span>:</span> <span class="comment">#子类继承抽象类,但是必须定义read和write方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'进程数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'进程数据的读取方法'</span>)</span><br><span class="line"></span><br><span class="line">wenbenwenjian=Txt()</span><br><span class="line"></span><br><span class="line">yingpanwenjian=Sata()</span><br><span class="line"></span><br><span class="line">jinchengwenjian=Process()</span><br><span class="line"></span><br><span class="line"><span class="comment">#这样大家都是被归一化了,也就是一切皆文件的思想</span></span><br><span class="line">wenbenwenjian.read()</span><br><span class="line">yingpanwenjian.write()</span><br><span class="line">jinchengwenjian.read()</span><br><span class="line"></span><br><span class="line">print(wenbenwenjian.all_type)</span><br><span class="line">print(yingpanwenjian.all_type)</span><br><span class="line">print(jinchengwenjian.all_type)</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/21/2020-07-21-python第五章_多态与多态性和鸭子类型/" class="prev">上一篇：python第五章_多态与多态性和鸭子类型</a>
+    
+    
+    <a href="/2020/07/19/2020-07-19-python第五章_类的组合/" class="next">下一篇：python第五章_类的组合</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

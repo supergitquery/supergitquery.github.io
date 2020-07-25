@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_封装与property | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_封装与property"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-21T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-22
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_封装与property</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#封装"><span class="toc-number">1.</span> <span class="toc-text">封装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#隐藏-私有"><span class="toc-number">1.1.</span> <span class="toc-text">隐藏(私有)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-number">1.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#意义"><span class="toc-number">1.3.</span> <span class="toc-text">意义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装数据"><span class="toc-number">1.3.1.</span> <span class="toc-text">封装数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装方法"><span class="toc-number">1.3.2.</span> <span class="toc-text">封装方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装与扩展性"><span class="toc-number">1.3.3.</span> <span class="toc-text">封装与扩展性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#特性"><span class="toc-number">2.</span> <span class="toc-text">特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#property"><span class="toc-number">2.1.</span> <span class="toc-text">property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setter"><span class="toc-number">2.2.</span> <span class="toc-text">setter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deleter"><span class="toc-number">2.3.</span> <span class="toc-text">deleter</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">封装就是将东西装起来封好,只要我不告诉你里面有什么,你就不知道.</span><br></pre></td></tr></table></figure>
+
+<h2 id="隐藏-私有"><a href="#隐藏-私有" class="headerlink" title="隐藏(私有)"></a>隐藏(私有)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在Python中用双下划线开头的方式将属性隐藏起来(其实是设置成私有属性).</span><br><span class="line"></span><br><span class="line">其实这仅仅这是一种变形操作</span><br><span class="line">类中所有双下划线开头的名称如__x在类的定义阶段都会自动变形成:_类名__x的形式</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    __name = <span class="string">'A'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__info</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.__name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(a.__name)  # 这样调用会报错</span></span><br><span class="line">print(a._A__name)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">这种自动变形的特点:</span><br><span class="line"></span><br><span class="line">类中定义的__x只能在内部使用,如self.__x,引用的就是变形的结果.</span><br><span class="line">这种变形其实正是针对外部的变形,在外部是无法通过__x这个名字访问到的.</span><br><span class="line">在子类定义的__x不会覆盖在父类定义的__x,因为子类中变形成了:_子类名__x,而父类中变形成了:_父类名__x,即双下滑线开头的属性在继承给子类时,子类是无法覆盖的.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这种变形需要注意的问题是:</span><br><span class="line"></span><br><span class="line">1 这种机制也并没有真正意义上限制我们从外部直接访问属性,知道了类名和属性名就可以拼出名字:_类名__属性,然后就可以访问了,如a._A__N</span><br><span class="line"></span><br><span class="line">2 变形的过程只在类的定义是发生一次,在定义后的赋值操作,不会变形</span><br><span class="line"></span><br><span class="line">3 在继承中,父类如果不想让子类覆盖自己的方法,可以将方法定义为私有的</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    __name = <span class="string">'A'</span>       <span class="comment"># 变为 _A__name = 'A'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__info</span><span class="params">(self)</span>:</span>  <span class="comment"># 变为 _A__info</span></span><br><span class="line">        print(self.__name)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call</span><span class="params">(self)</span>:</span>  <span class="comment"># 在A中调用__info,其实是在调用_A__info</span></span><br><span class="line">        self.__info()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    __name = <span class="string">'B'</span>        <span class="comment"># 变为 _B__name = 'B'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__info</span><span class="params">(self)</span>:</span>   <span class="comment"># 变为 _B__info</span></span><br><span class="line">        print(self.__name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A.__name = <span class="string">'aa'</span>   <span class="comment"># 类定义后赋值操作不会变形,因为变形是在定义阶段完成的</span></span><br><span class="line">print(A.__name)   </span><br><span class="line"></span><br><span class="line">print(A._A__name) <span class="comment"># 私有属性并不是不可访问的,只要知道变形规则就能访问到</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = B()</span><br><span class="line">b.call()  <span class="comment"># 子类和父类都定义了__info,但是变形后名字其实是不同的,所以子类无法覆盖</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aa</span><br><span class="line">A</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h2><hr>
+<h3 id="封装数据"><a href="#封装数据" class="headerlink" title="封装数据"></a>封装数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">封装数据</span><br><span class="line"></span><br><span class="line">将数据隐藏起来这不是目的,隐藏起来然后对外提供操作该数据的接口,然后我们可以在接口附加上对该数据操作的限制,以此完成对数据属性操作的严格控制,这样能规范用户的行为.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        明确区分内外属性</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tell_info</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        定义一个查询接口,控制外部对内部隐藏属性的操作行为,不能随意的像公共属性那样obj.name调用查看</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        print(<span class="string">'姓名:%s,年龄:%s'</span> % (self.__name, self.__age))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_info</span><span class="params">(self, name, age)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        定义一个修改接口,控制外部对内部隐藏属性的操作行为,不能随意的像公共属性那样obj.name=NAME修改</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(name, str):</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'姓名必须是字符串类型'</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(age, int):</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'年龄必须是整型'</span>)</span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__age = age</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">t = Teacher(<span class="string">'egg'</span>, <span class="number">18</span>)</span><br><span class="line">t.tell_info()</span><br><span class="line"></span><br><span class="line">t.set_info(<span class="string">'egg'</span>, <span class="number">19</span>)</span><br><span class="line">t.tell_info()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">姓名:egg,年龄:18</span><br><span class="line">姓名:egg,年龄:19</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="封装方法"><a href="#封装方法" class="headerlink" title="封装方法"></a>封装方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">封装方法：目的是隔离复杂度</span><br><span class="line"></span><br><span class="line">取款是功能,而这个功能有很多功能组成:插卡 密码认证 输入金额 打印账单 取钱</span><br><span class="line">对使用者来说,只需要知道取款这个功能即可,其余功能我们都可以隐藏起来,很明显这么做</span><br><span class="line">隔离了复杂度,同时也提升了安全性.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ATM</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__card</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'插卡'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__auth</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'用户认证'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__input</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'输入取款金额'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__print_bill</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'打印账单'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__take_money</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'取款'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">withdraw</span><span class="params">(self)</span>:</span>  <span class="comment"># 用户只需要知道这个方法就可以了,不需要了解其他方法</span></span><br><span class="line">        self.__card()</span><br><span class="line">        self.__auth()</span><br><span class="line">        self.__input()</span><br><span class="line">        self.__print_bill()</span><br><span class="line">        self.__take_money()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = ATM()</span><br><span class="line">a.withdraw()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">插卡</span><br><span class="line">用户认证</span><br><span class="line">输入取款金额</span><br><span class="line">打印账单</span><br><span class="line">取款</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="封装与扩展性"><a href="#封装与扩展性" class="headerlink" title="封装与扩展性"></a>封装与扩展性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">封装在于明确区分内外,使得类实现者可以修改封装内的东西而不影响外部调用者的代码;</span><br><span class="line">而外部使用用者只知道一个接口(函数),只要接口（函数名）参数不变,使用者的代码永远无需改变.</span><br><span class="line">这就提供一个良好的合作基础——或者说,只要接口这个基础约定不变,则代码改变不足为虑.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">property 将函数属性像数据属性一样调用</span><br><span class="line">setter   当被赋值的时候调用被property装饰的同名函数</span><br><span class="line">deleter  当被删除的时候调用</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="property"><a href="#property" class="headerlink" title="property"></a>property</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">property是一种特殊的属性,访问它时会执行一段功能(函数)然后返回值</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property  # 不需要像函数属性一样调用,装饰像数据属性一样去调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'调用时执行'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hi'</span>, self.__name  <span class="comment"># 需要有返回值才能像数据属性一样使用</span></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">jack = A(<span class="string">'jack'</span>)</span><br><span class="line">print(jack.say_hi)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">调用时执行</span><br><span class="line">(&#39;Hi&#39;, &#39;jack&#39;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">需要在使用property后才能使用,设定值时调用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property  # 不需要像函数属性一样调用,装饰像数据属性一样去调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'调用时执行'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hi'</span>, self.__name  <span class="comment"># 需要有返回值才能像数据属性一样使用</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @say_hi.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'赋值时执行'</span>)</span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jack = A(<span class="string">'jack'</span>)</span><br><span class="line">jack.say_hi = <span class="string">'Lisa'</span></span><br><span class="line">print(jack.say_hi)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">赋值时执行</span><br><span class="line">调用时执行</span><br><span class="line">(&#39;Hi&#39;, &#39;Lisa&#39;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="deleter"><a href="#deleter" class="headerlink" title="deleter"></a>deleter</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">需要在使用property后才能使用,删除属性时调用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property  # 不需要像函数属性一样调用,装饰像数据属性一样去调用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'调用时执行'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hi'</span>, self.__name  <span class="comment"># 需要有返回值才能像数据属性一样使用</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @say_hi.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        print(<span class="string">'赋值时执行'</span>)</span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @say_hi.deleter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">say_hi</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'删除时执行'</span>)</span><br><span class="line">        <span class="keyword">del</span> self.__name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jack = A(<span class="string">'jack'</span>)</span><br><span class="line"><span class="keyword">del</span> jack.say_hi</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">删除时执行</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/23/2020-07-23-python第五章_绑定方法与非绑定方法_/" class="prev">上一篇：python第五章_绑定方法与非绑定方法</a>
+    
+    
+    <a href="/2020/07/21/2020-07-21-python第五章_多态与多态性和鸭子类型/" class="next">下一篇：python第五章_多态与多态性和鸭子类型</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

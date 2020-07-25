@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_元类 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_元类"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-25T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-26
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_元类</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#exec"><span class="toc-number">1.</span> <span class="toc-text">exec</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类也是对象"><span class="toc-number">2.</span> <span class="toc-text">类也是对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元类"><span class="toc-number">3.</span> <span class="toc-text">元类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建类的两种方式"><span class="toc-number">4.</span> <span class="toc-text">创建类的两种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方式一"><span class="toc-number">4.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方式二"><span class="toc-number">4.2.</span> <span class="toc-text">方式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number">4.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自定义元类控制类"><span class="toc-number">5.</span> <span class="toc-text">自定义元类控制类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性检查控制"><span class="toc-number">5.1.</span> <span class="toc-text">属性检查控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例化控制"><span class="toc-number">5.2.</span> <span class="toc-text">实例化控制</span></a></li></ol></li></ol>
+    </div>
+    
+    <h1 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">exec:三个参数</span><br><span class="line"></span><br><span class="line">参数一:字符串形式的命令</span><br><span class="line"></span><br><span class="line">参数二:全局作用域(字典形式),如果不指定,默认为globals()</span><br><span class="line"></span><br><span class="line">参数三:局部作用域(字典形式),如果不指定,默认为locals()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以把exec命令的执行当成是一个函数的执行,会将执行期间产生的名字存放于局部名称空间中</span></span><br><span class="line">g = &#123;<span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">2</span>&#125;  <span class="comment"># 用来当为全局名称空间</span></span><br><span class="line">l = &#123;&#125;  <span class="comment"># 用来当为局部名称空间</span></span><br><span class="line"></span><br><span class="line">exec(<span class="string">'''</span></span><br><span class="line"><span class="string">global x,z</span></span><br><span class="line"><span class="string">x=100</span></span><br><span class="line"><span class="string">z=200</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">m=300</span></span><br><span class="line"><span class="string">'''</span>, g, l)</span><br><span class="line"></span><br><span class="line">print(g)  <span class="comment"># &#123;'x': 100, 'y': 2,'z':200,......&#125;</span></span><br><span class="line">print(l)  <span class="comment"># &#123;'m': 300&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;x&#39;: 100, &#39;y&#39;: 2, &#39;__builtins__&#39;: &#123;&#39;__name__&#39;: &#39;builtins&#39;, &#39;__doc__&#39;: ...&#125;</span><br><span class="line">&#123;&#39;m&#39;: 300&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="类也是对象"><a href="#类也是对象" class="headerlink" title="类也是对象"></a>类也是对象</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python中一切皆是对象,类本身也是一个对象,当使用关键字class的时候,python解释器在加载class的时候就会创建一个对象(这里的对象指的是类而非类的实例),因而我们可以将类当作一个对象去使用,同样满足第一类对象的概念,可以:</span><br><span class="line"></span><br><span class="line">1. 把类赋值给一个变量</span><br><span class="line">2. 把类作为函数参数进行传递</span><br><span class="line">3. 把类作为函数的返回值</span><br><span class="line">4. 在运行时动态地创建类</span><br><span class="line"></span><br><span class="line">那我们class定义类的时候,我们的类是有谁产生的呢?</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f1 = Foo()  <span class="comment"># f1是通过Foo类实例化的对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># type函数可以查看类型,也可以用来查看对象的类,二者是一样的</span></span><br><span class="line">print(type(f1))  <span class="comment"># 输出:&lt;class '__main__.Foo'&gt; 表示,obj 对象由Foo类创建</span></span><br><span class="line">print(type(Foo))  <span class="comment"># 输出:&lt;type 'type'&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#39;__main__.Foo&#39;&gt;</span><br><span class="line">&lt;class &#39;type&#39;&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="元类"><a href="#元类" class="headerlink" title="元类"></a>元类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">元类是类的类,是类的模板</span><br><span class="line"></span><br><span class="line">元类是用来控制如何创建类的,正如类是创建对象的模板一样,而元类的主要目的是为了控制类的创建行为</span><br><span class="line"></span><br><span class="line">元类的实例化的结果为我们用class定义的类,正如类的实例为对象(f1对象是Foo类的一个实例,Foo类是 type 类的一个实例)</span><br><span class="line"></span><br><span class="line">type是python的一个内建元类,用来直接控制生成类,python中任何class定义的类其实都是type类实例化的对象</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="创建类的两种方式"><a href="#创建类的两种方式" class="headerlink" title="创建类的两种方式"></a>创建类的两种方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">创建类主要分为三部分</span><br><span class="line"></span><br><span class="line">1.类名</span><br><span class="line"> </span><br><span class="line">2.类的父类</span><br><span class="line"> </span><br><span class="line">3.类体</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用class关键字</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line"></span><br><span class="line">    a_type = <span class="string">'class'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.__name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call_name</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.__name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = A(<span class="string">'jack'</span>)</span><br><span class="line">print(a.__dict__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;_A__name&#39;: &#39;jack&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">就是手动模拟class创建类的过程:将创建类的步骤拆分开,手动去创建</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 准备工作:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 类名</span></span><br><span class="line">class_name = <span class="string">'A'</span></span><br><span class="line"><span class="comment"># 类的父类</span></span><br><span class="line">class_bases = (object,)</span><br><span class="line"><span class="comment"># 类体</span></span><br><span class="line">class_body = <span class="string">"""</span></span><br><span class="line"><span class="string">a_type = 'class'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def __init__(self, name):</span></span><br><span class="line"><span class="string">    self.__name = name</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">def call_name(self):</span></span><br><span class="line"><span class="string">    print(self.__name)</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 步骤一(先处理类体-&gt;名称空间):类体定义的名字都会存放于类的名称空间中(一个局部的名称空间),</span></span><br><span class="line"><span class="comment"># 我们可以事先定义一个空字典,然后用exec去执行类体的代码(exec产生名称空间的过程与真正的class过程类似,</span></span><br><span class="line"><span class="comment"># 只是后者会将__开头的属性变形),生成类的局部名称空间,即填充字典</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个局部名称空间</span></span><br><span class="line">class_dict = &#123;&#125;</span><br><span class="line">exec(class_body, globals(), class_dict)  <span class="comment"># 生成类的局部名称空间</span></span><br><span class="line">print(<span class="string">'类名称空间创建'</span>, class_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 步骤二:调用元类type(也可以自定义)来产生类Chinense</span></span><br><span class="line">A = type(class_name, class_bases, class_dict)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'生成的类'</span>, A)</span><br><span class="line"></span><br><span class="line">a = A(<span class="string">'jack'</span>)  <span class="comment"># 实例化</span></span><br><span class="line">print(a.__dict__)  <span class="comment"># 两个方法的差别在这里,__name没有变形</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类名称空间创建 &#123;&#39;a_type&#39;: &#39;class&#39;, &#39;__init__&#39;: &lt;function __init__ at 0x01C5D6A8&gt;, &#39;call_name&#39;: &lt;function call_name at 0x01C5D738&gt;&#125;</span><br><span class="line">生成的类 &lt;class &#39;__main__.A&#39;&gt;</span><br><span class="line">&#123;&#39;__name&#39;: &#39;jack&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">我们看到,type 接收三个参数:</span><br><span class="line"></span><br><span class="line">第 1 个参数是字符串 &#39;Foo&#39;,表示类名</span><br><span class="line">第 2 个参数是元组 (object, ),表示所有的父类</span><br><span class="line">第 3 个参数是字典,这里是一个空字典,表示没有定义属性和方法</span><br><span class="line">补充:若Foo类有继承,即class Foo(Bar):.... 则等同于type(&#39;Foo&#39;,(Bar,),&#123;&#125;)</span><br><span class="line"></span><br><span class="line">方法一与方法二的区别是方法二__开头的属性名不会变形</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="自定义元类控制类"><a href="#自定义元类控制类" class="headerlink" title="自定义元类控制类"></a>自定义元类控制类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一个类没有声明自己的元类,默认他的元类就是type,除了使用元类type,用户也可以通过继承type来自定义元类</span><br><span class="line"></span><br><span class="line">在定义类的时候还可以传入metaclass指定元类,metaclass默认为type</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性检查控制"><a href="#属性检查控制" class="headerlink" title="属性检查控制"></a>属性检查控制</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyType</span><span class="params">(type)</span>:</span></span><br><span class="line">    <span class="string">"""自定义元类型"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, class_name, class_bases, class_dict)</span>:</span>  <span class="comment"># 元类三参数:类名,父类,类名称空间</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里是控制操作</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> class_name[<span class="number">0</span>].isupper():  <span class="comment"># 如果你的类名首字符不是大写就报错</span></span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'首字符要大写啊'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'__doc__'</span> <span class="keyword">not</span> <span class="keyword">in</span> class_dict <span class="keyword">or</span> <span class="keyword">not</span> class_dict[<span class="string">'__doc__'</span>].strip():  <span class="comment"># 如果你没写注释或者注释为空就报错</span></span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'写类注释啊魂淡'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'__init__'</span> <span class="keyword">not</span> <span class="keyword">in</span> class_dict:  <span class="comment"># 如果你没初始化就报错</span></span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'给我初始化啊'</span>)</span><br><span class="line"></span><br><span class="line">        super().__init__(class_name, class_bases, class_dict)  <span class="comment"># 使用父类的初始化方法完成初始化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object, metaclass=MyType)</span>:</span>  <span class="comment"># 首字符不大写就会报错</span></span><br><span class="line">    <span class="string">"""在写了, 在写了"""</span>                   <span class="comment"># 不写注释就会报错</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex)</span>:</span>   <span class="comment"># 没有初始化就会报错</span></span><br><span class="line">        self.name = name </span><br><span class="line">        self.age = age</span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">info</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.age, self.sex)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="实例化控制"><a href="#实例化控制" class="headerlink" title="实例化控制"></a>实例化控制</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyType</span><span class="params">(type)</span>:</span></span><br><span class="line">    <span class="string">"""自定义元类型"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, class_name, class_bases, class_dict)</span>:</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> class_name[<span class="number">0</span>].isupper():</span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'首字符要大写啊'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'__doc__'</span> <span class="keyword">not</span> <span class="keyword">in</span> class_dict <span class="keyword">or</span> <span class="keyword">not</span> class_dict[<span class="string">'__doc__'</span>].strip():</span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'写类注释啊魂淡'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">'__init__'</span> <span class="keyword">not</span> <span class="keyword">in</span> class_dict:</span><br><span class="line">            <span class="keyword">raise</span> SyntaxError(<span class="string">'给我初始化啊'</span>)</span><br><span class="line"></span><br><span class="line">        super().__init__(class_name, class_bases, class_dict)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, *args, **kwargs)</span>:</span>  <span class="comment"># 类的实例化实质就是调用的过程,三个步骤:1.生成空对象 2.初始化 3.返回对象</span></span><br><span class="line">        <span class="comment"># 这里有操作空间</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1. 生成空对象</span></span><br><span class="line">        obj = object.__new__(self)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 2. 初始化</span></span><br><span class="line">        self.__init__(obj, *args, **kwargs)  <span class="comment"># 这里是Student.__init__(obj, *args, **kwargs)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 3. 返回对象</span></span><br><span class="line">        <span class="keyword">return</span> obj</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object, metaclass=MyType)</span>:</span></span><br><span class="line">    <span class="string">"""在写了, 在写了"""</span>                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex)</span>:</span> </span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">info</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(self.name, self.age, self.sex)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jack = Student(<span class="string">'jack'</span>, <span class="number">17</span>, <span class="string">'man'</span>)  <span class="comment"># 实例化测试</span></span><br><span class="line">print(jack.__dict__)  <span class="comment"># 查看名称空间判断是否成功</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#39;name&#39;: &#39;jack&#39;, &#39;age&#39;: 17, &#39;sex&#39;: &#39;man&#39;&#125;</span><br></pre></td></tr></table></figure>
+
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    
+    <a href="/2020/07/25/2020-07-25-python第五章_内置方法/" class="next">下一篇：python第五章_内置方法(魔法函数)</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>
