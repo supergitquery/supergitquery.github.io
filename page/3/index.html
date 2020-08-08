@@ -88,6 +88,168 @@
   <article class="post">
 
   <h1 class="title" itemprop="name">
+    <a href="/2020/07/04/2020-07-04-python第四章_时间模块/" itemprop="url">python第四章_时间模块</a>
+  </h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+      
+时间模块程序对时间的处理可以归为以下3种:
+
+时间的显示,在屏幕显示和记录日志等
+时间的转换,比如把字符串格式的日期转成Python中的日期类型
+时间的运算,计算两个日期间的查值等
+
+
+time
+time123456time(...)    time() -&gt; floating point number    Return the current time in seconds sinc ...
+      <a href="/2020/07/04/2020-07-04-python第四章_时间模块/" class="more-link">
+        继续阅读
+        <div class="meta meta-index-post-entry">
+          
+<div class="date">
+
+<time datetime="2020-07-03T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-04
+</time>
+
+
+
+
+
+</div>
+
+        </div>
+      </a>
+    
+  </div>
+
+
+</article>
+  
+  <article class="post">
+
+  <h1 class="title" itemprop="name">
+    <a href="/2020/07/03/2020-07-03-python第四章_系统调用模块/" itemprop="url">python第四章_系统调用模块</a>
+  </h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+      
+os
+getcwd123getcwd()    Return a unicode string representing the current working directory.    返回表示当前工作目录的unicode字符串.
+
+12from os import getcwdprint(getcwd())
+
+1C:\Users\sgqadmin\Desktop\study\sgqpyt ...
+      <a href="/2020/07/03/2020-07-03-python第四章_系统调用模块/" class="more-link">
+        继续阅读
+        <div class="meta meta-index-post-entry">
+          
+<div class="date">
+
+<time datetime="2020-07-02T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-03
+</time>
+
+
+
+
+
+</div>
+
+        </div>
+      </a>
+    
+  </div>
+
+
+</article>
+  
+  <article class="post">
+
+  <h1 class="title" itemprop="name">
+    <a href="/2020/07/02/2020-07-02-python第四章_模块/" itemprop="url">python第四章_模块</a>
+  </h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+      
+模块模块就是工具包,工具包里有许多的工具可以使用.
+模块便于管理,一个 py 文件就是一个模块.
+模块的分类:    标准模块 内置模块 库    第三方模块  安装可以使用 (pip install)    自定义模块(自己写的)
+
+模块导入1234567模块的导入 &amp; 调用:    import module  # 导入    from module import xx    fr ...
+      <a href="/2020/07/02/2020-07-02-python第四章_模块/" class="more-link">
+        继续阅读
+        <div class="meta meta-index-post-entry">
+          
+<div class="date">
+
+<time datetime="2020-07-01T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-02
+</time>
+
+
+
+
+
+</div>
+
+        </div>
+      </a>
+    
+  </div>
+
+
+</article>
+  
+  <article class="post">
+
+  <h1 class="title" itemprop="name">
+    <a href="/2020/07/01/2020-07-01-python第三章_生成器/" itemprop="url">python第三章_生成器</a>
+  </h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+      
+生成器一边循环一边计算后面的元素的机制,成为生成器: generator ,也叫惰性运算,因为是用一次生成一次.
+1234567891011121314# 要循环100万次,但是循环到50次的时候我就想退出了,下面两种方式在 Python2 中对比 range(1000000)会先生# 成100万个元素的列表会造成浪费,而 while 是一边增加一边循环的.for i in range(100 ...
+      <a href="/2020/07/01/2020-07-01-python第三章_生成器/" class="more-link">
+        继续阅读
+        <div class="meta meta-index-post-entry">
+          
+<div class="date">
+
+<time datetime="2020-06-30T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-01
+</time>
+
+
+
+
+
+</div>
+
+        </div>
+      </a>
+    
+  </div>
+
+
+</article>
+  
+  <article class="post">
+
+  <h1 class="title" itemprop="name">
     <a href="/2020/06/30/2020-06-30-python第三章_装饰器/" itemprop="url">python第三章_装饰器</a>
   </h1>
   <div class="entry-content" itemprop="articleBody">
@@ -305,175 +467,6 @@ open123456789101112131415161718open(file, mode&#x3D;&#39;r&#39;, buffering&#x3D;
       data-updated="true"
        itemprop="datePublished">
   2020-06-25
-</time>
-
-
-
-
-
-</div>
-
-        </div>
-      </a>
-    
-  </div>
-
-
-</article>
-  
-  <article class="post">
-
-  <h1 class="title" itemprop="name">
-    <a href="/2020/06/24/2020-06-24-python第二章_哈希/" itemprop="url">python第二章_哈希</a>
-  </h1>
-  <div class="entry-content" itemprop="articleBody">
-    
-      
-定义hash,一般翻译做散列,杂奏,音译为哈希,把任意长度的输入(又叫做预映射)通过散列算法变换成固定长度的输出,该输出就是散列.这种转换是一种压缩映射,也就是,散列值得空间通常小于输入得空间.
-哈希不能从结果推出输入,所以又称为不可逆算法.
-12a = 'hello'print(hash(a))
-
-11441949233
-
-
-为什么字典查询快1234简单理解:因为字典中得key会被进行哈希, ...
-      <a href="/2020/06/24/2020-06-24-python第二章_哈希/" class="more-link">
-        继续阅读
-        <div class="meta meta-index-post-entry">
-          
-<div class="date">
-
-<time datetime="2020-06-23T16:00:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2020-06-24
-</time>
-
-
-
-
-
-</div>
-
-        </div>
-      </a>
-    
-  </div>
-
-
-</article>
-  
-  <article class="post">
-
-  <h1 class="title" itemprop="name">
-    <a href="/2020/06/23/2020-06-23-python第二章_集合/" itemprop="url">python第二章_集合</a>
-  </h1>
-  <div class="entry-content" itemprop="articleBody">
-    
-      
-定义1集合（set）是一个无序的不重复元素序列,集合中的元素必须是不可变类型.
-
-12a = &#123;1, 2, 3, 4, 5, 5&#125;print(a)
-
-1&#123;1, 2, 3, 4, 5&#125;
-
-
-常用函数
-add1234add(...)    将元素添加到集合中。    如果该元素已经存在，则这无效。
-
-123set_element = &#123;1, 2,  ...
-      <a href="/2020/06/23/2020-06-23-python第二章_集合/" class="more-link">
-        继续阅读
-        <div class="meta meta-index-post-entry">
-          
-<div class="date">
-
-<time datetime="2020-06-22T16:00:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2020-06-23
-</time>
-
-
-
-
-
-</div>
-
-        </div>
-      </a>
-    
-  </div>
-
-
-</article>
-  
-  <article class="post">
-
-  <h1 class="title" itemprop="name">
-    <a href="/2020/06/22/2020-06-22-python第二章_字典/" itemprop="url">python第二章_字典</a>
-  </h1>
-  <div class="entry-content" itemprop="articleBody">
-    
-      
-定义1.字典是存储信息的一种方式。
-2.字典以键-值对存储信息，因此字典中的任何一条信息都与至少一条其他信息相连。
-3.字典的存储是无序的，因此可能无法按照输入的顺序返回信息。
-12345678&#123;key1:value1,key2:value2&#125;1. key-value结构2. key必须为不可变数据类型,必须唯一3. 可以存放任意多个value,可修改,可以不唯一4. 无序 ...
-      <a href="/2020/06/22/2020-06-22-python第二章_字典/" class="more-link">
-        继续阅读
-        <div class="meta meta-index-post-entry">
-          
-<div class="date">
-
-<time datetime="2020-06-21T16:00:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2020-06-22
-</time>
-
-
-
-
-
-</div>
-
-        </div>
-      </a>
-    
-  </div>
-
-
-</article>
-  
-  <article class="post">
-
-  <h1 class="title" itemprop="name">
-    <a href="/2020/06/21/2020-06-21-python第二章_元组/" itemprop="url">python第二章_元组</a>
-  </h1>
-  <div class="entry-content" itemprop="articleBody">
-    
-      
-定义不可修改的列表,但是如果元组中包含其他可变元素,元组里的可变元素是可以修改的
-
-常用方法
-count12count(self, value, &#x2F;)    返回值出现的次数。
-
-123name_tuple = ('Jack', 'Alice', 'Klein', 'Jack')name_count = name_tuple.count('Jack')print(name_count ...
-      <a href="/2020/06/21/2020-06-21-python第二章_元组/" class="more-link">
-        继续阅读
-        <div class="meta meta-index-post-entry">
-          
-<div class="date">
-
-<time datetime="2020-06-20T16:00:00.000Z"
-      
-      data-updated="true"
-       itemprop="datePublished">
-  2020-06-21
 </time>
 
 

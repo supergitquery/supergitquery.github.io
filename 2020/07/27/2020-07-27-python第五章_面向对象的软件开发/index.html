@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第五章_面向对象的软件开发 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第五章_面向对象的软件开发"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-26T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-27
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第五章_面向对象的软件开发</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象的软件开发"><span class="toc-number">1.</span> <span class="toc-text">面向对象的软件开发</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象分析-object-oriented-analysis-OOA"><span class="toc-number">2.</span> <span class="toc-text">面向对象分析(object oriented analysis,OOA)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象设计-object-oriented-design-OOD"><span class="toc-number">3.</span> <span class="toc-text">面向对象设计(object oriented design,OOD)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象编程-object-oriented-programming-OOP"><span class="toc-number">4.</span> <span class="toc-text">面向对象编程(object oriented programming,OOP)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象测试-object-oriented-test-OOT"><span class="toc-number">5.</span> <span class="toc-text">面向对象测试(object oriented test,OOT)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象维护-object-oriendted-soft-maintenance-OOSM"><span class="toc-number">6.</span> <span class="toc-text">面向对象维护(object oriendted soft maintenance,OOSM)</span></a></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="面向对象的软件开发"><a href="#面向对象的软件开发" class="headerlink" title="面向对象的软件开发"></a>面向对象的软件开发</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">很多人在学完了python的class机制之后，遇到一个生产中的问题，还是会懵逼，这其实太正常了，因为任何程序的开发都是先设计后编程，</span><br><span class="line">python的class机制只不过是一种编程方式，如果你硬要拿着class去和你的问题死磕，变得更加懵逼都是分分钟的事，在以前，软件的开发相对简单，</span><br><span class="line">从任务的分析到编写程序，再到程序的调试，可以由一个人或一个小组去完成。但是随着软件规模的迅速增大，软件任意面临的问题十分复杂，</span><br><span class="line">需要考虑的因素太多，在一个软件中所产生的错误和隐藏的错误、未知的错误可能达到惊人的程度，这也不是在设计阶段就完全解决的。</span><br><span class="line"></span><br><span class="line">所以软件的开发其实一整套规范，我们所学的只是其中的一小部分，一个完整的开发过程，需要明确每个阶段的任务，在保证一个阶段正确的前提下再进行下一个阶段的工作，称之为软件工程</span><br><span class="line"></span><br><span class="line">面向对象的软件工程包括下面几个部分.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="面向对象分析-object-oriented-analysis-OOA"><a href="#面向对象分析-object-oriented-analysis-OOA" class="headerlink" title="面向对象分析(object oriented analysis,OOA)"></a>面向对象分析(object oriented analysis,OOA)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">软件工程中的系统分析阶段，要求分析员和用户结合在一起，对用户的需求做出精确的分析和明确的表述，从大的方面解析软件系统应该做什么，</span><br><span class="line">而不是怎么去做。面向对象的分析要按照面向对象的概念和方法，在对任务的分析中，从客观存在的事物和事物之间的关系，归纳出有关的对象</span><br><span class="line">（对象的‘特征’和‘技能’）以及对象之间的联系，并将具有相同属性和行为的对象用一个类class来标识。</span><br><span class="line"></span><br><span class="line">建立一个能反映这是工作情况的需求模型，此时的模型是粗略的。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="面向对象设计-object-oriented-design-OOD"><a href="#面向对象设计-object-oriented-design-OOD" class="headerlink" title="面向对象设计(object oriented design,OOD)"></a>面向对象设计(object oriented design,OOD)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">根据面向对象分析阶段形成的需求模型，对每一部分分别进行具体的设计。</span><br><span class="line"></span><br><span class="line">首先是类的设计，类的设计可能包含多个层次（利用继承与派生机制）。然后以这些类为基础提出程序设计的思路和方法，包括对算法的设计。</span><br><span class="line"></span><br><span class="line">在设计阶段并不牵涉任何一门具体的计算机语言，而是用一种更通用的描述工具（如伪代码或流程图）来描述</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="面向对象编程-object-oriented-programming-OOP"><a href="#面向对象编程-object-oriented-programming-OOP" class="headerlink" title="面向对象编程(object oriented programming,OOP)"></a>面向对象编程(object oriented programming,OOP)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据面向对象设计的结果，选择一种计算机语言把它写成程序，可以是python</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="面向对象测试-object-oriented-test-OOT"><a href="#面向对象测试-object-oriented-test-OOT" class="headerlink" title="面向对象测试(object oriented test,OOT)"></a>面向对象测试(object oriented test,OOT)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在写好程序后交给用户使用前，必须对程序进行严格的测试，测试的目的是发现程序中的错误并修正它。</span><br><span class="line"></span><br><span class="line">面向对的测试是用面向对象的方法进行测试，以类作为测试的基本单元。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="面向对象维护-object-oriendted-soft-maintenance-OOSM"><a href="#面向对象维护-object-oriendted-soft-maintenance-OOSM" class="headerlink" title="面向对象维护(object oriendted soft maintenance,OOSM)"></a>面向对象维护(object oriendted soft maintenance,OOSM)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">正如对任何产品都需要进行售后服务和维护一样，软件在使用时也会出现一些问题，或者软件商想改进软件的性能，这就需要修改程序。</span><br><span class="line"></span><br><span class="line">由于使用了面向对象的方法开发程序，使用程序的维护比较容易。</span><br><span class="line"></span><br><span class="line">因为对象的封装性，修改一个对象对其他的对象影响很小，利用面向对象的方法维护程序，大大提高了软件维护的效率，可扩展性高。</span><br><span class="line"></span><br><span class="line">在面向对象方法中，最早发展的肯定是面向对象编程(OOP),那时OOA和OOD都还没有发展起来，因此程序设计者为了写出面向对象的程序，还必须深入到分析和设计领域，</span><br><span class="line">尤其是设计领域，那时的OOP实际上包含了现在的OOD和OOP两个阶段，这对程序设计者要求比较高，许多人感到很难掌握。</span><br><span class="line"></span><br><span class="line">现在设计一个大的软件，是严格按照面向对象软件工程的5个阶段进行的，这个5个阶段的工作不是由一个人从头到尾完成的，而是由不同的人分别完成，</span><br><span class="line">这样OOP阶段的任务就比较简单了。程序编写者只需要根据OOd提出的思路，用面向对象语言编写出程序既可。</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/29/2020-07-28-python第五章_异常处理/" class="prev">上一篇：python第五章_异常处理</a>
+    
+    
+    <a href="/2020/07/26/2020-07-26-python第五章_元类/" class="next">下一篇：python第五章_元类</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>

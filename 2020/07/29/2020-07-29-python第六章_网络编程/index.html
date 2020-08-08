@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  
+  <title>python第六章_网络编程 | sgupergitquery</title>
+  <meta name="author" content="sgupergitquery">
+  
+  <meta name="description" content="notes">
+  
+  
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <meta property="og:title" content="python第六章_网络编程"/>
+  <meta property="og:site_name" content="sgupergitquery"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link rel="alternate" href="/atom.xml" title="sgupergitquery" type="application/atom+xml">
+
+  <link rel="preload" as="style" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+  <link href="https://unpkg.com" rel="dns-prefetch" />
+  <link href="https://busuanzi.ibruce.info" rel="dns-prefetch" />
+  <link href="https://cdn1.lncld.net" rel="dns-prefetch" />
+  
+  <link href="https://xpjzs0ff.api.lncld.net" rel="dns-prefetch" />
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="container">
+
+
+    <div class="left-col" style="background-image:url('https://tva1.sinaimg.cn/large/007S8ZIlgy1ggdmi6yapmj30dw0zk0wm.jpg')">
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/">
+            <div class="profilepic"><img src='https://s1.ax1x.com/2020/07/08/UZrhJx.jpg'></div>
+          </a>
+          <div class="author-name"><a href="/">sgupergitquery</a></div>
+          <p class="aboutme">notes</p>
+          <nav id="main-nav">
+            <ul class="main">
+              
+              <li>
+                
+                  <a href="/archives">归档</a>
+                
+              </li>
+              
+              <li>
+                
+                  <a href="/categories">专题</a>
+                
+              </li>
+              
+            </ul>
+          </nav>
+          <nav id="sub-nav">
+            <div class="social">
+              
+              
+              
+              
+              
+              
+            </div>
+          </nav>
+        </header>
+      </div>
+
+    </div>
+
+
+
+    <div class="mid-col">
+      <div class="mid-col-container">
+        <div id="content" class="inner">
+          <article class="post">
+
+  
+    <div class="meta">
+      
+<div class="date">
+
+<time datetime="2020-07-28T16:00:00.000Z"
+      
+      data-updated="true"
+       itemprop="datePublished">
+  2020-07-29
+</time>
+
+
+
+
+
+</div>
+
+    </div>
+  
+  <h1 class="title" itemprop="name">python第六章_网络编程</h1>
+  <div class="entry-content" itemprop="articleBody">
+    
+    <div class="post-toc" id='TOC'>
+      <div class="toc-title">TOC</div>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-S架构"><span class="toc-number">1.</span> <span class="toc-text">C&#x2F;S架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机基础知识"><span class="toc-number">2.</span> <span class="toc-text">计算机基础知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络"><span class="toc-number">3.</span> <span class="toc-text">网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP-IP"><span class="toc-number">4.</span> <span class="toc-text">TCP&#x2F;IP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OSI七层模型"><span class="toc-number">5.</span> <span class="toc-text">OSI七层模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#物理层"><span class="toc-number">6.</span> <span class="toc-text">物理层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据链路层"><span class="toc-number">7.</span> <span class="toc-text">数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#以太网协议"><span class="toc-number">7.1.</span> <span class="toc-text">以太网协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac地址"><span class="toc-number">7.2.</span> <span class="toc-text">mac地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#广播"><span class="toc-number">7.3.</span> <span class="toc-text">广播</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络层"><span class="toc-number">8.</span> <span class="toc-text">网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IP报文"><span class="toc-number">8.1.</span> <span class="toc-text">IP报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ARP协议"><span class="toc-number">8.2.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ICMP"><span class="toc-number">8.3.</span> <span class="toc-text">ICMP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ping"><span class="toc-number">8.4.</span> <span class="toc-text">ping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#traceroute"><span class="toc-number">8.5.</span> <span class="toc-text">traceroute</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#传输层"><span class="toc-number">9.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp协议"><span class="toc-number">9.1.</span> <span class="toc-text">tcp协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp三次握手"><span class="toc-number">9.2.</span> <span class="toc-text">tcp三次握手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tcp四次挥手"><span class="toc-number">9.3.</span> <span class="toc-text">tcp四次挥手</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#udp协议"><span class="toc-number">9.4.</span> <span class="toc-text">udp协议</span></a></li></ol></li></ol>
+    </div>
+    
+    <hr>
+<h1 id="C-S架构"><a href="#C-S架构" class="headerlink" title="C/S架构"></a>C/S架构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C指的是client(客户端软件),S指的是Server(服务端软件).</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="计算机基础知识"><a href="#计算机基础知识" class="headerlink" title="计算机基础知识"></a>计算机基础知识</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">作为应用开发程序员,我们开发的软件都是应用软件,而应用软件必须运行于操作系统之上,操作系统则运行于硬件之上,应用软件是无法直接操作硬件的,应用软件对硬件的操作必须调用操作系统的接口,由操作系统操控硬件.</span><br><span class="line"></span><br><span class="line">比如客户端软件想要基于网络发送一条消息给服务端软件,流程是:</span><br><span class="line"></span><br><span class="line">1、客户端软件产生数据,存放于客户端软件的内存中,然后调用接口将自己内存中的数据发送／拷贝给操作系统内存</span><br><span class="line"></span><br><span class="line">2、客户端操作系统收到数据后,按照客户端软件指定的规则(即协议)、调用网卡发送数据</span><br><span class="line"></span><br><span class="line">3、网络传输数据</span><br><span class="line"></span><br><span class="line">4、服务端软件调用系统接口,想要将数据从操作系统内存拷贝到自己的内存中</span><br><span class="line"></span><br><span class="line">5、服务端操作系统收到4的指令后,使用与客户端相同的规则(即协议)从网卡接收到数据,然后拷贝给服务端软件</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">即Internet,因特网(Internet)是一组全球信息资源的总汇.有一种粗略的说法,认为INTERNET是由于许多小的网络(子网)互联而成的一个逻辑网,每个子网中连接着若干台计算机(主机).Internet以相互交流信息资源为目的,基于一些共同的协议,并通过许多路由器和公共互联网而成,它是一个信息资源和资源共享的集合.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Transmission Control Protocol&#x2F;Internet Protocol的简写,中译名为传输控制协议&#x2F;因特网互联协议,又名网络通讯协议,是Internet最基本的协议、Internet国际互联网络的基础</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">OSI&#x2F;RM模型(Open System Interconnection &#x2F; Reference Model)的设计目的是成为一个所有计算机厂商都能实现的开放网络模型,来克服使用众多私有网络模型所带来的困难和低效性.</span><br><span class="line"></span><br><span class="line">七层分为:</span><br><span class="line">    应用层</span><br><span class="line">        网络服务与最终用户的一个接口</span><br><span class="line">        协议有:HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP</span><br><span class="line">    表示层</span><br><span class="line">        数据的表示、安全、压缩.(在五层模型里面已经合并到了应用层)</span><br><span class="line">        格式有,JPEG、ASCll、EBCDIC、加密格式等</span><br><span class="line">    会话层</span><br><span class="line">        建立、管理、终止会话.(在五层模型里面已经合并到了应用层)</span><br><span class="line">        对应主机进程,指本地主机与远程主机正在进行的会话</span><br><span class="line">    传输层</span><br><span class="line">        定义传输数据的协议端口号,以及流控和差错校验.</span><br><span class="line">        协议有:TCP UDP,数据包一旦离开网卡即进入网络传输层</span><br><span class="line">    网络层</span><br><span class="line">        进行逻辑地址寻址,实现不同网络之间的路径选择.</span><br><span class="line">        协议有:ICMP IGMP IP(IPV4 IPV6)</span><br><span class="line">    数据链路层</span><br><span class="line">        建立逻辑连接、进行硬件地址寻址、差错校验等功能.(由底层网络定义协议)</span><br><span class="line">        将比特组合成字节进而组合成帧,用MAC地址访问介质,错误发现但不能纠正.</span><br><span class="line">    物理层</span><br><span class="line">        建立、维护、断开物理连接.(由底层网络定义协议)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">孤立的计算机之间要想一起玩,就必须接入internet,言外之意就是计算机之间必须完成组网.</span><br><span class="line">物理层功能:主要是基于电器特性发送高低电压(电信号),高电压对应数字1,低电压对应数字0</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据链路层由来:单纯的电信号0和1没有任何意义,必须规定电信号多少位一组,每组什么意思</span><br><span class="line">数据链路层的功能:定义了电信号的分组方式</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="以太网协议"><a href="#以太网协议" class="headerlink" title="以太网协议"></a>以太网协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">早期的时候各个公司都有自己的分组方式,后来形成了统一的标准,即以太网协议ethernet.</span><br><span class="line">ethernet规定一组电信号构成一个数据包,叫做&#39;帧&#39;&#39;,每一数据帧分成:报头head和数据data两部分</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">head包含:(固定18个字节)</span><br><span class="line">    发送者／源地址,6个字节</span><br><span class="line">    接收者／目标地址,6个字节</span><br><span class="line">    数据类型,6个字节</span><br><span class="line">    data包含:(最短46字节,最长1500字节)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">数据包的具体内容</span><br><span class="line">    head长度＋data长度＝最短64字节,最长1518字节,超过最大限制就分片发送</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="mac地址"><a href="#mac地址" class="headerlink" title="mac地址"></a>mac地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mac地址:</span><br><span class="line">    head中包含的源和目标地址由来:ethernet规定接入internet的设备都必须具备网卡,发送端和接收端的地址便是指网卡的地址,即mac地址</span><br><span class="line">    mac地址:每块网卡出厂时都被烧制上一个世界唯一的mac地址,长度为48位2进制,通常由12位16进制数表示(前六位是厂商编号,后六位是流水线号)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">有了mac地址,同一网络内的两台主机就可以通信了(一台主机通过arp协议获取另外一台主机的mac地址)</span><br><span class="line">ethernet采用最原始的方式,广播的方式进行通信,即计算机通信基本靠吼</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">网络层由来:有了ethernet、mac地址、广播的发送方式,世界上的计算机就可以彼此通信了,问题是世界范围的互联网是由一个个彼此隔离的小的局域网组成的,那么如果所有的通信都采用以太网的广播方式,那么一台机器发送的包全世界都会收到,这就不仅仅是效率低的问题了,这会是一种灾难.</span><br><span class="line"></span><br><span class="line">网络层功能:引入一套新的地址用来区分不同的广播域／子网,这套地址即网络地址.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="IP报文"><a href="#IP报文" class="headerlink" title="IP报文"></a>IP报文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IP协议是TCP&#x2F;IP协议的核心,所有的TCP,UDP,IMCP,IGCP的数据都以IP数据格式传输,要注意的是,IP不是可靠的协议,这是说,IP协议没有提供一种数据未传达以后的处理机制－－这被认为是上层协议－－TCP或UDP要做的事情.所以这也就出现了TCP是一个可靠的协议,而UDP就没有那么可靠的区别.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">arp协议由来:计算机通信基本靠吼,即广播的方式,所有上层的包到最后都要封装上以太网头,然后通过以太网协议发送,在谈及以太网协议时候,我门了解到</span><br><span class="line"></span><br><span class="line">通信是基于mac的广播方式实现,计算机在发包时,获取自身的mac是容易的,如何获取目标主机的mac,就需要通过arp协议</span><br><span class="line"></span><br><span class="line">arp协议功能:广播的方式发送数据包,获取目标主机的mac地址</span><br><span class="line"></span><br><span class="line">协议工作方式:每台主机ip都是已知的</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IP协议并不是一个可靠的协议,它不保证数据被送达,那么,自然的,保证数据送达的工作应该由其他的模块来完成.其中一个重要的模块就是ICMP(网络控制报文)协议.</span><br><span class="line"></span><br><span class="line">当传送IP数据包发生错误－－比如主机不可达,路由不可达等等,ICMP协议将会把错误信息封包,然后传送回给主机.给主机一个处理错误的机会.</span><br><span class="line"></span><br><span class="line">我们一般主要用ICMP协议检测网络是否通畅,基于ICMP协议的工具主要有ping 和traceroute</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ping这个单词源自声纳定位,而这个程序的作用也确实如此,它利用ICMP协议包来侦测另一个主机是否可达.</span><br><span class="line">原理是用类型码为0的ICMP发请求,受到请求的主机则用类型码为8的ICMP回应.ping程序来计算间隔时间,</span><br><span class="line">并计算有多少个包被送达.用户就可以判断网络大致的情况.我们可以看到,ping给出来了传送的时间和TTL的数据.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用来查看从当前主机到某地址一共经过多少跳路由</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">传输层的由来:网络层的ip帮我们区分子网,以太网层的mac帮我们找到主机,然后大家使用的都是应用程序,</span><br><span class="line">你的电脑上可能同时开启qq,暴风影音,迅雷等多个应用程序,那么我们通过ip和mac找到了一台特定的主机,</span><br><span class="line">如何标识这台主机上的应用程序呢?答案就是端口,端口即应用程序与网卡关联的编号.</span><br><span class="line"></span><br><span class="line">传输层功能:建立端口到端口的通信</span><br><span class="line"></span><br><span class="line">补充:端口范围0-65535,0-1023为系统占用端口</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="tcp协议"><a href="#tcp协议" class="headerlink" title="tcp协议"></a>tcp协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">可靠传输,TCP数据包没有长度限制,理论上可以无限长,但是为了保证网络的效率,通常TCP数据包的长度不会超过IP数据包的长度,以确保单个TCP数据包不必再分割.</span><br><span class="line"></span><br><span class="line">为什么tcp是可靠的数据传输呢?</span><br><span class="line"></span><br><span class="line">最可靠的方式就是只要不得到确认,就重新发送数据报,直到得到对方的确认为止.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="tcp三次握手"><a href="#tcp三次握手" class="headerlink" title="tcp三次握手"></a>tcp三次握手</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">第一次</span><br><span class="line">    第一次握手:建立连接时,客户端发送syn包(seq&#x3D;j)到服务器,并进入SYN_SENT状态,等待服务器确认;SYN(同步序列编号)</span><br><span class="line"></span><br><span class="line">第二次</span><br><span class="line">    第二次握手:服务器收到syn包,必须确认客户的SYN(ack&#x3D;j+1),同时自己也发送一个SYN包(seq&#x3D;k),即SYN+ACK包,此时服务器进入SYN_RECV状态</span><br><span class="line"></span><br><span class="line">第三次</span><br><span class="line">    第三次握手:客户端收到服务器的SYN+ACK包,向服务器发送确认包ACK(ack&#x3D;k+1),此包发送完毕,客户端和服务器进入ESTABLISHED(TCP连接成功)状态,完成三次握手.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="tcp四次挥手"><a href="#tcp四次挥手" class="headerlink" title="tcp四次挥手"></a>tcp四次挥手</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">由于TCP连接是全双工的,因此每个方向都必须单独进行关闭.这原则是当一方完成它的数据发送任务后就能发送一个FIN来终止这个方向的连接.收到一个 FIN只意味着这一方向上没有数据流动,一个TCP连接在收到一个FIN后仍能发送数据.首先进行关闭的一方将执行主动关闭,而另一方执行被动关闭.</span><br><span class="line">(1) TCP客户端发送一个FIN,用来关闭客户到服务器的数据传送.</span><br><span class="line">(2) 服务器收到这个FIN,它发回一个ACK,确认序号为收到的序号加1.和SYN一样,一个FIN将占用一个序号.</span><br><span class="line">(3) 服务器关闭客户端的连接,发送一个FIN给客户端.</span><br><span class="line">(4) 客户端发回ACK报文确认,并将确认序号设置为收到序号加1.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="udp协议"><a href="#udp协议" class="headerlink" title="udp协议"></a>udp协议</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不可靠传输,&quot;报头&quot;部分一共只有8个字节,总长度不超过65,535字节,正好放进一个IP数据包.</span><br></pre></td></tr></table></figure>
+  </div>
+
+</article>
+
+
+  <nav id="pagenavi">
+    
+    <a href="/2020/07/30/2020-07-30-python第六章_socket/" class="prev">上一篇：python第六章_Socket</a>
+    
+    
+    <a href="/2020/07/29/2020-07-28-python第五章_异常处理/" class="next">下一篇：python第五章_异常处理</a>
+    
+  </nav>
+
+<a href="#TOC">Top</a>
+        </div>
+         
+        
+      </div>
+      <footer id="footer" class="inner">
+        © 2020 - sgupergitquery -
+        <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span></span>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a href="https://github.com/thinkerchan/hexo-theme-greyshade" target="_blank" rel="noopener">GreyShade</a></p>
+      </footer>
+    </div>
+  </div>
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://s5.cnzz.com/z_stat.php?id=1276809529&web_id=1276809529"></script>
+</body>
+</html>
